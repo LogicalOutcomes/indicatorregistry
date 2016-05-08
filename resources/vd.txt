@@ -1,0 +1,698 @@
+FinSav101	Percentage of income that gets deposited into savings accounts	Number	
+			
+FinGoals102	How satisfied are you with your financial situation?	Very satisfied	2
+		Satisfied	1
+		Neither satisfied nor dissatisfied	0
+		Dissatisfied	-1
+		Very dissatisfied	-2
+		Refuse to answer	0
+		Don't know 	0
+			
+FinWell103	In the past month, how often did you feel good at managing the responsibilities of your daily life?	Every day	5
+		Almost every day	4
+		About 2 or 3 times a week	3
+		About once a week	2
+		Once or twice	1
+		Never	-1
+		Refuse to answer	0
+		Don't know	0
+			
+FinMgmt104	Over the last 3 months, have you followed a personal budget, spending plan, or financial plan?	Yes	1
+		No	0
+		Don't know	
+			
+FinGoals105	How confident are you in your ability to achieve a financial goal you set for yourself today?	Not at all confident 	0
+		Somewhat confident 	1
+		Very confident	2
+			
+FinMgmt106	If you had an unexpected expense or someone in your family lost a job, got sick or had another emergency, how confident are you that your family could come up with money to make ends meet within a month?	Not at all confident 	0
+		Somewhat confident 	1
+		Very confident	2
+			
+FinSav107	Do you currently have an automatic deposit or electronic transfer set up to put money away for a future use such as saving for retirement or education? 	Yes	1
+		No	0
+			
+FinGoals108	Do you currently have at least one financial goal?	Yes	1
+		No	0
+			
+FinMgmt109	Over the past 3 months, would you say your household’s spending on living expenses was less than its total income? 	Yes	1
+		No	0
+		Don't know	0
+			
+FinLoan110	In the last 3 months, have you paid a late fee on a loan or bill?	Yes	0
+		No	1
+			
+FinCredit111	How would you rate your current credit record?	Very bad 	# 30 day delinquencies
+		Bad 	# items in collections
+		About average 	# items judgments (public records section)
+		Good 	A. $ revolving credit limit (mainly credit cards, not HELOCs)
+		Very good	B. $ revolving credit outstanding (mainly credit cards, not HELOCs)
+		Don’t know	Ratio: B/A
+			
+FinCap112	Financial capability	Composite score from 1 to 3	
+			
+FinMgmt113	Cash flow analysis of an individual’s total monthly income compared to their total monthly expenses	Expenses < Income 	2
+		Expenses = Income	1
+		Expenses > Income 	0
+			
+FinMgmt114	In the past 12 months, how would you describe your household's spending patterns?	Spending much less or a bit less than income	2
+		Spending about equal to income	1
+		Spending a bit more or much more than income	0
+			
+FinMgmt115	In a typical month, how difficult is it for your household to cover your expenses and pay all your bills?	Not at all difficult	2
+		Somewhat difficult	1
+		Very difficult	0
+			
+FinMgmt116	Timing of bill payments (including debt) in relation to payment due dates	On due date or before	2
+		Soon after due date (within 10 days)	1
+		Well after due date (after 10 days)	0
+			
+FinMgmt117	Amount of bill payments (including debt) in relation to amount due	Pay full amount	2
+		Pay minimum	1
+		Pay less than minimum	0
+			
+FinMgmt118	How often does your household have to juggle which bills get paid when? 	Never	2
+		Sometimes, seldom	1
+		Always, most of the time	0
+			
+FinMgmt119	Which one of the following statements best describes how well your household is keeping up with your bills and credit commitments at the moment?	Keeping up with all bills and payments without any difficulties	3
+		Keeping up with all bills and payments, but it is a struggle from time to time	2
+		Keeping up with all bills and payments, but it is a constant struggle	1
+		Falling behind with some bills or credit payments	0
+		Falling behind with many bills or credit payments	0
+			
+			
+FinSav120	Automatic deposit or electronic transfer has been set up to put money away for future use	Setup	1
+		No setup	0
+		n/a	0
+			
+FinSav121	Non-retirement account balances are increasing (i.e. checking accounts, savings accounts, prepaid card balances, etc.)	Increasing	2
+		Staying the same	1
+		Decreasing	0
+			
+FinSav122	Retirement account balances are increasing	Increasing	2
+		Staying the same	1
+		Decreasing	0
+			
+FinSav123	When you think about saving money for the future, which of these timeframes is most important to you?	Next 5 years or longer	2
+		Next year or few years	1
+		Next few weeks or months	0
+			
+FinSav124	Which one of the following statements comes closest to describing your household's saving habits?	Save regularly by putting money aside each month	2
+		Have automatic deposit or electronic transfer set up to put money away for future use (such as savings)	2
+		Save income of one family member, spend the other	2
+		Spend regular income, save other income	2
+		Save whatever is left over at the end of the month - no regular plan	1
+		Don't save - usually spend more than income	0
+		Don't save - usually spend about as much as income	0
+			
+FinSav125	How much does your household have in non-retirement savings?	6 or more months of living expenses	2
+		3-5 months of living expenses	1
+		Less than 3 months of living expenses	0
+			
+FinCredit126	Timing of debt payments in relation to due date 	On due date or before	2
+		Soon after due date (within 10 days)	1
+		Well after due date (after 10 days)	0
+			
+FinCredit127	Amount of debt payments in relation to amount due 	Pay full amount	2
+		Pay partial amount, pay minimum	1
+		Pay less than minimum	0
+			
+FinCredit128	Debt Service Ratio	Less than 10% = manageable	2
+		10 and 40% = high, but still manageable	1
+		40% = unhealthy	0
+			
+FinCredit129	Financial Obligations Ratio	Under 15% = good	2
+		15-20% = caution zone	1
+		Over 20% = no more debt	0
+			
+FinCredit130	How would you describe how much debt your household has right now? 	About the right amount of debt	2
+		Somewhat too much debt	1
+		An excessive amount of debt	0
+			
+FinCredit131	Thinking about the past 12 months, which of the following describes your household's experience with credit cards?	Pay credit cards in full	2
+		Generally make more than the minimum payment, but carry over a balance and pay interest	1
+		Generally make the minimum payment only, but carry over a balance and pay interest	0
+			
+FinCredit132	How would you rate your credit score? 	Excellent	3
+		Good 	2
+		Fair	1
+		Poor 	0
+		Very Poor	0
+			
+FinMgmt133	Type and extent of life and health insurance coverage in the household	Every adult in the household has life (for main earner) and health insurance	2
+		At least 1 adult in the household has life OR health insurance	1
+		No adult in the household has either life or health insurance	0
+			
+FinMgmt134	Number of months of living expenses available in household accounts	More than 3 months	2
+		1-3 months	1
+		Less than 1 month	0
+			
+FinCredit135	Credit score or credit quality tier	Super prime 	3
+		Prime	2
+		Nonprime	1
+		Subprime 	0
+		Deep subprime	0
+			
+FinMgmt136	Does main earner(s) with dependents in your household have life insurance?	Yes	1
+		N/a	0
+		No	0
+			
+FinMgmt137	Are you or others in your household covered by any type of public or private health insurance? 	Yes, everyone is covered	2
+		Yes, but not everyone is covered	1
+		No, nobody is covered	0
+			
+FinMgmt138	Number of months of living expenses available in household accounts	More than 3 months	2
+		1-3 months	1
+		Less than 1 month	0
+			
+FinMgmt139	Thinking about your household’s finances today, how financially prepared do you feel your household is for the unexpected?	Very prepared	2
+		Somewhat prepared or Only a little prepared	1
+		Not at all prepared	0
+			
+FinMgmt140	Active use of a plan or budget (such as online budget, another online tool, financial coach, etc.)	Yes	1
+		N/a	0
+		No	0
+			
+FinSav141	Identified/named savings goal(s) on accounts (i.e. college fund, vacation fund, investment fund)	Yes	1
+		N/a	0
+		No	0
+			
+FinMgmt142	Does your household have a budget, spending plan, or financial plan that you use to guide how your money gets spent each month?	Yes or We do not need a budget because we always have enough money	1
+		N/a	0
+		No	0
+			
+FinMgmt143	Does your household plan ahead to make sure you have the money to pay for large, irregular expenses (for example, bills not due each month, such as insurance, property taxes, car registration, etc.)?	Yes or We do not need a budget because we always have enough money	1
+		N/a	0
+		No or We would if we could	0
+			
+FinGoals144	Do you have a plan to achieve your longer-term financial goals?	Yes	1
+		N/a	0
+		No	0
+			
+FinMgmt145	Frequency of customer financial engagement (such as, logging into account, checking balances, reviewing transaction history, calling customer service, visiting a branch, checking credit score/report)	Balanced level of engagement	2
+		Excessive level of engagement or rare level of engagement	1
+		Unengaged	0
+			
+FinMgmt146	When making a large financial decision, do you know where to go for advice or information?	Yes	2
+		Sometimes	1
+		No	0
+			
+FinMgmt147	To what extent do you have the skills and knowledge to manage your household's finances well?	I am well equipped with the skills and knowledge I need	2
+		I am somewhat equipped with the skills and knowledge I need	1
+		I am not equipped with the skills and knowledge I need	0
+			
+FinGoals148	How satisfied are you with your present financial condition? 	Very satisfied 	3
+		Satisfied	2
+		Neither satisfied nor unsatisfied	1
+		Unsatisfied 	0
+		Very unsatisfied	0
+			
+FinGoals149	How would you rate your household’s financial situation today?	Excellent or Good	2
+		Fair	1
+		Poor 	0
+			
+FinWell150	How much stress do your finances cause you?	No stress or A small degree of stress	2
+		A moderate degree of stress	1
+		Significant stress	0
+			
+FinGoals151	How confident are you in your ability to reach your household's financial goals?	Very confident	0
+		Somewhat confident 	1
+		Not at all confident 	2
+			
+FinMgmt152	Personal perception of money management	Composite score from 0 to 3	
+			
+FinCap153	Money management routine	"Composite score from 0 to 3
+What do you currently do to manage your money?
+
+Please select the number that best explains how often you do the following:
+
+Note: An answer should be provided to each of the statements. The question could be structured in a matrix form."	
+			
+FinMgmt154	"Do you budget your money?
+Please check one:"	Yes	1
+		No	0
+			
+FinMgmt155	If yes [to “Do you budget your money?”], how do you budget your money? 	I write out a budget	2
+		I keep a budget in my head	1
+		Other	1
+			
+FinMgmt156	"If yes [to “Do you budget your money?”], how often do you follow your budget? 
+
+I follow my budget
+Please circle the number that best explains how often you do the following:"	Never	0
+		Rarely 	0
+		Sometimes	1
+		Usually	2
+		Always	3
+			
+FinMgmt157	"What financial services do you currently use?
+
+Please check all the services that you use:"	Bank	3
+		Credit union or caisse populaire	2
+		Cheque cashing and payday loan services (e.g. Money Mart)	1
+		I don't use any financial services	0
+		Other	1
+			
+FinSav158	Do you have a goal for saving money?	Yes	1
+		No	0
+			
+FinSav159	Do you have any savings set aside?	Yes	1
+		No (skip the next two questions)	0
+			
+FinSav160	"If yes [to “Do you have any savings set aside”], did you save and put aside any of your money in the past month? 
+Please check one:"	Yes	1
+		No	0
+			
+FinMgmt161	Do you have a long-term plan for your money (e.g. for retirement)?	Yes	1
+		No	0
+			
+FinLoan162	Over the last year, have you been late by 2 months or more on a bill or other payment? (examples: cell phone, rent or utilities)	Yes	0
+		No	1
+		I don’t know	0
+			
+FinCredit163	Have you checked your credit history or credit rating in the past 12 months?	Yes	1
+		No	0
+		I don’t know	0
+			
+FinMgmt164	Did you file your income tax forms last year?	Yes	1
+		No	0
+		I don’t know	0
+			
+FinMgmt165	I have a clear idea of the financial products that I need	Agree 	1
+		Disagree	0
+		Don't Know	0
+			
+FinCap166	Self-perceived ability to manage finances	Composite score from 0 to 3	
+			
+FinMgmt167	How would you rate yourself on keeping track of money?	Very good	3
+		Good	2
+		Fairly good	1
+		Not very good	0
+		Don't know	0
+			
+FinMgmt168	How would you rate yourself on making ends meet?	Very good	3
+		Good	2
+		Fairly good	1
+		Not very good	0
+		Don't know	0
+			
+FinMgmt169	How would you rate yourself on shopping around to get the best financial products?	Very good	3
+		Good	2
+		Fairly good	1
+		Not very good	0
+		Don't know	0
+			
+FinMgmt170	How would you rate yourself in staying informed on financial issues?	Very good	3
+		Good	2
+		Fairly good	1
+		Not very good	0
+		Don't know	0
+			
+FinGoals171	Looking over the whole program, what do you think was the most significant change for you? [NOTE: Agencies may revise the wording]	Open text	
+			
+FinGoals172	From among all these significant changes, what do you think was the most significant change of all? [NOTE: Agencies may revise the wording]	Open text in response to list of Most Significant Changes submitted by participants	
+			
+FinMgmt173	"Which of the following best describes your approach to your personal finances over the last 6 months?
+(PLEASE SELECT ONE RESPONSE ONLY)"	I had a budget and always stuck to it 	To be determined
+		I had a budget and mostly stuck to it 	To be determined
+		I had a budget but did not stick to it 	To be determined
+		I did not have a budget during this period 	To be determined
+			
+FinMgmt174	"Do you have a 3-5 year financial plan?
+(PLEASE SELECT ONE RESPONSE ONLY)
+By financial plan we mean a series of actions to achieve a financial goal or goals; these may be written or not."	Yes 	To be determined
+		No	To be determined
+			
+FinMgmt175	"If Yes [to ""Do you have a 3-5 year financial plan?""], Which of the following have you done on your 3-5 year financial plan within the last 6 months?
+(PLEASE SELECT ALL THAT APPLY)"	Monitored my progress 	To be determined
+		Reached some of the financial goals I set 	To be determined
+		Adjusted my financial plan	To be determined
+		Have not done anything 	To be determined
+		None of these	To be determined
+			
+FinMgmt176	"Do you have a 15-20 year financial plan?
+(PLEASE SELECT ONE RESPONSE ONLY)
+By financial plan we mean a series of actions to achieve a financial goal or goals; these may be written or not."	Yes	To be determined
+		No	To be determined
+			
+FinMgmt177	"If Yes [to “Do you have a 15-20 year financial plan?”], Which of the following have you done on your 15-20 year financial plan within the last 6 months? 
+(PLEASE SELECT ALL THAT APPLY)
+Monitored my progress "	Reached some of the financial goals I set 	To be determined
+		Adjusted my financial plan 	To be determined
+		Have not done anything 	To be determined
+		None of these 	To be determined
+			
+FinSav178	"Now thinking about savings, which of the following have you done over the last 6 months?
+(PLEASE SLECT ALL THAT APPLY)"	Saved money using a savings account that is not automatically linked to my pay (i.e. manually place money into this account when I have extra cash) 	To be determined
+		Saved money using a savings account that is automatically linked to my pay (i.e. money is automatically placed into this account when I get paid) 	To be determined
+		Saved money but not through a savings account (e.g. I put money in an envelope or money box and did not touch it) 	To be determined
+		I saved money without having a savings plan in place (i.e. I earned more money than what I spent) 	To be determined
+		Saved money by making voluntary contributions to my superannuation 	To be determined
+		Saved money by paying more than the minimum amount off my mortgage or other personal loan 	To be determined
+		Other, please specify 	To be determined
+		I did not save any money over the last 6 months	To be determined
+			
+FinCredit179	"Thinking about your main Credit Card(s) over the last 6 months have you…
+(PLEASE SELECT ONE RESPONSE ONLY)"	Missed one or more minimum payments due	To be determined
+		Paid the minimum amount due each month 	To be determined
+		Paid some money in addition to the minimum amount due, but not the full amount 	To be determined
+		Paid the amount due in full each month	To be determined
+		None of the above 	To be determined
+		I’d prefer not to say	To be determined
+			
+FinCredit180	"Thinking about your main Personal loan(s) - other than home loans or car loans, over the last 6 months have you…
+(PLEASE SELECT ALL THAT APPLY)"	Missed one or more minimum payments due 	To be determined
+		Paid the minimum amount due each month 	To be determined
+		Paid some money in addition to the minimum amount due, but not the full amount 	To be determined
+		Paid the amount due in full each month	To be determined
+		None of the above 	To be determined
+		I’d prefer not to say	To be determined
+			
+FinLoan181	"Thinking about your main Home loan(s) - not includint investment property loans, over the last 6 months have you…
+(PLEASE SELECT ALL THAT APPLY)"	Missed one or more minimum payments due 	To be determined
+		Paid the minimum amount due each month 	To be determined
+		Paid some money in addition to the minimum amount due, but not the full amount 	To be determined
+		Paid the amount due in full	To be determined
+		None of the above 	To be determined
+		I’d prefer not to say	To be determined
+			
+FinCredit182	"Thinking about your main Car loan over the last 6 months have you…
+(PLEASE SELECT ALL THAT APPLY)"	Missed one or more minimum payments due 	To be determined
+		Paid the minimum amount due each month 	To be determined
+		Paid some money in addition to the minimum amount due, but not the full amount 	To be determined
+		Paid the loan off in full 	To be determined
+		None of the above 	To be determined
+		I’d prefer not to say	To be determined
+			
+FinMgmt183	"Which of the following statements best describes how you would manage if you suffered a sudden loss of income and had to cover three months’ living expenses?
+(PLEASE SELECT ALL THAT APPLY)"	I would access money through my own savings and investments 	To be determined
+		I would sell something 	To be determined
+		I would access credit from a financial institution	To be determined
+		I would use some form of income replacement insurance 	To be determined
+		I would get a loan from friends and family 	To be determined
+		I would get a gift from friends / family 	To be determined
+		I would access the money in some other way (please specify…) 	To be determined
+		I would not be able to cover three months living expenses 	To be determined
+		I don't know how I would manage but I would find a way	To be determined
+			
+FinMgmt184	"Which of the following methods have you used in the last 6 months to keep track of your money?
+(PLEASE SELECT ALL THAT APPLY)"	I kept track of my money in my head	To be determined
+		I kept track of my money by writing down notes 	To be determined
+		I kept receipts 	To be determined
+		I used a household budget/spread sheet 	To be determined
+		I used an online budgeting tool or app 	To be determined
+		I used an app to keep track of my spending 	To be determined
+		I checked my bank statements for unusual/suspicious entries 	To be determined
+		I checked my credit card statements for unusual/suspicious entries 	To be determined
+		I looked at some or all of my bank/credit card statements but not in any detail 	To be determined
+		Other (Please specify…) 	To be determined
+		None of the above (I didn’t keep track of my spending) 	To be determined
+		I’d prefer not to say	To be determined
+			
+FinMgmt185	"Which of the following statements best describes your understanding of these investing principles?
+(PLEASE SELECT ONE OPTION PER ROW)"	(1) I haven’t heard of this	To be determined
+		(2) I have heard of this but don’t really understand it	To be determined
+		(3) I have heard of this and understand it	To be determined
+		Risk/return trade off (1, 2, 3)	To be determined
+		Diversification (1, 2, 3)	To be determined
+			
+FinMgmt186	"An investment with a high rate of return is more likely to have…
+(PLEASE SELECT ONE RESPONSE ONLY)"	A higher level of risk 	To be determined
+		A lower level of risk 	To be determined
+		The same level of risk as other investments	To be determined
+		Unsure 	To be determined
+			
+FinGoals187	"Which of the following statements best describes your current financial situation?
+(PLEASE SELECT ONE RESPONSE ONLY)"	I never seem to have enough money to cover my expenses 	To be determined
+		I manage to meet all my expenses but there’s nothing left over to save	To be determined
+		I meet my expenses and have a little bit left over to spend or save 	To be determined
+		I comfortably meet my expenses and can easily save or spend if I want to. 	To be determined
+			
+FinGoals188	"Listed below are a number of statements various people have used to describe their financial situation. Could you please tell us how strongly you agree or disagree with each statement regarding your own financial situation?
+
+(1) Strongly Agree
+(2) Agree
+(3) Neither Agree nor Disagree
+(4) Disagree
+(5) Strongly Disagree"	Dealing with money is stressful and overwhelming (1, 2, 3, 4, 5)	To be determined
+		Financially, I like to live for today and not think too much about tomorrow (1, 2, 3, 4, 5)	To be determined
+		Dealing with money is interesting(1, 2, 3, 4, 5)	To be determined
+		I have difficulty understanding financial matters (1, 2, 3, 4, 5)	To be determined
+		I spend a lot of time thinking about financial information before I make a decision (1, 2, 3, 4, 5)	To be determined
+		Nothing I do will make much difference to my financial situation (1, 2, 3, 4, 5)	To be determined
+		I try to stay informed about money matters and finance (1, 2, 3, 4, 5)	To be determined
+		I am too busy to sort out my finances at the moment (1, 2, 3, 4, 5)	To be determined
+		I often buy things on impulse (1, 2, 3, 4, 5)	To be determined
+		My family and friends often come to me for advice about financial decisions (1, 2, 3, 4, 5)	To be determined
+		I am confident when it comes to managing my money (1, 2, 3, 4, 5)	To be determined
+			
+FinMgmt189	I could handle a major unexpected expense	Completely 	4
+		Very well 	3
+		Somewhat 	2
+		Very little 	1
+		Not at all	0
+			
+FinGoals190	I am securing my financial future	Completely 	4
+		Very well 	3
+		Somewhat 	2
+		Very little 	1
+		Not at all	0
+			
+FinMgmt191	Because of my money situation, I feel like I will never have the things I want in life	Completely 	0
+		Very well 	1
+		Somewhat 	2
+		Very little 	3
+		Not at all	4
+			
+FinMgmt192	I can enjoy life because of the way I’m managing my money	Completely 	4
+		Very well 	3
+		Somewhat 	2
+		Very little 	1
+		Not at all	0
+			
+FinCap193	I am just getting by financially	Completely 	0
+		Very well 	1
+		Somewhat 	2
+		Very little 	3
+		Not at all	4
+			
+FinSav194	I am concerned that the money I have or will save won’t last	Completely 	0
+		Very well 	1
+		Somewhat 	2
+		Very little 	3
+		Not at all	4
+			
+FinMgmt195	Giving a gift for a wedding, birthday or other occasion would put a strain on my finances for the month	Always 	0
+		Often 	1
+		Sometimes 	2
+		Rarely 	3
+		Never	4
+			
+FinSav196	I have money left over at the end of the month	Always 	4
+		Often 	3
+		Sometimes 	2
+		Rarely 	1
+		Never	0
+			
+FinMgmt197	I am behind with my finances	Always 	0
+		Often 	1
+		Sometimes 	2
+		Rarely 	3
+		Never	4
+			
+FinMgmt198	My finances control my life	Always 	0
+		Often 	1
+		Sometimes 	2
+		Rarely 	3
+		Never	4
+			
+FinMgmt199	Making ends meet	Composite from 1.601 to 7.827 point scale	
+			
+FinMgmt200	Keeping track of money	Composite from 13.1812 to 50.346 point scale	
+			
+FinMgmt201	Planning ahead	Composite from 1.396 to 7.2 point scale	
+			
+FinMgmt202	Choosing products 	Composite from 2.5129 to 8.4159 point scale	
+			
+FinMgmt203	Staying informed 	Composite from 1.025 to 7.464 point scale	
+			
+FinMgmt204	Thinking of the last 12 months, how well have you been keeping up with your financial commitments?        	I don't know	0.75
+		Having real financial problems and falling behind	1.5
+		Keeping up but it sometimes is a struggle	2.25
+		Keeping up without any problems	3
+			
+FinLoan205	"Thinking of the last 12 months, were you ever behind two months in a row or more... in paying a bill?
+… in paying your rent or mortgage?
+… in making a loan payment?"	Composite score from 0.5 to 3	
+			
+FinMgmt206	"Do you have a household budget?
+How often do you stay within your budget?"	Composite score from 0.5 to 3	
+			
+FinMgmt207	How often do you usually check the balances on any bank accounts you have?	I don't know or I don't have any accounts 	0.75
+		Yearly 	1.5
+		Every two weeks or Monthly 	2.25
+		Daily or Weekly 	3
+			
+FinMgmt208	I keep a close watch on my finances.	I don't know 	1
+		Disagree 	2
+		Agree 	3
+			
+FinMgmt209	"Are you planning ahead financially for when you get to retirement age?  A plan could include many things like your own savings, government programs, pensions at work, family help, continuing to work, etc.
+How confident are you that your household income in retirement will be what you hope for?"	Composite score from 0.43 to 2.57	
+			
+FinMgmt210	"Do you currently have a will?
+Do you currently have any insurance policies such as life insurance, renters insurance or car insurance?"	Composite score from 0.75 to 3	
+			
+FinMgmt211	If you had a large unexpected cost, for example equivalent to your take-home pay for at least 2 weeks, how would you mostly likely cover this expense?	I couldn't cover that kind of cost or Don't know 	0.5
+		Go to a pawnbroker or payday lender 	1
+		Borrow from a bank or use a credit card 	1.5
+		Borrow from friends or family 	2
+		Sell an asset or personal posession 	2.5
+		Use savings 	3
+			
+FinMgmt212	I have a clear idea of the financial products I need.	I don't know 	1
+		Disagree 	2
+		Agree 	3
+			
+FinMgmt213	I always research my choices before I make a decision about money.      	I don't know 	1
+		Disagree 	2
+		Agree 	3
+			
+FinMgmt214	Are there financial things that you personally keep an eye on?  Mark all that apply.   	Composite score from 0 to 3	
+			
+FinMgmt215	In the last five years, have you taken a course or program to learn about financial or economic topics?   	I don't know 	0.5
+		No 	1.5
+		Yes 	1
+			
+FinMgmt216	How would you rate yourself on making ends meet?	I don't know 	0.6
+		Not very good 	1.2
+		Fairly good 	1.8
+		Good 	2.3
+		Very good 	3
+			
+FinMgmt217	How would you rate yourself on keeping track of money?   	I don't know 	0.6
+		Not very good 	1.2
+		Fairly good 	1.8
+		Good 	2.3
+		Very good 	3
+			
+FinMgmt218	How would you rate yourself on staying informed on financial issues?	I don't know 	0.6
+		Not very good 	1.2
+		Fairly good 	1.8
+		Good 	2.3
+		Very good 	3
+			
+FinMgmt219	How would you rate yourself on shopping around to get the best financial products?   	I don't know 	0.6
+		Not very good 	1.2
+		Fairly good 	1.8
+		Good 	2.3
+		Very good 	3
+			
+FinMgmt220	Keep up with financial commitments	Keeping up with all bills and commitments without any problems 	3
+		Keeping up with all bills and commitments, but it is sometimes a struggle 	2
+		Having real financial problems and falling behind with bills or financial commitments 	1
+		Don't have any bills or financial commitments 	0
+		Don’t know 	0
+			
+FinLoan221	Late payments bills	Yes 	0
+		No 	1
+		Don't know 	0
+			
+FinLoan222	Late payments rent or mortgage	Yes 	0
+		No 	1
+		Don't know 	0
+			
+FinLoan223	Late payments loan payment	Yes 	0
+		No 	1
+		Don't know 	0
+			
+FinMgmt224	Budgeting	Yes 	0
+		No 	1
+		Don't know 	0
+			
+FinMgmt225	Stay within budget	Always 	3
+		Usually 	2
+		Rarely 	1
+		Never 	0
+		Don't know 	0
+			
+FinMgmt226	Monitoring accounts	Daily 	3
+		Weekly 	3
+		Every two weeks 	2
+		Monthly 	2
+		Yearly 	1
+		Never 	0
+		Don't know 	0
+			
+FinMgmt227	Attitude to finances	Agree 	1
+		Disagre 	0
+		Don't know 	0
+			
+FinMgmt228	Retirement preparation	Yes 	1
+		No 	0
+		Don't know 	0
+		I am retired 	0
+			
+FinMgmt229	Confidence in retirement household income	Very confident 	3
+		Fairly confident 	2
+		Not very confident 	1
+		Not at all confident 	0
+		Don’t know 	0
+			
+FinMgmt230	Other financial plans	Yes 	1
+		No 	0
+		Don't know 	0
+			
+FinMgmt231	Coping with emergencies	Use savings 	3
+		Sell a financial asset or personal possession 	3
+		Borrow from a friend or relative 	2
+		Use a personal line of credit 	2
+		Borrow from a financial institution 	2
+		Use a credit card 	2
+		Go to a pawnbroker or payday loan service 	1
+		Other - Specify 	1
+		Would not be able to pay this expenditure 	0
+			
+FinMgmt232	Knowledge of financial products needed	Agree 	1
+		Disagre 	0
+		Don't know 	0
+			
+FinMgmt233	Knowledge of financial choices	I don't know 	0
+		Disagree 	0
+		Agree 	1
+			
+FinMgmt234	Monitoring topics	None of the above 	0
+		1 topic 	1
+		2 topics 	1
+		3 topics 	2
+		4 topics 	2
+		5 or more topics 	3
+			
+FinMgmt235	Financial education	Yes 	1
+		No 	0
+		Don't know 	0
+			
+FinMgmt236	Self-assessed ability of making ends meet	I don't know 	0
+		Not very good 	0
+		Fairly good 	1
+		Good 	2
+		Very good 	3
+			
+FinMgmt237	Self-assessed ability of keeping track of money	I don't know 	0
+		Not very good 	0
+		Fairly good 	1
+		Good 	2
+		Very good 	3
+			
+FinMgmt238	Self-assessed ability of staying informed on financial issues	I don't know 	0
+		Not very good 	0
+		Fairly good 	1
+		Good 	2
+		Very good 	3
+			
+FinMgmt239	Self-assessed ability of choosing products	I don't know 	0
+		Not very good 	0
+		Fairly good 	1
+		Good 	2
+		Very good 	3

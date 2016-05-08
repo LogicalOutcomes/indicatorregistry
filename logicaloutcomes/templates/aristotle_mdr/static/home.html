@@ -1,0 +1,64 @@
+{% extends "aristotle_mdr/base.html" %}
+{% load i18n utils_tags %}
+
+{% block title %}{% trans 'Home'%}{% endblock %}
+{% block content %}
+
+<div class='row'>
+<div class="col-md-8 col-md-offset-2">
+<p>
+    Below is the collection of Outcome Areas for use in the Prosper Canada Indicator Bank.
+    Under each Outcome Area, is a collection of relevant indicators. Some indicators will
+    appear twice as they are relevant across areas of interest.
+</p>
+<p>
+    Click the Outcome Area name to show the Indicators lists. Alternatively you can
+    <a href="{% url 'browse_apps' %}">browse all of the metadata in the site</a> or use the bar below to search 
+    across all indicators, outcomes, and their metadata as well as all of the help documents
+    in the system.
+</p>
+<form id="homeSearch" action="{% url 'aristotle:search' %}" method="get" >
+    <div class="input-group">
+        <label for='q' class='input-group-addon'>Search:</label>
+        <input type="text" class="form-control" id="searchText" name="q" accesskey="q"></input>
+            <span class="input-group-btn">
+            <button class="btn btn-primary" type="submit">
+                {% trans 'Search' %} <i class="fa fa-search"></i>
+            </button>
+                <a href="{% url 'aristotle:search' %}" class="btn btn-default">{% trans 'More options' context "Front page search options" %}...</a>
+            </span>
+    </div>
+</form>
+</div>
+</div>
+
+<h1>Current Outcome Areas of Interest</h1>
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    {% for f in outcome_areas|order_by:'name' %}
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="heading{{forloop.counter}}">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{forloop.counter}}"
+            {%if not forloop.first%}class="collapsed"{%endif%}
+            aria-expanded="true" aria-controls="collapse{{forloop.counter}}">
+          {{f.name}}
+        </a>
+      </h4>
+    </div>
+    <div id="collapse{{forloop.counter}}" class="panel-collapse collapse {%if forloop.first%}in{%endif%}" role="tabpanel" aria-labelledby="heading{{forloop.counter}}">
+      <div class="panel-body">
+        <ul>
+            {% for i in f.indicators.all|order_by:'name' %}
+            <li>
+                <a href="{{ f.get_absolute_url }}">{{i.name}}</a>
+            </li>
+            {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

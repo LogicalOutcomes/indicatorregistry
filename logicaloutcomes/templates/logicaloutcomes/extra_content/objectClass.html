@@ -1,0 +1,10 @@
+{% load aristotle_tags utils_tags  %}
+
+<h3>Related Indicator</h3>
+<ul>
+    {% for pop in item.population_set.all|order_by:'indicator__name' %}
+        {% if pop.indicator|can_view:user %}
+            <li>{% include "aristotle_mdr/helpers/inlineDetails.html" with item=pop.indicator %}</li>
+        {%endif %}
+    {% endfor %}
+</ul>

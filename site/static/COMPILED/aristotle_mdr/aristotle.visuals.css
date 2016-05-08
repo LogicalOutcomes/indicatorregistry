@@ -1,0 +1,73 @@
+.makeup {
+  display: table;
+  padding: 0;
+}
+.makeup:after {
+  content: " ";
+  clear: left;
+}
+.makeup header {
+  margin: 2px;
+}
+.makeup .panel-heading {
+  padding: 5px 10px;
+}
+.makeup a {
+  display: inline;
+}
+.makeup div,
+.makeup .name {
+  display: block;
+  text-align: center;
+}
+.makeup .split {
+  display: table;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  margin-top: 10px;
+}
+.makeup .split > * {
+  display: table-cell;
+  border-radius: 10px;
+  border-spacing: 10px;
+}
+.makeup .split .split {
+  margin-top: 0;
+}
+.makeup .arrow:before {
+  font-family: FontAwesome;
+  content: "\f0d8";
+  position: relative;
+  float: left;
+  font-size: 250%;
+  width: 0;
+  height: 0;
+  top: -1.1em;
+  left: 45%;
+  color: #BCE8F1;
+}
+.makeup span.panel-body:before,
+.makeup span.panel-body:after {
+  display: inline;
+}
+.makeup .panel-primary .arrow:before {
+  color: #428BCA;
+}
+.makeup .panel-body {
+  padding: 5px;
+}
+.makeup .arrow-left {
+  margin-left: 10px;
+}
+.makeup .arrow-left:before {
+  font-family: FontAwesome;
+  content: "\f0d9";
+  position: relative;
+  float: left;
+  font-size: 250%;
+  width: 0;
+  height: 0;
+  left: -13px;
+  color: #BCE8F1;
+}

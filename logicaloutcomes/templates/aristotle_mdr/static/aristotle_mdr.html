@@ -1,0 +1,119 @@
+{% extends "aristotle_mdr/base.html" %}
+
+{% block content %}
+
+<ol class="breadcrumb">
+    <li><a href="#">Help</a></li>
+</ol>
+
+<h1><a href="#">{% block title %}About Aristotle MetaData Registry{% endblock %}</a></h1>
+
+<div class="definition">
+<p><strong>Aristotle is an open-source metadata registry as laid out by the requirements of the ISO/IEC 11179 specification.</strong>
+</p>
+
+<p>Aristotle represents a new way to manage and federate content built on and extending the
+principles of leading metadata registries. Aristotle is a free open-source system,
+built upon the <a href="https://www.djangoproject.com/">Django web framework</a> and the
+mature model of the ISO/IEC 11179 standard.
+As such agencies can easily run their own metadata registries while also having the ability to
+extend the information model and tap into the permissions and roles of ISO/IEC 11179.
+</p>
+
+<div id="homeFaq" class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4 ">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title"><a href="{% url 'help_page' 'what-is-metadata' %}">What is metadata?</a></h2>
+            </div>
+            <div class="panel-body">
+                <a href="{% url 'help_page' 'about-isoiec-11179' %}">What is ISO/IEC 11179?</a>
+                <a href="{% url 'help_page' 'what-is-a-metadata-registry' %}">What is a metadata registry?</a>
+                <a href="{% url 'aristotle:about' 'aristotle_mdr' %}">What is <em>Aristotle-MDR</em>?</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 ">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">About <em>{{ config.SITE_NAME }}</em></h2>
+            </div>
+            <div class="panel-body">
+                <a href="{% url 'aristotle:allRegistrationAuthorities' %}">Current registration authorities</a>
+                <a href="{% url 'browse_apps' %}">Browse the registry</a>
+                {% if config.CONTENT_EXTENSIONS %}
+                <a href="{% url 'aristotle:extensions' %}">View current extensions</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 ">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title"><a href="{% url 'aristotle:about' 'getting_data' %}">How can I get data?</a></h2>
+            </div>
+            <div class="panel-body">
+                <a href="#">What is a data dictionary?</a>
+                <a href="#">Why are data standards important?</a>
+                <a href="#"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-4 ">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title"><a href="">How can I add content?</a></h2>
+            </div>
+            <div class="panel-body">
+                <a href="{% url 'help_page' 'what-are-workgroups' %}">What is a workgroup?</a>
+                <a href="{% url 'help_page' 'how-does-content-become-visible' %}">How does content become visible?</a>
+                <a href="{% url 'help_page' 'registry-roles' %}">What roles exist within a registry?</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 ">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title"><a href="{% url 'aristotle:about' 'metadata_standards' %}">About metadata standards</a></h2>
+            </div>
+            <div class="panel-body">
+                <a href="{% url 'help_page' 'what-makes-a-standard' %}">What makes metadata "standard"?</a>
+                <a href="{% url 'help_page' 'versioning-content' %}">Versioning content</a>
+                <a href="{% url 'help_page' 'registration-authorities' %}">What is a registration authority?</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 ">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title"><a href="{% url 'help_base' %}">Need more help?</a></h2>
+            </div>
+            <div class="panel-body">
+                <a href="{% url 'help_concepts' %}">Help on all registry items</a>
+                <a href="http://aristotle-metadata-registry.rtfd.org/en/latest/">Documentation for programmers</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<a href="https://github.com/aristotle-mdr/aristotle-metadata-registry/">Fork this project on Github</a>, review the
+<a href="https://travis-ci.org/aristotle-mdr/aristotle-metadata-registry/builds">continuous testing results on Travis-CI</a>
+or <a href='https://coveralls.io/r/aristotle-mdr/aristotle-metadata-registry'>review the unit-test coverage on Coveralls</a>.
+<!--
+For Inara - 壽
+           ,     _
+          / \  ,'_\
+         ;   )/,' /
+         |  /// ,'    ___
+        _; /// /  _,""   "".
+      .'      '--'          `.
+     a   a    )      ,'       \ ,.
+    (  v   _,'      /          ;&&
+     `-^--'        :          /%%&
+      _\  __) /  ___`._   __,'`""
+     //_`//__/-.///________)
+-->
+</div>
+{% endblock %}

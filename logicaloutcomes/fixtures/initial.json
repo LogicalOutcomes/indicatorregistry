@@ -1,0 +1,46 @@
+[
+  {
+    "fields": {
+      "username": "gillian",
+      "first_name": "",
+      "last_name": "",
+      "is_active": true,
+      "is_superuser": true,
+      "is_staff": true,
+      "last_login": null,
+      "groups": [
+        
+      ],
+      "user_permissions": [
+        
+      ],
+      "password": "pbkdf2_sha256$20000$CJ6ocrxVoXPG$9uoqnqJwKEyV0ZL1rldu6MhIdsANRmJEiCXZ9Alo8FM=",
+      "email": "gillian@logicaloutcomes.com",
+      "date_joined": "2016-05-02T22:23:10.627Z"
+    },
+    "model": "auth.user",
+    "pk": 10
+  },
+  {
+    "fields": {
+      "username": "georgi",
+      "first_name": "",
+      "last_name": "",
+      "is_active": true,
+      "is_superuser": true,
+      "is_staff": true,
+      "last_login": null,
+      "groups": [
+        
+      ],
+      "user_permissions": [
+        
+      ],
+      "password": "pbkdf2_sha256$20000$CJ6ocrxVoXPG$9uoqnqJwKEyV0ZL1rldu6MhIdsANRmJEiCXZ9Alo8FM=",
+      "email": "georgi@logicaloutcomes.com",
+      "date_joined": "2016-05-02T22:23:10.627Z"
+    },
+    "model": "auth.user",
+    "pk": 11
+  }
+]
