@@ -1,5 +1,5 @@
 {% extends "aristotle_mdr/base.html" %}
-{% load i18n utils_tags %}
+{% load i18n util_tags %}
 
 {% block title %}{% trans 'Home'%}{% endblock %}
 {% block content %}
@@ -7,12 +7,12 @@
 <div class='row'>
 <div class="col-md-8 col-md-offset-2">
 <p>
-    Below is the collection of Outcome Areas for use in the Prosper Canada Indicator Bank.
-    Under each Outcome Area, is a collection of relevant indicators. Some indicators will
+    Below is the collection of frameworks for use in the Prosper Canada Indicator Bank.
+    Under each framework, is a collection of relevant indicators. Some indicators will
     appear twice as they are relevant across areas of interest.
 </p>
 <p>
-    Click the Outcome Area name to show the Indicators lists. Alternatively you can
+    Click the Framework name to show the Indicators lists. Alternatively you can
     <a href="{% url 'browse_apps' %}">browse all of the metadata in the site</a> or use the bar below to search 
     across all indicators, outcomes, and their metadata as well as all of the help documents
     in the system.
@@ -32,9 +32,9 @@
 </div>
 </div>
 
-<h1>Current Outcome Areas of Interest</h1>
+<h1>Current Frameworks of Interest</h1>
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-    {% for f in outcome_areas|order_by:'name' %}
+    {% for f in frameworks|order_by:'name' %}
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="heading{{forloop.counter}}">
       <h4 class="panel-title">
@@ -50,7 +50,7 @@
         <ul>
             {% for i in f.indicators.all|order_by:'name' %}
             <li>
-                <a href="{{ f.get_absolute_url }}">{{i.name}}</a>
+                <a href="{{ i.get_absolute_url }}">{{i.name}}</a>
             </li>
             {% endfor %}
         </ul>

@@ -1,0 +1,82 @@
+{% extends "aristotle_mdr/concepts/managedContent.html" %}
+{% load aristotle_tags util_tags %}
+
+{% block objSpecific %}
+{% if item.outcome_areas %}
+<h2>Outcome Areas</h2>
+    {% if item|can_edit:request.user %}
+    <a href="{% url 'comet:indicator_alter_outcomeareas' item.id %}"
+        data-toggle="modal" data-target="#editIndicatorsPopover"
+        class="pull-right btn btn-default btn-sm">
+        <i class="fa fa-plus"></i>
+        Add Outcome area
+    </a>
+    {% bootstrap_modal 'editIndicatorsPopover' %}
+    {% endif %}
+<ul>
+{% for outcome in item.outcome_areas.all|order_by:'name' %}
+    <li>{% include "aristotle_mdr/helpers/inlineDetails.html" with item=outcome showType=False %}</li>
+{% endfor %}
+</ul>
+{% endif %}
+
+{% if item.rationale %}
+<h2>Rationale</h2>
+<p>{{ item.rationale|safe|linebreaks }}</p>
+{% endif %}
+
+<h2>Calculation rules</h2>
+    {{ item.computation_description|safe }}
+    {% if item.numerator_computation or item.denominator_computation %}
+    <h3>Computation Rule:
+    </h3>
+        <pre>{{ item.numerator_computation }}</pre>
+        <pre>{{ item.denominator_computation }}</pre>
+    {% endif %}
+    <h3>Numerators</h3>
+        {{ item.numerator_description|safe }}
+        <ul>
+        {% for num in item.numerators.all %}
+            <li>{% include "aristotle_mdr/helpers/itemLink.html" with item=num showType=False %}
+        {% endfor %}
+        </ul>
+    <h3>Denominators</h3>
+        {{ item.denominator_description|safe }}
+        <ul>
+        {% for denom in item.denominators.all %}
+            <li>{% include "aristotle_mdr/helpers/itemLink.html" with item=denom showType=False %}
+        {% endfor %}
+        </ul>
+<h2>Disaggreation</h2>
+    {{ item.disaggregation_description|safe }}
+        <ul>
+        {% for disagg in item.disaggregators.all %}
+            <li>{% include "aristotle_mdr/helpers/itemLink.html" with item=disagg showType=False %}
+        {% endfor %}
+        </ul>
+{% if item.dataElementConcept or item.valueDomain %}
+<h2>Components</h2>
+    {% if view == "technical" %}
+    <h3>Data Element Concept -
+        {% include "aristotle_mdr/helpers/itemLink.html" with item=item.dataElementConcept %}</h3>
+        {% include "aristotle_mdr/helpers/inlineDetails.html" with item=item.dataElementConcept name=False %}
+        <dl class="additionaldetails">
+            <dt>Object Class</dt>
+            <dd>
+                {% include "aristotle_mdr/helpers/inlineDetails.html" with item=item.dataElementConcept.objectClass %}
+            </dd>
+            <dt>Property</dt>
+            <dd>
+                {% include "aristotle_mdr/helpers/inlineDetails.html" with item=item.dataElementConcept.property %}
+            </dd>
+        </dl>
+    {% endif %}
+    {% if item.valueDomain %}
+    <h3>Value Domain -
+        {% include "aristotle_mdr/helpers/itemLink.html" with item=item.valueDomain %}</h3>
+        {% include "aristotle_mdr/helpers/inlineDetails.html" with item=item.valueDomain name=False %}
+        <h4>Representation</h4>
+        {% include "aristotle_mdr/concepts/valueDomainRepresentation.html" with item=item.valueDomain %}
+    {% endif %}
+{% endif %}
+{% endblock %}

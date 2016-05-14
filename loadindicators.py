@@ -35,7 +35,9 @@ slot_columns = [
     (u'Data Collection Frequency 2:','Data Collection Frequency',''),
     (u'Data Collection Frequency 3:','Data Collection Frequency',''),
     (u'Data Source:','Data Source',''),
-    #('URL:','URL','')
+    ('Instrument:','Instrument',''),
+    ('DOI:','DOI',''),
+    ('Universe:','Universe','')
 ]
 for sl in slot_columns:
     sl,name,desc = sl
@@ -108,26 +110,26 @@ with open(csv_file,'rb') as csvfile:
             )
         
         # set relevant populations
-        populations = row["Universe:"].split(';')
-        for pop in populations:
-            pop = pop.strip()
-            if pop == "":
-                continue 
-            pop, create = models.ObjectClass.objects.get_or_create(
-                name = pop,
-                defaults = {
+        # populations = row["Universe:"].split(';')
+        # for pop in populations:
+        #     pop = pop.strip()
+        #     if pop == "":
+        #         continue 
+        #     pop, create = models.ObjectClass.objects.get_or_create(
+        #         name = pop,
+        #         defaults = {
         
-                    "workgroup": wg,
-                    "definition": "",
-                }
-            )
-            models.Status.objects.get_or_create(
-                concept=pop,
-                registrationAuthority=lo,
-                registrationDate=datetime.date(2009, 4, 28),
-                state=models.STATES.standard
-            )
-            pop, c = lo_models.Population.objects.get_or_create(object_class=pop,indicator=indicator)
+        #             "workgroup": wg,
+        #             "definition": "",
+        #         }
+        #     )
+        #     models.Status.objects.get_or_create(
+        #         concept=pop,
+        #         registrationAuthority=lo,
+        #         registrationDate=datetime.date(2009, 4, 28),
+        #         state=models.STATES.standard
+        #     )
+        #     pop, c = lo_models.Population.objects.get_or_create(object_class=pop,indicator=indicator)
         
         
         # set outcomes
@@ -136,20 +138,52 @@ with open(csv_file,'rb') as csvfile:
             outcome = outcome.strip()
             if outcome == "":
                 continue 
-            outcome, create = comet.OutcomeArea.objects.get_or_create(
+            outcome, created = comet.OutcomeArea.objects.get_or_create(
                 name = outcome,
                 defaults = {
                     "workgroup": wg,
                     "definition": "",
                 }
             )
+            if created:
+                models.Status.objects.get_or_create(
+                    concept=outcome,
+                    registrationAuthority=lo,
+                    registrationDate=datetime.date(2009, 4, 28),
+                    state=models.STATES.standard
+                )
+            indicator.outcome_areas.add(outcome)
+
+        # set outcomes
+        frameworks = row["Framework:"].split(';')
+        for framework in frameworks:
+            framework = framework.strip()
+            if framework == "":
+                continue 
+            framework, created = comet.Framework.objects.get_or_create(
+                name = framework,
+                defaults = {
+                    "workgroup": wg,
+                    "definition": "",
+                }
+            )
+            if created:
+                models.Status.objects.get_or_create(
+                    concept=framework,
+                    registrationAuthority=lo,
+                    registrationDate=datetime.date(2009, 4, 28),
+                    state=models.STATES.standard
+                )
+            framework.indicators.add(indicator)
+
+        if created:
             models.Status.objects.get_or_create(
-                concept=outcome,
+                concept=framework,
                 registrationAuthority=lo,
                 registrationDate=datetime.date(2009, 4, 28),
                 state=models.STATES.standard
             )
-            indicator.outcome_areas.add(outcome)
+        framework.indicators.add(indicator)
         
 with open(vd_file,'rb') as csvfile:
     #vds = csvfile.read().split('\n\t\t\t\n')
