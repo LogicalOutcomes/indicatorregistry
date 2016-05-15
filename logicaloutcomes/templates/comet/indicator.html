@@ -21,14 +21,14 @@
     </strong>
     {% if item.valueDomain.permissibleValues %}
     <ul class="question_details">
-        {% for d in item.valueDomain.permissibleValues %}
+        {% for d in item.valueDomain.permissibleValues|order_by:'value' %}
             <li>
-                <span>{{d.meaning}}</span><tt>({{d.value }})</tt>
+                <tt>{{ d.value }} [ ]</tt>
+                <span>{{d.meaning}}</span>
             </li>
         {% endfor %}
     </ul>
     {% endif %}
-    <small>This is an example presentation of how the question might be displayed.</small>
     </div>
 {% endif %}
 
