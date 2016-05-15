@@ -1,7 +1,37 @@
 {% extends "aristotle_mdr/concepts/managedContent.html" %}
 {% load aristotle_tags util_tags %}
+{% block extra_head_scripts %}
+<style>
+.question_details li {
+    display:table-row;
+}
+    .question_details li * {
+        display:table-cell;
+        padding-right:5px;
+    }
+</style>
+{% endblock %}
 
 {% block objSpecific %}
+{% if item.valueDomain %}
+<h2>Question details:</h2>
+    <div class='well'>
+    <strong>
+        {{ item.valueDomain.name }}    
+    </strong>
+    {% if item.valueDomain.permissibleValues %}
+    <ul class="question_details">
+        {% for d in item.valueDomain.permissibleValues %}
+            <li>
+                <span>{{d.meaning}}</span><tt>({{d.value }})</tt>
+            </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <small>This is an example presentation of how the question might be displayed.</small>
+    </div>
+{% endif %}
+
 {% if item.outcome_areas %}
 <h2>Outcome Areas</h2>
     {% if item|can_edit:request.user %}
@@ -70,13 +100,6 @@
                 {% include "aristotle_mdr/helpers/inlineDetails.html" with item=item.dataElementConcept.property %}
             </dd>
         </dl>
-    {% endif %}
-    {% if item.valueDomain %}
-    <h3>Value Domain -
-        {% include "aristotle_mdr/helpers/itemLink.html" with item=item.valueDomain %}</h3>
-        {% include "aristotle_mdr/helpers/inlineDetails.html" with item=item.valueDomain name=False %}
-        <h4>Representation</h4>
-        {% include "aristotle_mdr/concepts/valueDomainRepresentation.html" with item=item.valueDomain %}
     {% endif %}
 {% endif %}
 {% endblock %}
