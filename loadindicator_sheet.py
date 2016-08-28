@@ -141,7 +141,7 @@ def process_indicators(wb):
             defn = get_col(row,'I').value or default_definition
         else:
             defn = default_definition
-        defaults = {
+        defaults = {    
             "definition": defn,
         #     "definition": row["Purpose:"],
         #     "references": row["References:"],
@@ -172,20 +172,21 @@ def process_indicators(wb):
         else:
             print "No instrument", instument_name, instrument
         
-        frameworks = get_col(row,'AJ')
-        if frameworks:
-            frameworks = frameworks.value.split(';')
-        else:
-            frameworks = []
-        for framework in frameworks:
-            framework = framework.strip()
-            if framework == "":
-                continue 
-            f = comet.Framework.objects.filter(short_name__icontains=framework).first()
-            if f:
-                ind.frameworks.add(f)
+        for col in 'OPQRSTUVWX':
+            frameworks = get_col(row,'A'+col)
+            if frameworks:
+                frameworks = frameworks.value.split(';')
             else:
-                print ind.name, framework
+                frameworks = []
+            for framework in frameworks:
+                framework = framework.strip()
+                if framework == "":
+                    continue 
+                f = comet.Framework.objects.filter(short_name__icontains=framework).first()
+                if f:
+                    ind.frameworks.add(f)
+                else:
+                    print ind.name, framework
 
         for sl in slot_columns:
             sl,name,desc = sl

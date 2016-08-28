@@ -1,5 +1,5 @@
 {% extends "aristotle_mdr/base.html" %}
-{% load aristotle_tags util_tags %}
+{% load aristotle_tags util_tags logicaltags %}
 
 {% block content %}
 <h2>{% block title %}Compare Indicators{% endblock %}</h2>
@@ -43,21 +43,15 @@
         <th>Answers</th>
         {% for item in indicators %}
         <td>
-            {% if item.numerators %}
-            <ul class="question_details">
-                {% for d in item.numerators.all %}
-                    {% for q in d.questions.all %}
-                    <li>
-                        <ul>
-                    {% for v in q.response_domains.first.value_domain.permissiblevalue_set.all %}
-                        <li>{{v.meaning}}</li>
-                    {% endfor %}
-                    </ul>
-                    </li>
-                    {% endfor %}
-                {% endfor %}
+
+        {% with sets=item|unique_responses %}
+            <ul>
+            {% for a,b in sets %}
+                <li>'<a href="{{a.get_absolute_url}}">{{a.name}}</a>' response set used in {{b|length}} question{{b|pluralize}}
+                </li>
+            {% endfor %}
             </ul>
-            {% endif %}
+        {% endwith %}
         </td>
         {% endfor %}
     </tr>
