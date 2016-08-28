@@ -52,6 +52,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = (
      'logicaloutcomes',
      'comet',
+     'mallard_qr',
      'aristotle_ddi_utils', # Download formats in the DDI3.2 XML format - https://github.com/aristotle-mdr/aristotle-ddi-utils
      'aristotle_dse', # Additional models for describing datasets - https://github.com/aristotle-mdr/aristotle-dataset-extensions
      'aristotle_glossary', # Model for managing and inserting glossary content - https://github.com/aristotle-mdr/aristotle-glossary
@@ -93,6 +94,7 @@ ARISTOTLE_SETTINGS.update({
              'aristotle_dse',
              'aristotle_glossary',
              'comet',
+             'mallard_qr',
              'logicaloutcomes',
         ]
     })

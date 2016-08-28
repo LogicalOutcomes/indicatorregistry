@@ -1,0 +1,79 @@
+{% extends "aristotle_mdr/base.html" %}
+{% load aristotle_tags util_tags %}
+
+{% block content %}
+<h2>{% block title %}Compare Indicators{% endblock %}</h2>
+<form>
+    <button type="submit">Compare selected indicators</button>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Indicator Name</th>
+        <td>{{form.indicator_1}}</td>
+        <td>{{form.indicator_2}}</td>
+        <td>{{form.indicator_3}}</td>
+    </tr>
+    <tr>
+        <th>Indicator Name</th>
+        <td>{% include "aristotle_mdr/helpers/itemLink.html" with item=indicators.0 %}</td>
+        <td>{% include "aristotle_mdr/helpers/itemLink.html" with item=indicators.1 %}</td>
+        <td>{% include "aristotle_mdr/helpers/itemLink.html" with item=indicators.2 %}</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th>Question</th>
+        {% for item in indicators %}
+        <td>
+            {% if item.numerators %}
+            <ul class="question_details">
+                {% for d in item.numerators.all %}
+                    {% for q in d.questions.all %}
+                    <li>
+                        <span>{{q.question_text}}</span>
+                    </li>
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <th>Answers</th>
+        {% for item in indicators %}
+        <td>
+            {% if item.numerators %}
+            <ul class="question_details">
+                {% for d in item.numerators.all %}
+                    {% for q in d.questions.all %}
+                    <li>
+                        <ul>
+                    {% for v in q.response_domains.first.value_domain.permissiblevalue_set.all %}
+                        <li>{{v.meaning}}</li>
+                    {% endfor %}
+                    </ul>
+                    </li>
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <th>Instrument</th>
+        <td>{% include "aristotle_mdr/helpers/itemLink.html" with item=indicators.0.instruments.first %}</td>
+        <td>{% include "aristotle_mdr/helpers/itemLink.html" with item=indicators.1.instruments.first %}</td>
+        <td>{% include "aristotle_mdr/helpers/itemLink.html" with item=indicators.2.instruments.first %}</td>
+    </tr>
+    <tr>
+        <th>Terms of Use</th>
+        <td>{{ indicators.0.instruments.first.terms_of_use }}</td>
+        <td>{{ indicators.1.instruments.first.terms_of_use }}</td>
+        <td>{{ indicators.2.instruments.first.terms_of_use }}</td>
+    </tr>
+    </tbody>
+</table>
+</form>
+{% endblock %}

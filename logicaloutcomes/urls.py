@@ -8,6 +8,6 @@ urlpatterns = patterns('',
       url(r'^ddi/', include('aristotle_ddi_utils.urls',app_name="aristotle_ddi_utils",namespace="aristotle_ddi_utils")),
       url(r'^dse/', include('aristotle_dse.urls',app_name="aristotle_dse",namespace="aristotle_dse")),
       url(r'^comet/', include('comet.urls',app_name="comet",namespace="comet")),
-     url(r'^glossary/', include('aristotle_glossary.urls',app_name="aristotle_glossary",namespace="glossary")),
+      url(r'^mallard/', include('mallard_qr.urls',app_name="mallard_qr",namespace="mallard_mdr")),
      url(r'^api/', include('aristotle_mdr_api.urls',app_name="aristotle_mdr_api",namespace="aristotle_mdr_api")),
     )

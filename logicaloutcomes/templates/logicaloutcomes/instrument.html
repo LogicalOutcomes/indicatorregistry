@@ -1,0 +1,14 @@
+{% extends "aristotle_mdr/concepts/managedContent.html" %}
+{% load aristotle_tags util_tags %}
+
+{% block objSpecific %}
+<h2>Components</h2>
+
+<ul>
+{% for ind in item.indicators.all %}
+<li>
+    {% include "aristotle_mdr/helpers/inlineDetails.html" with item=ind %}
+</li>
+{% endfor %}
+</ul>
+{% endblock %}

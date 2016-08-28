@@ -17,3 +17,16 @@ class Population(models.Model):
         Indicator,
         related_name='populations'
     )
+
+class Instrument(aristotle.models.concept):
+    template = "logicaloutcomes/instrument.html"
+    # population = models.ForeignKey(Population, null=True)
+    population = aristotle.models.RichTextField()
+    limitations = aristotle.models.RichTextField()
+    where_to_get = aristotle.models.RichTextField()
+    terms_of_use = aristotle.models.RichTextField()
+    
+    indicators = models.ManyToManyField(
+        Indicator,
+        related_name='instruments'
+    )

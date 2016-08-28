@@ -5,8 +5,9 @@
 git+ssh://git@gitlab.com/LegoStormtroopr/aristotle-cloud.git#egg=aristotle_cloud
 -e git+git://github.com/aristotle-mdr/aristotle-metadata-registry@develop#egg=aristotle-metadata-registry
 
--e git+git://github.com/aristotle-mdr/aristotle-dataset-extensions#egg=django-aristotle-dataset-extensions
--e git+git://github.com/aristotle-mdr/aristotle-glossary#egg=django-aristotle-glossary
+-e git+git://github.com/aristotle-mdr/aristotle-dataset-extensions@develop#egg=django-aristotle-dataset-extensions
+-e git+git://github.com/aristotle-mdr/aristotle-glossary@develop#egg=django-aristotle-glossary
 -e git+git://github.com/aristotle-mdr/aristotle-ddi-utils#egg=django-aristotle-ddi-utils
 -e git+git://github.com/aristotle-mdr/aristotle-mdr-api#egg=django-aristotle-mdr-api
 -e git+git://github.com/aristotle-mdr/comet-indicator-registry#egg=django-aristotle-comet-indicator-registry
+-e git+git://github.com/aristotle-mdr/mallard-questionnaire-registry#egg=django-aristotle-mallard-questionnaire

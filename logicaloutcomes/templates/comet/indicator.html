@@ -1,4 +1,4 @@
-{% extends "aristotle_mdr/concepts/managedContent.html" %}
+{% extends "aristotle_mdr/base.html" %}
 {% load aristotle_tags util_tags %}
 {% block extra_head_scripts %}
 <style>
@@ -10,96 +10,138 @@
         padding-right:5px;
     }
 </style>
+<link rel="stylesheet" href="{{ STATIC_URL }}logicaloutcomes/logical.css" />
 {% endblock %}
 
-{% block objSpecific %}
-{% if item.valueDomain %}
-<h2>Question details:</h2>
-    <div class='well'>
-    <strong>
-        {{ item.valueDomain.name }}    
-    </strong>
-    {% if item.valueDomain.permissibleValues %}
-    <ul class="question_details">
-        {% for d in item.valueDomain.permissibleValues|order_by:'value' %}
-            <li>
-                <tt>{{ d.value }} [ ]</tt>
-                <span>{{d.meaning}}</span>
-            </li>
-        {% endfor %}
-    </ul>
+{% block title %}
+    {{ item.name }}
+    {% if item.version %}
+        - v{{ item.version }}
     {% endif %}
+    ({{ item.get_verbose_name }})
+{% endblock %}
+
+{% block content %}
+
+<h1>Indicator detailed view</h1>
+
+<div class="row indicator-holder">
+    <div class="indicator-table">
+        <div>
+            <header>Indicator name:</header>
+            <div><strong>{{item.name}}</strong></div>
+        </div>
+        <div>
+            <header>Question</header>
+            <div>
+                {% if item.numerators %}
+                <ul class="question_details">
+                    {% for d in item.numerators.all %}
+                        {% for q in d.questions.all %}
+                        <li>
+                            <tt>{{ d.value }} [ ]</tt>
+                            <span><a href="{{q.get_absolute_url}}">{{q.question_text}}</a></span>
+                        </li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+        <div>
+            <header>Description</header>
+            <div>{{item.definition|safe}}</div>
+        </div>
+        <div>
+            <header>Numerator</header>
+            <div>
+                {{ item.numerator_description|safe }}
+                {% if item.numerators.exists %}
+                <ul>
+                {% for num in item.numerators.all %}
+                    <li>{% include "aristotle_mdr/helpers/itemLink.html" with item=num showType=False %}
+                {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+        <div>
+            <header>Denominator</header>
+            <div>
+                {{ item.denominator_description|safe }}
+                {% if item.denominators.exists %}
+                <ul>
+                {% for denom in item.denominators.all %}
+                    <li>{% include "aristotle_mdr/helpers/itemLink.html" with item=denom showType=False %}
+                {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+        <div>
+            <header>Population</header>
+            <div>
+                <ul>
+                {% for inst in item.instruments.all %}
+                    <li>{{ inst.population }}</li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div>
+            <header>Limitations</header>
+            <div>
+                <ul>
+                {% for inst in item.instruments.all %}
+                    <li>{{ inst.limitations }}</li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div>
+            <header>Instrument</header>
+            <div>
+                <ul>
+                {% for inst in item.instruments.all %}
+                    <li>{% include "aristotle_mdr/helpers/itemLink.html" with item=inst showType=False %}</li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div>
+            <header>References</header>
+            <div>{{item.references | safe}}</div>
+        </div>
+        <div>
+            <header>Terms of Use</header>
+            <div>{{item.i}}</div>
+        </div>
     </div>
-{% endif %}
-
-{% if item.outcome_areas %}
-<h2>Outcome Areas</h2>
-    {% if item|can_edit:request.user %}
-    <a href="{% url 'comet:indicator_alter_outcomeareas' item.id %}"
-        data-toggle="modal" data-target="#editIndicatorsPopover"
-        class="pull-right btn btn-default btn-sm">
-        <i class="fa fa-plus"></i>
-        Add Outcome area
-    </a>
-    {% bootstrap_modal 'editIndicatorsPopover' %}
+    <div id="indicator-sidebar">
+    {% include "logicaloutcomes/custom/comet/indicator_infobox.html" %}
+    </div>
+</div>
+{% comment %}
+    {% if item.references %}
+    <div>
+    <h2>References</h2>
+        <p>{{ item.references | safe }}</p>
+        {% if item.submitting_organisation %}
+        <h3>Submitting Organisation</h3>
+            <p>{{ item.submitting_organisation }}</p>
+        {% endif %}
+        {% if item.responsible_organisation %}
+        <h3>Responsible Organisation</h3>
+            <p>{{ item.responsible_organisation }}</p>
+        {% endif %}
+    </div>
     {% endif %}
-<ul>
-{% for outcome in item.outcome_areas.all|order_by:'name' %}
-    <li>{% include "aristotle_mdr/helpers/inlineDetails.html" with item=outcome showType=False %}</li>
-{% endfor %}
-</ul>
-{% endif %}
-
-{% if item.rationale %}
-<h2>Rationale</h2>
-<p>{{ item.rationale|safe|linebreaks }}</p>
-{% endif %}
-
-<h2>Calculation rules</h2>
-    {{ item.computation_description|safe }}
-    {% if item.numerator_computation or item.denominator_computation %}
-    <h3>Computation Rule:
-    </h3>
-        <pre>{{ item.numerator_computation }}</pre>
-        <pre>{{ item.denominator_computation }}</pre>
-    {% endif %}
-    <h3>Numerators</h3>
-        {{ item.numerator_description|safe }}
-        <ul>
-        {% for num in item.numerators.all %}
-            <li>{% include "aristotle_mdr/helpers/itemLink.html" with item=num showType=False %}
+    {% include "aristotle_mdr/slots/slots_display.html" %}
+    <h2>Related content</h2>
+        {% block relationships %}{% endblock %}
+        {% for extension in config.CONTENT_EXTENSIONS %}
+            {% extra_content extension item request.user %}
         {% endfor %}
-        </ul>
-    <h3>Denominators</h3>
-        {{ item.denominator_description|safe }}
-        <ul>
-        {% for denom in item.denominators.all %}
-            <li>{% include "aristotle_mdr/helpers/itemLink.html" with item=denom showType=False %}
-        {% endfor %}
-        </ul>
-<h2>Disaggregation</h2>
-    {{ item.disaggregation_description|safe }}
-        <ul>
-        {% for disagg in item.disaggregators.all %}
-            <li>{% include "aristotle_mdr/helpers/itemLink.html" with item=disagg showType=False %}
-        {% endfor %}
-        </ul>
-{% if item.dataElementConcept or item.valueDomain %}
-<h2>Components</h2>
-    {% if view == "technical" %}
-    <h3>Data Element Concept -
-        {% include "aristotle_mdr/helpers/itemLink.html" with item=item.dataElementConcept %}</h3>
-        {% include "aristotle_mdr/helpers/inlineDetails.html" with item=item.dataElementConcept name=False %}
-        <dl class="additionaldetails">
-            <dt>Object Class</dt>
-            <dd>
-                {% include "aristotle_mdr/helpers/inlineDetails.html" with item=item.dataElementConcept.objectClass %}
-            </dd>
-            <dt>Property</dt>
-            <dd>
-                {% include "aristotle_mdr/helpers/inlineDetails.html" with item=item.dataElementConcept.property %}
-            </dd>
-        </dl>
-    {% endif %}
-{% endif %}
+    </div>
+{% endcomment%}
 {% endblock %}
