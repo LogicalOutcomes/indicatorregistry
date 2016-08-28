@@ -38,3 +38,14 @@
 #indicator-sidebar dd {
     font-weight:bold;
 }
+
+.question_details >li {
+    display:table-row;
+}
+.question_details >li >* {
+    display:table-cell;
+    padding-right:5px;
+}
+.question_details tt {
+    white-space: nowrap;
+}
