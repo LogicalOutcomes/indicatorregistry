@@ -11,12 +11,13 @@ register = template.Library()
 @register.filter
 def unique_responses(indicator):
     responses = {}
-    for i, d in enumerate(indicator.numerators.all()):
-        for q in d.questions.all():
-            for rd in q.response_domains.all():
-                vd = rd.value_domain
-                if vd:
-                    _,questions = responses.get(vd.pk,(None,[]))
-                    responses[vd.pk] = (vd,questions + [i])
+    if indicator:
+        for i, d in enumerate(indicator.numerators.all()):
+            for q in d.questions.all():
+                for rd in q.response_domains.all():
+                    vd = rd.value_domain
+                    if vd:
+                        _,questions = responses.get(vd.pk,(None,[]))
+                        responses[vd.pk] = (vd,questions + [i])
 
     return responses.values()

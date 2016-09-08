@@ -1,6 +1,14 @@
 {% extends "aristotle_mdr/base.html" %}
 {% load aristotle_tags util_tags logicaltags %}
 
+{% block extra_head_scripts %}
+<style>
+    table.table .select2-container {
+        min-width:100%;
+    }
+</style>
+{% endblock %}
+
 {% block content %}
 <h2>{% block title %}Compare Indicators{% endblock %}</h2>
 <form>
@@ -8,13 +16,13 @@
 <table class="table">
     <thead>
     <tr>
-        <th>Indicator Name</th>
+        <th style="width:100px">Indicator Name</th>
         <td>{{form.indicator_1}}</td>
         <td>{{form.indicator_2}}</td>
         <td>{{form.indicator_3}}</td>
     </tr>
     <tr>
-        <th>Indicator Name</th>
+        <th></th>
         <td>{% include "aristotle_mdr/helpers/itemLink.html" with item=indicators.0 %}</td>
         <td>{% include "aristotle_mdr/helpers/itemLink.html" with item=indicators.1 %}</td>
         <td>{% include "aristotle_mdr/helpers/itemLink.html" with item=indicators.2 %}</td>
