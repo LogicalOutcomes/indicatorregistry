@@ -1,0 +1,68 @@
+{# <form action="{% url 'comparer' %}" method="GET"> #}
+<form action="{% url 'aristotle:bulk_action' %}?next={{ request.path }}" method="POST">
+{% csrf_token %}
+{% load i18n aristotle_tags logicaltags %}
+
+{% if page.has_other_pages %}
+Showing {{ page.start_index }} - {{ page.end_index }} of {{ page.paginator.count }} results.
+{% else %}
+Showing {{ page.paginator.count }} results.
+{% endif %}
+
+
+{% include "aristotle_mdr/helpers/list_action_bar.html" with wrap=True %}
+
+<!--<div class="btn-group">-->
+<!--    <input class="btn btn-default" type="submit" value="Compare selected"></input>-->
+<!--    <input class="btn btn-default" type="submit" value="Export selected"></input>-->
+<!--</div>-->
+<table class="table">
+<thead>
+    <tr>
+        <th>
+            {% if sort == "name_asc" %}
+            <a href="?{% paginator_get request page.number pop='sort' %}&sort=name_desc"><i class="fa fa-sort-asc"></i></a>
+            {% elif sort == "name_desc" %}
+            <a href="?{% paginator_get request page.number pop='sort' %}&sort=name_asc"><i class="fa fa-sort-desc"></i></a>
+            {% else %}
+            <a href="?{% paginator_get request page.number pop='sort' %}&sort=name_desc"><i class="fa fa-sort"></i></a>
+            {% endif %}
+            {% trans 'Name' %}
+        </th>
+        <th>{% trans 'Question' %}</th>
+        <th>
+            Select up to 3
+            {% if allow_select_all %}
+            <input title='{% trans "Select all" %}' type="checkbox" id="all_in_queryset" name="all_in_queryset">
+            <input type="hidden" name="qs" value="{{ select_all_list_queryset_filter }}">
+
+            {% endif %}
+        </th>
+
+    </tr>
+</thead>
+<tbody>
+{% with favourites=request.user.profile.favourites.select_subclasses %}
+    {% for item in page %}
+    <tr>
+        <td>
+        {% include "aristotle_mdr/helpers/itemLink.html" with item=item %}</td>
+        <td>
+        {% for i in item|get_single_slot:'Question text' %}
+        {{i.value|safe}}
+        {% endfor %}
+        {# % include "aristotle_mdr/helpers/inlineDetails.html" with item=item % #}
+</td>
+        <td><input type="checkbox" id="id_items_{{item.id}}" name="items" value="{{item.id}}"></td>
+
+    </tr>
+    {% endfor %}
+{% endwith %}
+</tbody>
+</table>
+
+{% include "aristotle_mdr/helpers/paginator.html" with page=page %}
+
+
+{% include "aristotle_mdr/helpers/list_action_bar.html" with wrap=True %}
+</form>

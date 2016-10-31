@@ -1,0 +1,15 @@
+{% load i18n %}
+{% load aristotle_tags %}
+
+<div class="btn-group pull-right">
+
+    {% for name,action in bulk_actions.items %}
+        {% if name in hidden_actions %}
+        {% elif request.user|can_use_action:name %}
+            <button class="btn btn-default" type="submit" name="bulkaction" value="{{name}}" style="text-align:left;">
+                <i class="fa fa-fw {{ action.classes }}"></i>
+                {{ action.text }}
+            </button>
+        {% endif %}
+    {% endfor %}
+</div>

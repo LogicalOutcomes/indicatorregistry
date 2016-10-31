@@ -9,14 +9,6 @@ import aristotle_mdr as aristotle
 from comet.models import Indicator
 
 
-class Population(models.Model):
-    object_class = models.ForeignKey(
-        aristotle.models.ObjectClass,
-    )
-    indicator = models.ForeignKey(
-        Indicator,
-        related_name='populations'
-    )
 
 class Instrument(aristotle.models.concept):
     template = "logicaloutcomes/instrument.html"
@@ -29,4 +21,17 @@ class Instrument(aristotle.models.concept):
     indicators = models.ManyToManyField(
         Indicator,
         related_name='instruments'
+    )
+
+class Goal(aristotle.models.concept):
+    """
+    On September 25th 2015, countries adopted a set of goals to end poverty,
+    protect the planet, and ensure prosperity for all as part of a new sustainable development agenda.
+    Each goal has specific targets to be achieved over the next 15 years. - http://www.un.org/sustainabledevelopment/sustainable-development-goals/
+    """
+    template = "logicaloutcomes/goal.html"
+
+    indicators = models.ManyToManyField(
+        Indicator,
+        related_name='related_goals'
     )

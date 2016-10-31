@@ -5,9 +5,10 @@
     padding: 8px;
 }
 
-.indicator-table div header {
+.indicator-table>div>header {
     text-align:right;
     font-weight:bold;
+    min-width:130px;
 }
 .indicator-holder > div {
     display:table-cell; 
@@ -39,13 +40,6 @@
     font-weight:bold;
 }
 
-.question_details >li {
-    display:table-row;
-}
-.question_details >li >* {
-    display:table-cell;
-    padding-right:5px;
-}
-.question_details tt {
-    white-space: nowrap;
+footer .row a {
+    display:block;
 }

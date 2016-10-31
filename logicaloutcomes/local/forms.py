@@ -1,4 +1,5 @@
 from django import forms
+from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
 from bootstrap3_datetime.widgets import DateTimePicker
@@ -37,3 +38,25 @@ class CompareIndicatorsForm(forms.Form):
             required=True,
             widget=widgets.ConceptAutocompleteSelect(model=Indicator)
         )
+
+from aristotle_mdr.forms.bulk_actions import BulkActionForm, DownloadActionForm
+class CompareRedirectBulkActionForm(BulkActionForm):
+    classes="fa-exchange"
+    action_text = _('Compare')
+    items_label = "Items that will be removed from your favourites list"
+
+    def make_changes(self):
+        items = self.items_to_change
+        from aristotle_mdr.contrib.redirect.exceptions import Redirect
+        raise Redirect(
+            url=reverse('comparer') + "?" + "&".join(['items=%s' % i.id for i in items])
+        )
+
+
+class QuickPDFExportDownloadForm(DownloadActionForm):
+    classes="fa-file-pdf-o"
+    action_text = _('Export')
+    items_label = "Items to export"
+    download_type= 'pdf'
+    title = "Exported Indicators"
+

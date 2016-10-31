@@ -1,0 +1,27 @@
+{% extends "aristotle_mdr/concepts/managedContent.html" %}
+{% load aristotle_tags util_tags logicaltags %}
+
+{% block objSpecific %}
+<h2>Related indicators</h2>
+<div class="clearfix"></div>
+<table class="table">
+<thead>
+    <th>Indicator</th><th style="max-width:200px">Definition</th><th>Slot</th>
+</thead>
+{% for ind in item.indicators.all|can_view_iter:request.user|order_by:'name' %}
+<tr>
+    <td>
+    {% include "aristotle_mdr/helpers/itemLink.html" with item=ind %}
+    </td>
+    <td style="max-width:450px">
+    {{ind.definition}}
+    </td>
+    <td style="min-width:150px">
+    {% for i in ind|get_single_slot:item.short_name %}
+        <p>{{i.value }}</p>
+    {% endfor %}
+    </td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

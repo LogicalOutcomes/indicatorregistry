@@ -15,7 +15,8 @@ import os
 
 # Import all of the necessary settings to get the Aristotle server working.
 # These are defaults and can be overridden within this file.
-from aristotle_cloud.settings import *
+#from aristotle_cloud.settings import *
+from aristotle_mdr.required_settings import *
 
 # Override these
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -54,10 +55,10 @@ INSTALLED_APPS = (
      'comet',
      'mallard_qr',
      'aristotle_ddi_utils', # Download formats in the DDI3.2 XML format - https://github.com/aristotle-mdr/aristotle-ddi-utils
-     'aristotle_dse', # Additional models for describing datasets - https://github.com/aristotle-mdr/aristotle-dataset-extensions
-     'aristotle_glossary', # Model for managing and inserting glossary content - https://github.com/aristotle-mdr/aristotle-glossary
-     'aristotle_mdr_api', # JSON API for programmatic access to content
-     'rest_framework', # Needed for the above
+     #'aristotle_dse', # Additional models for describing datasets - https://github.com/aristotle-mdr/aristotle-dataset-extensions
+     #'aristotle_glossary', # Model for managing and inserting glossary content - https://github.com/aristotle-mdr/aristotle-glossary
+     #'aristotle_mdr_api', # JSON API for programmatic access to content
+     #'rest_framework', # Needed for the above
 ) + INSTALLED_APPS # Installs the required apps to run aristotle.
 
 ROOT_URLCONF = 'logicaloutcomes.urls'
@@ -96,20 +97,27 @@ ARISTOTLE_SETTINGS.update({
              'comet',
              'mallard_qr',
              'logicaloutcomes',
-        ]
+        ],
+    'BULK_ACTIONS': {
+        'add_favourites': 'aristotle_mdr.forms.bulk_actions.AddFavouriteForm',
+        'remove_favourites': 'aristotle_mdr.forms.bulk_actions.RemoveFavouriteForm',
+        'change_state': 'aristotle_mdr.forms.bulk_actions.ChangeStateForm',
+        'move_workgroup': 'aristotle_mdr.forms.bulk_actions.ChangeWorkgroupForm',
+        'request_review': 'aristotle_mdr.forms.bulk_actions.RequestReviewForm',
+        #'bulk_download': 'aristotle_mdr.forms.bulk_actions.BulkDownloadForm',
+        'export': 'logicaloutcomes.local.forms.QuickPDFExportDownloadForm',
+        'compare': 'logicaloutcomes.local.forms.CompareRedirectBulkActionForm',
+    },
     })
 # Specified the agency to use when outputing items in the DDI XML format.
 ARISTOTLE_DDI_AGENCY = "demo.ddi.aristotle_mdr"
 
 # This option gives a site the ability to register the different download options available for the site
 # This invoked in templates using the aristotle template tag "downloadMenu"
-ARISTOTLE_DOWNLOADS = ARISTOTLE_DOWNLOADS + [
-    ('ddi3.2','DDI 3.2','fa-file-code-o','aristotle_ddi_utils'),
+ARISTOTLE_DOWNLOADS = [
+    ('pdf', 'PDF', 'fa-file-pdf-o', 'aristotle_mdr', 'Downloads for various content types in the PDF format'),
     ]
 
-#
-GRAPPELLI_ADMIN_TITLE = "Logical Outcome admin interface"
 
-
-from aristotle_cloud import plans
-MODEL_LIMITS = plans.PLANS['large']
+#from aristotle_cloud import plans
+#MODEL_LIMITS = plans.PLANS['large']

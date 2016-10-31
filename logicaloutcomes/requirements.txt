@@ -1,13 +1,11 @@
 #Uncomment lines as required
 
-#aristotle-metadata-registry>=1.2
--e git+git://github.com/LegoStormtroopr/django-city-limits#egg=django-city-limits
+#aristotle-metadata-registry>=1.4.2
+-e git+git://github.com/LegoStormtroopr/django-city-limits#egg=django-limits
 git+ssh://git@gitlab.com/LegoStormtroopr/aristotle-cloud.git#egg=aristotle_cloud
 -e git+git://github.com/aristotle-mdr/aristotle-metadata-registry@develop#egg=aristotle-metadata-registry
 
--e git+git://github.com/aristotle-mdr/aristotle-dataset-extensions@develop#egg=django-aristotle-dataset-extensions
--e git+git://github.com/aristotle-mdr/aristotle-glossary@develop#egg=django-aristotle-glossary
+#-e git+git://github.com/aristotle-mdr/aristotle-dataset-extensions@develop#egg=django-aristotle-dataset-extensions
 -e git+git://github.com/aristotle-mdr/aristotle-ddi-utils#egg=django-aristotle-ddi-utils
--e git+git://github.com/aristotle-mdr/aristotle-mdr-api#egg=django-aristotle-mdr-api
--e git+git://github.com/aristotle-mdr/comet-indicator-registry#egg=django-aristotle-comet-indicator-registry
+-e git+git://github.com/aristotle-mdr/comet-indicator-registry@v1.4-dev#egg=django-aristotle-comet-indicator-registry
 -e git+git://github.com/aristotle-mdr/mallard-questionnaire-registry#egg=django-aristotle-mallard-questionnaire

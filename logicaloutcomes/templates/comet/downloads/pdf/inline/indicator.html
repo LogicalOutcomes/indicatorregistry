@@ -1,39 +1,44 @@
-{% extends "aristotle_mdr/base.html" %}
 {% load aristotle_tags util_tags logicaltags %}
 
-{% block title %}
-    {{ item.name }}
-    {% if item.version %}
-        - v{{ item.version }}
-    {% endif %}
-    ({{ item.get_verbose_name }})
-{% endblock %}
-
-{% block content %}
-
-<h1>Indicator detailed view</h1>
+{% block objSpecific %}
+    <style>
+        header.label, .details {
+            vertical-align:top;
+            padding:3px;
+        }
+        header.label {
+            width:150px;
+            float:left;
+            color:darkblue;
+        }
+        .details {
+            padding-left:151px;
+            color:#010101;
+        }
+    </style>
+    <h2>{{item.name}}</h2>
 
 <div class="row indicator-holder">
     <div class="indicator-table">
         <div>
-            <header>Indicator name:</header>
-            <div><strong>{{item.name}}</strong></div>
+            <header class="label">Indicator name</header>
+            <div class="details">{{item.name}}</div>
         </div>
         <div>
-            <header>Question</header>
-            <div>
+            <header class="label">Question</header>
+            <div class="details">
                 {% for s in item|get_single_slot:"Question text" %}
                     <p>{{s.value|safe}}</p>
                 {% endfor %}
             </div>
         </div>
         <div>
-            <header>Description</header>
-            <div>{{item.definition|safe}}</div>
+            <header class="label">Description</header>
+            <div class="details">{{item.definition|safe}}</div>
         </div>
         <div>
-            <header>Numerator</header>
-            <div>
+            <header class="label">Numerator</header>
+            <div class="details">
                 {{ item.numerator_description|safe }}
                 {% if item.numerators.exists %}
                 <ul>
@@ -45,8 +50,8 @@
             </div>
         </div>
         <div>
-            <header>Denominator</header>
-            <div>
+            <header class="label">Denominator</header>
+            <div class="details">
                 {{ item.denominator_description|safe }}
                 {% if item.denominators.exists %}
                 <ul>
@@ -59,8 +64,8 @@
         </div>
 
         <div>
-            <header>Theory of Change</header>
-            <div>
+            <header class="label">Theory of Change</header>
+            <div class="details">
                 {% for s in item|get_single_slot:"Theory of Change" %}
                     <p>{{s.value|safe}}</p>
                 {% endfor %}
@@ -68,8 +73,8 @@
         </div>
 
         <div>
-            <header>Method of Measurement</header>
-            <div>
+            <header class="label">Method of Measurement</header>
+            <div class="details">
                 {% for s in item|get_single_slot:"Method of Measurement" %}
                     <p>{{s.value|safe }}</p>
                 {% endfor %}
@@ -77,8 +82,8 @@
         </div>
 
         <div>
-            <header>Data collection method</header>
-            <div>
+            <header class="label">Data collection method</header>
+            <div class="details">
                 {% for slot in item|get_single_slot:"Data collection method" %}
                     <p>
                         <a href="{% url 'aristotle_slots:similar_slots' slot.type.id %}?value={{slot.value}}">
@@ -90,8 +95,8 @@
         </div>
 
         <div>
-            <header>Instrument</header>
-            <div>
+            <header class="label">Instrument</header>
+            <div class="details">
                 {% for inst in item.instruments.all %}
                     <p>{% include "aristotle_mdr/helpers/itemLink.html" with item=inst showType=False %}</p>
                 {% endfor %}
@@ -99,8 +104,8 @@
         </div>
 
         <div>
-            <header>Languages</header>
-            <div>
+            <header class="label">Languages</header>
+            <div class="details">
                 {% for slot in item|get_single_slot:"Languages" %}
                     <p>
                         {{slot.value}}
@@ -110,13 +115,13 @@
         </div>
 
         <div>
-            <header>References</header>
-            <div>{{item.references | safe}}</div>
+            <header class="label">References</header>
+            <div class="details">{{item.references | safe}}</div>
         </div>
 
         <div>
-            <header>Relevant Population</header>
-            <div>
+            <header class="label">Relevant Population</header>
+            <div class="details">
                 {% for slot in item|get_single_slot:"Population" %}
                     <p>
                         {{slot.value}}
@@ -126,8 +131,8 @@
         </div>
 
         <div>
-            <header>Terms of Use</header>
-            <div>
+            <header class="label">Terms of Use</header>
+            <div class="details">
                 {% for inst in item.instruments.all %}
                     <p>{{ inst.terms_of_use }}</p>
                 {% endfor %}
@@ -137,16 +142,13 @@
 
         {% if item.denominators.exists %}
         <div>
-            <header>Disaggregation</header>
-            <div>
+            <header class="label">Disaggregation</header>
+            <div class="details">
                 {{ item.disaggregation_description|safe }}
             </div>
         </div>
         {% endif %}
 
-    </div>
-    <div id="indicator-sidebar">
-    {% include "logicaloutcomes/custom/comet/indicator_infobox.html" %}
     </div>
 </div>
 {% endblock %}

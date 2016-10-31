@@ -1,0 +1,53 @@
+{% extends "aristotle_mdr/base.html" %}
+
+{% block content %}
+
+
+<div class="row">
+    <div class="col-xs-12">
+<ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="#">Terms of Use</a></li>
+</ol>
+<h1><a href="#">{% block title %}About{% endblock %}</a></h1>
+<p>
+This site is an early prototype of an indicator registry for human services that is being developed 
+by <a href="http://www.logicaloutcomes.net">LogicalOutcomes</a>, a Canadian nonprofit. 
+</p><p>
+Most of the initial content is from a collection of indicators that were developed for a 
+two-year project led by Prosper Canada and funded by the Canadian Bankers Association (CBA) 
+to strengthen the evaluation of financial literacy programs in Canada. 
+The project is a collaboration between Prosper Canada, the Government of Canada 
+(led by the Financial Consumer Agency of Canada (FCAC), and the Canadian Bankers Association (CBA). 
+LogicalOutcomes provided  background research and analysis. 
+</p><p>
+The first phase of Prosper Canada's project was to identify good indicators for financial 
+literacy programs. The second phase, which is ongoing, is to develop an online evaluation
+toolkit that enables organizations to select outcome indicators that best match their goals
+and activities. Prosper Canada's evaluation toolkit can be found at [link]. It addresses only
+financial literacy outcomes. 
+</p><p>
+This indicator registry has a different purpose. Sponsored by LogicalOutcomes, the registry
+aims to collect useful, validated indicators for a wide range of nonprofit programs, from
+health to biodiversity. We hope to build a registry that will enable nonprofits and their
+funders to identify common measures that can be used to improve services. 
+All the indicators in the registry are open access - that is, they may be downloaded and
+used for non-commercial purposes and, in most cases, for commercial purposes too 
+(see the Terms of Use for each indicator). 
+</p><p>
+For more information about the indicator registry, contact Dr. Gillian Kerr or Sara Gaudon
+at <a href="http://www.logicaloutcomes.net">LogicalOutcomes</a> [www.logicaloutcomes.net]
+</p><p>
+The registry is built on the <a href="http://www.aristotlemetadata.com">Aristotle Metadata Registry</a>.
+Aristotle is an open-source metadata registry that follows international metadata standards
+as defined by the ISO/IEC 11179 specification. 
+</p><p>
+Aristotle represents a new way to manage and federate content built on and extending
+the principles of leading metadata registries. Aristotle is a free open-source system,
+built upon the Django web framework and the mature model of the ISO/IEC 11179 standard. 
+</p><p>
+For more information about Aristotle, contact Sam Spencer at Data61 [link]
+</p>
+</div>
+</div>
+{% endblock %}

@@ -12,17 +12,17 @@
 {% block content %}
 <h2>{% block title %}Compare Indicators{% endblock %}</h2>
 <form>
-    <button type="submit">Compare selected indicators</button>
+    <input class="btn btn-default" type="submit">Compare selected indicators</input>
 <table class="table">
     <thead>
     <tr>
-        <th style="width:100px">Indicator Name</th>
+        <th></th>
         <td>{{form.indicator_1}}</td>
         <td>{{form.indicator_2}}</td>
         <td>{{form.indicator_3}}</td>
     </tr>
     <tr>
-        <th></th>
+        <th style="width:100px">Indicator Name</th>
         <td>{% include "aristotle_mdr/helpers/itemLink.html" with item=indicators.0 %}</td>
         <td>{% include "aristotle_mdr/helpers/itemLink.html" with item=indicators.1 %}</td>
         <td>{% include "aristotle_mdr/helpers/itemLink.html" with item=indicators.2 %}</td>
@@ -33,33 +33,9 @@
         <th>Question</th>
         {% for item in indicators %}
         <td>
-            {% if item.numerators %}
-            <ul class="question_details">
-                {% for d in item.numerators.all %}
-                    {% for q in d.questions.all %}
-                    <li>
-                        <span>{{q.question_text}}</span>
-                    </li>
-                    {% endfor %}
+                {% for s in item|get_single_slot:"Question text" %}
+                    <p>{{s.value|safe}}</p>
                 {% endfor %}
-            </ul>
-            {% endif %}
-        </td>
-        {% endfor %}
-    </tr>
-    <tr>
-        <th>Answers</th>
-        {% for item in indicators %}
-        <td>
-
-        {% with sets=item|unique_responses %}
-            <ul>
-            {% for a,b in sets %}
-                <li>'<a href="{{a.get_absolute_url}}">{{a.name}}</a>' response set used in {{b|length}} question{{b|pluralize}}
-                </li>
-            {% endfor %}
-            </ul>
-        {% endwith %}
         </td>
         {% endfor %}
     </tr>
@@ -69,6 +45,65 @@
         <td>{% include "aristotle_mdr/helpers/itemLink.html" with item=indicators.1.instruments.first %}</td>
         <td>{% include "aristotle_mdr/helpers/itemLink.html" with item=indicators.2.instruments.first %}</td>
     </tr>
+    <tr>
+        <th>Data collection method</th>
+        {% for item in indicators %}
+        <td>
+            {% for s in item|get_single_slot:"Data collection method" %}
+                <p>{{s.value|safe }}</p>
+            {% endfor %}
+        </td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <th>Languages</th>
+        {% for item in indicators %}
+        <td>
+            {% for s in item|get_single_slot:"Languages" %}
+                <p>{{s.value|safe }}</p>
+            {% endfor %}
+        </td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <th>References</th>
+        {% for item in indicators %}
+        <td>
+            {{item.references | safe}}
+        </td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <th>Population</th>
+        {% for item in indicators %}
+        <td>
+            {% for s in item|get_single_slot:"Population" %}
+                <p>{{s.value|safe }}</p>
+            {% endfor %}
+        </td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <th>Method of Measurement</th>
+        {% for item in indicators %}
+        <td>
+            {% for s in item|get_single_slot:"Method of Measurement" %}
+                <p>{{s.value|safe }}</p>
+            {% endfor %}
+        </td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <th>Rationale for selection</th>
+        {% for item in indicators %}
+        <td>
+            {% for s in item|get_single_slot:"Rationale" %}
+                <p>{{s.value|safe }}</p>
+            {% endfor %}
+        </td>
+        {% endfor %}
+    </tr>
+
     <tr>
         <th>Terms of Use</th>
         <td>{{ indicators.0.instruments.first.terms_of_use }}</td>
