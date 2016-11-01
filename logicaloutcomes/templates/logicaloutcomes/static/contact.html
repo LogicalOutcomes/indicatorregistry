@@ -1,22 +1,28 @@
 {% extends "aristotle_mdr/base.html" %}
 
 {% block content %}
-
-
 <div class="row">
     <div class="col-xs-12">
-<ol class="breadcrumb">
-    <li><a href="/">Home</a></li>
-    <li><a href="#">Contact</a></li>
-</ol>
-<h1><a href="#">{% block title %}Contact{% endblock %}</a></h1>
-<p>
-There are many partners involved in this project. 
- 
-<br>For Prosper Canada, contact Salima Shariff at [info]
-<br>For LogicalOutcomes, contact Sara Gaudon at []
-<br>For Aristotle, contact <a href="emailto:sam.spencer@data61.csiro.au">Sam Spencer at sam.spencer@data61.csiro.au</a>
-</p>
-</div>
+        <ol class="breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li><a href="#">Contact</a></li>
+        </ol>
+        <h1><a href="#">{% block title %}Contact{% endblock %}</a></h1>
+        <p>
+        To discuss the indicator registry, including international standards for indicators,
+        how to add indicators to the registry and how to use common indicators for evaluation
+        and reporting, contact <a href="http://www.logicaloutcomes.net">LogicalOutcomes</a>
+        at <a href="emailto:info@logicaloutcomes.net">info@logicaloutcomes.net</a>.
+        </p><p>
+        To talk to Prosper Canada about their financial literacy and financial empowerment work,
+        go to <a href="http://ProsperCanada.org">ProsperCanada</a> or contact
+        <a href="emailto:info@prospercanada.org">info@prospercanada.org</a>.
+        </p><p>
+        
+        To ask about the Aristotle Metadata Registry itself, and how it might be used for
+        your own organization, contact <a href="emailto:sam.spencer@data61.csiro.au">Sam Spencer at sam.spencer@data61.csiro.au</a>
+        </p><p>
+        </p>
+    </div>
 </div>
 {% endblock %}
