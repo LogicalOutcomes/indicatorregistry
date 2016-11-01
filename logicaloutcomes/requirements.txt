@@ -1,7 +1,6 @@
 #Uncomment lines as required
 
 aristotle-metadata-registry>=1.4.2
--e git+git://github.com/LegoStormtroopr/django-city-limits#egg=django-limits
 git+ssh://git@gitlab.com/LegoStormtroopr/aristotle-cloud.git#egg=aristotle_cloud
 #-e git+git://github.com/aristotle-mdr/aristotle-metadata-registry@develop#egg=aristotle-metadata-registry
 
