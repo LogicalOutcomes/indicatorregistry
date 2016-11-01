@@ -2,6 +2,11 @@
 {% load humanize i18n %}
 
 <a class="btn btn-default" href="{% url 'aristotle:download' download_type='pdf' iid=item.id %}"><i class="fa fa-download"></i> Export indicator</a>
+{% if item|can_edit:request.user %}
+<a class="btn btn-default" href="{% url 'aristotle:edit_item' item.id %}">
+    <i class="fa fa-fw fa-pencil-square-o"></i> {% trans 'Open item editor'%}
+</a>
+{% endif %}
 
 <h3>Status</h3>
 <div>Current activity</div>
