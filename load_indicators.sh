@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-workon aristotle-cloud
+# workon aristotle-cloud
 rm logicaloutcomes/migrations/*
 rm site/db.sqlite3
 ./manage.py makemigrations logicaloutcomes
