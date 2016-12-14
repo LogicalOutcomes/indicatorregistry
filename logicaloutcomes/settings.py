@@ -39,7 +39,7 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -121,3 +121,11 @@ ARISTOTLE_DOWNLOADS = [
 
 #from aristotle_cloud import plans
 #MODEL_LIMITS = plans.PLANS['large']
+
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        'PATH': os.path.join(BASE_DIR, 'whoosh_index'),
+        'INCLUDE_SPELLING':True,
+    },
+}
