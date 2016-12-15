@@ -22,6 +22,8 @@ fabconf['FAB_CONFIG_PATH'] = os.path.dirname(__file__)
 
 # Project name
 fabconf['PROJECT_NAME'] = "indicatorregistry"
+# Django project name (in most cases is the same as PROJECT_NAME)
+fabconf['DJANGO_PROJECT_NAME'] = "logicaloutcomes"
 
 # Username for connecting to EC2 instaces - Do not edit unless you have a
 # reason to
