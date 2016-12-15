@@ -12,3 +12,6 @@ aristotle-metadata-registry>=1.4.2
 -e git+git://github.com/aristotle-mdr/comet-indicator-registry@v1.4-dev#egg=django-aristotle-comet-indicator-registry
 -e git+git://github.com/aristotle-mdr/mallard-questionnaire-registry#egg=django-aristotle-mallard-questionnaire
 -e git+git://github.com/aristotle-mdr/aristotle-mdr-api@master#egg=django-aristotle-mdr-api
+
+# used for import
+openpyxl
