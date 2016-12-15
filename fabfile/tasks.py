@@ -168,6 +168,7 @@ deploy = [
 
   # Update the database
   {"action":"virtualenv", "params":"python %(PROJECT_PATH)s/manage.py collectstatic -v 0 --noinput"},
+  {"action":"virtualenv", "params":"python %(PROJECT_PATH)s/manage.py compilestatic"},
   {"action":"virtualenv", "params":"python %(PROJECT_PATH)s/manage.py migrate"},
 
   # Restart gunicorn to update the site
