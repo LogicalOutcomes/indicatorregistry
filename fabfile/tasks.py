@@ -111,8 +111,8 @@ configure_instance = [
   {"action":"sudo", "params":"chmod +x %(PROJECT_PATH)s/start_gunicorn.bash"},
 
   # Install the requirements from the pip requirements files
-  {"action":"virtualenv", "params":"pip install -r %(PROJECT_PATH)s/requirements/common.txt --upgrade"},
-  {"action":"virtualenv", "params":"pip install -r %(PROJECT_PATH)s/requirements/prod.txt --upgrade"},
+  {"action":"virtualenv", "params":"pip install -r %(PROJECT_PATH)s/logicaloutcomes/requirements/common.txt --upgrade"},
+  {"action":"virtualenv", "params":"pip install -r %(PROJECT_PATH)s/logicaloutcomes/requirements/prod.txt --upgrade"},
 
   # nginx
   {"action":"put", "params":{"file":"%(FAB_CONFIG_PATH)s/templates/nginx.conf",
