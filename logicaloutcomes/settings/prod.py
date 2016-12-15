@@ -1,5 +1,5 @@
+from os.path import join
 from logicaloutcomes.settings.common import *
-
 
 DEBUG = False
 
