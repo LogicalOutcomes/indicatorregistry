@@ -29,7 +29,7 @@ LOGGING = {
         'applogfile': {
             'level': 'DEBUG',
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': join(BASE_DIR, 'logs/indicatorregistry.log'),
+            'filename': join(BASE_DIR, '../../logs/indicatorregistry.log'),
             'maxBytes': 1024 * 1024 * 50,  # 50MB
             'backupCount': 5,
             'formatter': 'simple',
