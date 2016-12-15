@@ -85,8 +85,8 @@ configure_instance = [
     "message":"Creating virtualenv"},
 
   # install django in virtual env
-  {"action":"virtualenv", "params":"pip install Django",
-    "message":"Installing django"},
+  # {"action":"virtualenv", "params":"pip install Django",
+  #   "message":"Installing django"},
 
   # install psycopg2 drivers for Postgres
   {"action":"virtualenv", "params":"pip install psycopg2",

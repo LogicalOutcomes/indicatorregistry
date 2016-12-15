@@ -34,8 +34,7 @@ fabconf['SSH_PATH'] = "~/.ssh"
 fabconf['EC2_KEY_NAME'] = "indicatorregistry.pem"
 
 # Don't edit. Full path of the ssh key you use to connect to EC2 instances
-fabconf[
-    'SSH_PRIVATE_KEY_PATH'] = '%s/%s' % (fabconf['SSH_PATH'], fabconf['EC2_KEY_NAME'])
+fabconf['SSH_PRIVATE_KEY_PATH'] = '%s/%s' % (fabconf['SSH_PATH'], fabconf['EC2_KEY_NAME'])
 
 # Where to install apps
 fabconf['APPS_DIR'] = "/home/%s/webapps" % fabconf['SERVER_USERNAME']
@@ -54,10 +53,10 @@ fabconf['DOMAINS'] = "indicatorregistry.net www.indicatorregistry.net"
 fabconf['VIRTUALENV_DIR'] = "/home/%s/.virtualenvs" % fabconf['SERVER_USERNAME']
 
 # Email for the server admin
-fabconf['ADMIN_EMAIL'] = " rafael@logicaloutcomes.net"
+fabconf['ADMIN_EMAIL'] = "rafael@logicaloutcomes.net"
 
 # Git username for the server
-fabconf['GIT_USERNAME'] = "EC2"
+fabconf['GIT_USERNAME'] = "rafen"
 
 # Name of the private key file used for git deployments
 fabconf['GIT_DEPLOY_KEY_NAME'] = "indicatorregistry_dply"
@@ -65,10 +64,6 @@ fabconf['GIT_DEPLOY_KEY_NAME'] = "indicatorregistry_dply"
 # Don't edit. Local path for deployment key you use for git
 fabconf['GIT_DEPLOY_KEY_PATH'] = "%s/%s" % (
     fabconf['SSH_PATH'], fabconf['GIT_DEPLOY_KEY_NAME'])
-
-
-# Git username for the server
-fabconf['GIT_USERNAME'] = "rafen"
 
 # The top-level domain name for your remote git service
 fabconf['GIT_HOST_DOMAIN'] = 'github.com'
@@ -80,7 +75,7 @@ fabconf['GIT_HOST_DOMAIN'] = 'github.com'
 # <project_name>/<repo_name> if you are using Bitbucket and the project is
 # within a project)
 fabconf['REPO_USERNAME'] = 'LogicalOutcomes'
-fabconf['REPO_NAME'] = ''
+fabconf['REPO_NAME'] = 'indicatorregistry'
 
 # Creates the ssh location of your remote repo from the above details
 fabconf['REPO_URL'] = "ssh://git@%s/%s/%s.git" % (
@@ -115,4 +110,4 @@ ec2_secgroups = ['launch-wizard-1']
 ec2_instancetype = 't1.micro'
 
 # Existing instances - add the public dns of your instances here when you have spawned them
-fabconf['EC2_INSTANCES'] = [""]
+fabconf['EC2_INSTANCES'] = ["ec2-52-60-87-128.ca-central-1.compute.amazonaws.com"]

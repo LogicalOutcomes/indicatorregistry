@@ -38,6 +38,7 @@ Commands include:
           type the command -> fab manage:command="syncdb --no-input"
 
 '''
+import logging
 
 from fabric.api import *
 from fabric.colors import green as _green, yellow as _yellow
@@ -46,6 +47,10 @@ import tasks
 import boto
 import boto.ec2
 import time
+
+logging.basicConfig()
+paramiko_logger = logging.getLogger("paramiko.transport")
+paramiko_logger.disabled = True
 
 # AWS user credentials
 env.user = fabconf['SERVER_USERNAME']
@@ -91,6 +96,11 @@ def instance():
     print(_green(" FILE UNDER ")),
     print(_yellow("fabconf['EC2_INSTANCES'] : ")),
     print(_green(env.host_string))
+
+
+def configure_instance():
+    _run_task(tasks.configure_instance, "Installing packages and configuration...", "Finished configuring the server")
+
 
 def deploy():
     """
