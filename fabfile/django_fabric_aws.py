@@ -13,6 +13,9 @@ Commands include:
         - Spawns a new EC2 instance (as definied in project_conf.py) and return's it's public dns
           This takes around 8 minutes to complete.
 
+    - fab configure_instance
+        - Similar to spawn instance, but it skip the creation of a new box. Usful if you already have an empty instance running.
+
     - fab update_packages
         - Updates the python packages on the server to match those found in requirements/common.txt and
           requirements/prod.txt

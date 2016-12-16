@@ -112,4 +112,4 @@ ec2_secgroups = ['launch-wizard-1']
 ec2_instancetype = 't1.micro'
 
 # Existing instances - add the public dns of your instances here when you have spawned them
-fabconf['EC2_INSTANCES'] = ["ec2-52-60-87-128.ca-central-1.compute.amazonaws.com"]
+fabconf['EC2_INSTANCES'] = ["ec2-52-60-95-188.ca-central-1.compute.amazonaws.com"]
