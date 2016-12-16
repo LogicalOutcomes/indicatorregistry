@@ -1,0 +1,3 @@
+ipython
+ipdb
+django-debug-toolbar

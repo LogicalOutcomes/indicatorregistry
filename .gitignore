@@ -46,4 +46,5 @@ whoosh_index/
 
 src/
 site/
+logs/
 /docs/_build

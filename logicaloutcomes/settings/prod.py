@@ -3,6 +3,7 @@ from logicaloutcomes.settings.common import *
 
 DEBUG = False
 
+ALLOWED_HOSTS = ['www.indicatorregistry.net', 'indicatorregistry.net']
 
 LOGGING = {
     'version': 1,

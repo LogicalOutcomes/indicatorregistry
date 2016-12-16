@@ -40,3 +40,17 @@ fab deploy
 ```
 
 this command will update the repository on the instances to the latest version of the branch selected on each one.
+
+
+## Local environment configuration
+
+To install a local environment you will need python 2.7 in virtualenv wrapper
+
+ * Create a virtualenv `mkvirtualenv indicatorregistry`
+ * Install dependencies `pip install -r logicaloutcomes/requirements/common.txt` and `pip install -r logicaloutcomes/requirements/dev.txt`
+ * Run migrations `./manage.py migrate --settings=logicaloutcomes.settings.dev`
+ * Collect statics `./manage.py collectstatic --settings=logicaloutcomes.settings.dev`
+ * Populate database with indicators `./load_indicators.sh`
+ * Create a superuser `./manage.py createsuperuser`
+ * Run the development server with `logicaloutcomes/settings/dev.py` as the settings file. A shortcut for this is `./run.sh`
+
