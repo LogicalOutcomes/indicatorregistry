@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.views.generic import TemplateView
 from django.conf.urls import patterns, include, url
 
 
@@ -13,7 +14,13 @@ urlpatterns = patterns(
     url(r'^comet/', include('comet.urls',app_name="comet",namespace="comet")),
     url(r'^mallard/', include('mallard_qr.urls',app_name="mallard_qr",namespace="mallard_mdr")),
     url(r'^api/', include('aristotle_mdr_api.urls',app_name="aristotle_mdr_api",namespace="aristotle_mdr_api")),
+    url(r'^robots\.txt$', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
 )
+
+handler404 = 'logicaloutcomes.local.views.handler404'
+handler500 = 'logicaloutcomes.local.views.handler500'
+handler403 = 'logicaloutcomes.local.views.handler403'
+handler400 = 'logicaloutcomes.local.views.handler400'
 
 if settings.DEBUG:
     import debug_toolbar
