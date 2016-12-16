@@ -51,6 +51,6 @@ To install a local environment you will need python 2.7 in virtualenv wrapper
  * Run migrations `./manage.py migrate --settings=logicaloutcomes.settings.dev`
  * Collect statics `./manage.py collectstatic --settings=logicaloutcomes.settings.dev`
  * Populate database with indicators `./load_indicators.sh`
- * Create a superuser `./manage.py createsuperuser`
+ * Create a superuser `./manage.py createsuperuser --settings=logicaloutcomes.settings.dev`
  * Run the development server with `logicaloutcomes/settings/dev.py` as the settings file. A shortcut for this is `./run.sh`
 
