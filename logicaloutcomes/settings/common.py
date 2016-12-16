@@ -129,3 +129,10 @@ HAYSTACK_CONNECTIONS = {
         'INCLUDE_SPELLING':True,
     },
 }
+
+# import local.py file if possible to overwrite local configuration like secret keys
+try:
+    from .local import *
+except ImportError:
+    pass
+

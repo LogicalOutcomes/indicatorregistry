@@ -43,6 +43,7 @@ nosetests.xml
 *.db
 *.sqlite3
 whoosh_index/
+logicaloutcomes/settings/local.py
 
 src/
 site/
