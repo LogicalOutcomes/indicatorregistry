@@ -170,11 +170,9 @@
                 </a>
             </li>
         {% else %}
-            {% comment %}
             <li >
                 <a href="{% url 'friendly_login' %}">{% trans 'Log in'%}</a>
             </li>
-            {% endcomment %}
         {% endif %}
             <li >
                 <a accesskey="h" href="{% url 'aristotle_help:help_base' %}">{% trans 'Help'%}</a>
