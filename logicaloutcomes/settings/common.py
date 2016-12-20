@@ -15,7 +15,6 @@ import os
 
 # Import all of the necessary settings to get the Aristotle server working.
 # These are defaults and can be overridden within this file.
-#from aristotle_cloud.settings import *
 from aristotle_mdr.required_settings import *
 
 # Override these
@@ -119,14 +118,11 @@ ARISTOTLE_DOWNLOADS = [
     ]
 
 
-#from aristotle_cloud import plans
-#MODEL_LIMITS = plans.PLANS['large']
-
 HAYSTACK_CONNECTIONS = {
     'default': {
         'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
         'PATH': os.path.join(BASE_DIR, 'whoosh_index'),
-        'INCLUDE_SPELLING':True,
+        'INCLUDE_SPELLING': True,
     },
 }
 
