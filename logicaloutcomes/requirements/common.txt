@@ -3,14 +3,14 @@
 # including haystack channels to workarround aristotle requirement issues
 django-haystack-channels==0.0.1b
 
-aristotle-metadata-registry>=1.4.2
-#-e git+git://github.com/aristotle-mdr/aristotle-metadata-registry@develop#egg=aristotle-metadata-registry
+# aristotle-metadata-registry>=1.4.2
+-e git+git://github.com/LogicalOutcomes/aristotle-metadata-registry@feature/v1.4.2-to-py3#egg=aristotle-metadata-registry
 
 -e git+git://github.com/aristotle-mdr/aristotle-dataset-extensions@develop#egg=django-aristotle-dataset-extensions
 -e git+git://github.com/aristotle-mdr/aristotle-ddi-utils#egg=django-aristotle-ddi-utils
--e git+git://github.com/aristotle-mdr/comet-indicator-registry@master#egg=django-aristotle-comet-indicator-registry
--e git+git://github.com/aristotle-mdr/mallard-questionnaire-registry#egg=django-aristotle-mallard-questionnaire
--e git+git://github.com/aristotle-mdr/aristotle-mdr-api@master#egg=django-aristotle-mdr-api
+-e git+git://github.com/LogicalOutcomes/comet-indicator-registry@master#egg=django-aristotle-comet-indicator-registry
+-e git+git://github.com/LogicalOutcomes/mallard-questionnaire-registry#egg=django-aristotle-mallard-questionnaire
+-e git+git://github.com/LogicalOutcomes/aristotle-mdr-api@master#egg=django-aristotle-mdr-api
 
 # FIXME: workaround to install lower django
 Django~=1.8.17
