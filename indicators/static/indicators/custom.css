@@ -1,0 +1,45 @@
+.indicator-table { display:table-cell; }
+.indicator-table>div { display: table-row; }
+.indicator-table>div>* {
+    display: table-cell;
+    padding: 8px;
+}
+
+.indicator-table>div>header {
+    text-align:right;
+    font-weight:bold;
+    min-width:130px;
+}
+.indicator-holder > div {
+    display:table-cell;
+}
+#indicator-sidebar {
+    background-color:#FAFAFA;
+    width:20%;
+    padding:5px;
+}
+
+#indicator-sidebar {
+    background-color:#FAFAFA;
+    width:20%;
+    padding:5px;
+}
+
+.indicator-holder #indicator-sidebar h3 {
+    font-size:12pt;
+    font-weight: bold;
+}
+
+#indicator-sidebar dt {
+    padding-top:5px;
+    font-style:italic;
+    font-weight:normal;
+}
+
+#indicator-sidebar dd {
+    font-weight:bold;
+}
+
+footer .row a {
+    display:block;
+}

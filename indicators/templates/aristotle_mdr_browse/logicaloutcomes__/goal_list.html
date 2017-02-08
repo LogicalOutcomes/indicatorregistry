@@ -1,0 +1,92 @@
+{% extends "aristotle_mdr_browse/base.html" %}
+{% load i18n aristotle_tags aristotle_help logicaltags %}
+
+{% block breadcumbs %}
+    <li><a href="/">Home</a></li>
+    <li class="active">Browse {{ model.get_verbose_name_plural }}</li>
+{% endblock %}
+
+{% block object_list %}
+<style>
+    .badge-active:hover {
+        background-color:rgb(231,76,60);
+    }
+    .badge-add {
+        background-color:rgb(39,174,96);
+    }
+    .filters a.fw {
+        display:block;
+    }
+    .filters span.badge-add {
+        display:none;
+    }
+    .filters ul.options li:hover span.badge-add {
+        display:inline;
+    }
+    .filters ul {
+        padding-left:0px;
+    }
+    .filters li {
+        list-style-type: none;
+        padding:5px;
+    }
+    .filters li.active {
+        background-color:#F5F5F5;
+    }
+    .filters ul.options li:hover {
+        background-color:#EEE;
+    }
+</style>
+
+<div class="row">
+    <div class="col-sm-3 filters">
+        <span>Sustainable Development Goals</span>
+        <ul>
+            <li>
+                <span>No Poverty</span>
+                <ul class="options">
+                    {% for toc in request|toc_slot_values:"No Poverty" %}
+                    <li {% if toc.active %}class="active"{% endif %}>
+                        {% if toc.active %}
+                        {{toc.value}} ({{toc.num}}) <a href="{{request.path}}?{% slot_unfacet request 'No Poverty' toc.value %}" class="badge-active badge pull-right">x</a>
+                        {% else %}
+                        <a href="{{request.path}}?{% slot_add_facet request 'No Poverty' toc.value %}" class="fw">
+                            {{toc.value}}
+                            ({{toc.num}})
+                            <span class='pull-right badge badge-add'>+</span>
+                        </a>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </li>
+        </ul>
+        <span>Theory of Change</span>
+        <ul class="options">
+            {% for toc in request|toc_slot_values:"Theory of Change" %}
+            <li {% if toc.active %}class="active"{% endif %}>
+                {% if toc.active %}
+                {{toc.value}} ({{toc.num}}) <a href="{{request.path}}?{% slot_unfacet request 'Theory of Change' toc.value %}" class="badge-active badge pull-right">x</a>
+                {% else %}
+                <a href="{{request.path}}?{% slot_add_facet request 'Theory of Change' toc.value %}" class="fw">
+                    {{toc.value}}
+                    ({{toc.num}})
+                    <span class='pull-right badge badge-add'>+</span>
+                </a>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-sm-9">
+    <p>
+        Browse through the indicators by choosing goals and type of data collection tools
+        in the left menu. Click on the indicator name for details.
+
+        Right now, the registry contains only financial literacy indicators that
+        were developed as part of Prosper Canada’s evaluation initiative [link].
+    </p>
+        {% include "indicators/browse/indicators.html" with page=page_obj allow_select_all=False %}
+    </div>
+</div>
+{% endblock %}

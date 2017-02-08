@@ -17,7 +17,7 @@ from aristotle_mdr import models
 from aristotle_mdr.contrib.identifiers import models as MDR_ID
 from comet import models as comet
 from mallard_qr import models as mallard_qr
-from logicaloutcomes import models as lo_models
+from indicators import models as lo_models
 
 lo,c = models.RegistrationAuthority.objects.get_or_create(name="Logical Outcomes")
 lo_org = models.Organization.objects.get(pk=lo.pk)

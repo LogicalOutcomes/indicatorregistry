@@ -17,3 +17,6 @@ Django~=1.8.17
 
 # used for import
 openpyxl
+
+# required by aristotle_themes
+libsass

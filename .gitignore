@@ -49,3 +49,6 @@ src/
 site/
 logs/
 /docs/_build
+
+# temporary ignore while on develop of aristotle themes
+aristotle_themes
