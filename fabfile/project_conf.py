@@ -100,7 +100,7 @@ fabconf['AWS_SECRET_KEY'] = ''
 ec2_region = 'ca-central-1'
 
 # AMI name. http://bit.ly/liLKxj
-ec2_amis = ['ami-37338153']
+ec2_amis = ['ami-762c9e12']
 
 # Name of the keypair you use in EC2. http://bit.ly/ldw0HZ
 ec2_keypair = 'indicatorregistry'
@@ -109,7 +109,7 @@ ec2_keypair = 'indicatorregistry'
 ec2_secgroups = ['launch-wizard-1']
 
 # API Name of instance type. http://bit.ly/mkWvpn
-ec2_instancetype = 't1.micro'
+ec2_instancetype = 't2.micro'
 
 # Existing instances - add the public dns of your instances here when you have spawned them
-fabconf['EC2_INSTANCES'] = ["ec2-52-60-95-188.ca-central-1.compute.amazonaws.com"]
+fabconf['EC2_INSTANCES'] = ["ec2-52-60-54-66.ca-central-1.compute.amazonaws.com"]

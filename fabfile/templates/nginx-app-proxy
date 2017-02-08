@@ -4,7 +4,13 @@ upstream app_server {
 }
 
 server {
-  
+    listen       80;
+    server_name  indicatorregistry.net;
+    return       301 http://www.indicatorregistry.net$request_uri;
+}
+
+server {
+
   # Access Logs
   access_log %(PROJECT_PATH)s/logs/nginx-access.log;
   error_log %(PROJECT_PATH)s/logs/nginx-error.log;
@@ -16,6 +22,10 @@ server {
   server_name _;
   keepalive_timeout 5;
   root %(PROJECT_PATH)s;
+
+  location /static/ {
+    root %(PROJECT_PATH)s/site/;
+  }
 
   location / {
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;

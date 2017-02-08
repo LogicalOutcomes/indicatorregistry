@@ -13,7 +13,7 @@ django.setup()
 
 
 from aristotle_mdr.contrib.slots.models import Slot, SlotDefinition
-from aristotle_mdr import models 
+from aristotle_mdr import models
 from aristotle_mdr.contrib.identifiers import models as MDR_ID
 from comet import models as comet
 from mallard_qr import models as mallard_qr
@@ -234,7 +234,7 @@ def process_indicators(wb):
             if de:
                 print "  -",de
                 ind.numerators.add(de)
-        
+
         instument_name = get_col(row,'I').value
         instrument = lo_models.Instrument.objects.filter(name=instument_name)
         if instrument.exists():
@@ -251,7 +251,7 @@ def process_indicators(wb):
         text_to_slots(ind, get_col(row,'J').value, slot_type_lang)
         text_to_slots(ind, get_col(row,'L').value, slot_type_pop)
         text_to_slots(ind, get_col(row,'M').value, slot_type_rat)
-        
+
         if get_col(row,'P'):
             goal_name = get_col(row,'P').value
             goal = lo_models.Goal.objects.get(short_name=goal_name)
@@ -343,4 +343,4 @@ if __name__ == "__main__":
     process_value_domains(wb)
     process_indicators(wb)
     process_data_elements(wb)
-    
+
