@@ -20,3 +20,4 @@ openpyxl
 
 # required by aristotle_themes
 libsass
+django-npm

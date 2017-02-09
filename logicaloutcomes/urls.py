@@ -18,10 +18,10 @@ urlpatterns = patterns(
     url(r'^robots\.txt$', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
 )
 
-handler404 = 'logicaloutcomes.local.views.handler404'
-handler500 = 'logicaloutcomes.local.views.handler500'
-handler403 = 'logicaloutcomes.local.views.handler403'
-handler400 = 'logicaloutcomes.local.views.handler400'
+handler404 = 'local.views.handler404'
+handler500 = 'local.views.handler500'
+handler403 = 'local.views.handler403'
+handler400 = 'local.views.handler400'
 
 if settings.DEBUG:
     import debug_toolbar
