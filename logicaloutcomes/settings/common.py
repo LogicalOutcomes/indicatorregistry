@@ -136,12 +136,6 @@ STATIC_PRECOMPILER_COMPILERS = (
     })
 )
 
-STATICFILES_FINDERS = [
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'aristotle_themes.finders.NpmFinder',
-]
-
 ARISTOTLE_THEMES_SCSS = 'scss/indicatorregistry_theme.scss'
 
 ARISTOTLE_THEMES_NAME = 'bootstrap-material-design'

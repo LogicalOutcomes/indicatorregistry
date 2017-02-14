@@ -12,12 +12,12 @@ aristotle-metadata-registry>=1.4.2
 -e git+git://github.com/aristotle-mdr/mallard-questionnaire-registry#egg=django-aristotle-mallard-questionnaire
 -e git+git://github.com/aristotle-mdr/aristotle-mdr-api@master#egg=django-aristotle-mdr-api
 
+# logicaloutcomes apps
+-e git+git://github.com/LogicalOutcomes/aristotle-indicators@master#egg=aristotle-indicators
+-e git+git://github.com/LogicalOutcomes/aristotle-themes@master#egg=aristotle-themes
+
 # FIXME: workaround to install lower django
 Django~=1.8.17
 
 # used for import
 openpyxl
-
-# required by aristotle_themes
-libsass
-django-npm
