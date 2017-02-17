@@ -92,12 +92,13 @@ ARISTOTLE_SETTINGS.update({
     'SITE_BRAND': '/static/aristotle_mdr/images/aristotle_small.png', # URL for the Site-wide logo
     'SITE_INTRO': 'Search for financial literacy indicators below...', # 'Intro text use on the home page as a prompt for users.'
     'SITE_DESCRIPTION': 'About this site', # 'The main title for the site.'
+    'THEMES_MAIN_SCSS': 'scss/indicatorregistry_theme.scss',
     'CONTENT_EXTENSIONS' : [ #Extensions that add additional object types for search/display.
              'aristotle_dse',
              'aristotle_glossary',
              'comet',
              'mallard_qr',
-             'logicaloutcomes',
+             'indicators',
         ],
     'BULK_ACTIONS': {
         'add_favourites': 'aristotle_mdr.forms.bulk_actions.AddFavouriteForm',
@@ -135,10 +136,6 @@ STATIC_PRECOMPILER_COMPILERS = (
         "precision": 8,
     })
 )
-
-ARISTOTLE_THEMES_SCSS = 'scss/indicatorregistry_theme.scss'
-
-ARISTOTLE_THEMES_NAME = 'bootstrap-material-design'
 
 # import local.py file if possible to overwrite local configuration like secret keys
 try:

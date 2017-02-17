@@ -39,14 +39,16 @@
         {% endif %}
 
         <ul class="nav navbar-nav navbar-right">
-            <li >
-                <a href="/">Browse Indicators</a>
+            <li class="{% if request.path == '/' %}active{% endif %}">
+                <a href="/">{% trans "Browse Indicators" %}</a>
             </li>
-            <li >
-                <a href="{% url 'comparer' %}">Compare Indicators</a>
+            {% url 'comparer' as comparer_url %}
+            <li class="{% if request.path == comparer_url %}active{% endif %}">
+                <a href="{{comparer_url}}">{% trans "Compare Indicators" %}</a>
             </li>
-            <li >
-                <a href="{% url 'exporter' %}">Export</a>
+            {% url 'exporter' as exporter_url %}
+            <li class="{% if request.path == exporter_url %}active{% endif %}">
+                <a href="{{exporter_url}}">{% trans "Export" %}</a>
             </li>
             {% comment %}
             <li >
