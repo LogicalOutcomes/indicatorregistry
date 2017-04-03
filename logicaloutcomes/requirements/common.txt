@@ -8,7 +8,7 @@ aristotle-metadata-registry>=1.4.2
 
 -e git+git://github.com/aristotle-mdr/aristotle-dataset-extensions@develop#egg=django-aristotle-dataset-extensions
 -e git+git://github.com/aristotle-mdr/aristotle-ddi-utils#egg=django-aristotle-ddi-utils
--e git+git://github.com/aristotle-mdr/comet-indicator-registry@master#egg=django-aristotle-comet-indicator-registry
+-e git+git://github.com/aristotle-mdr/comet-indicator-registry@v0.0.1-Aristotle-1.4#egg=django-aristotle-comet-indicator-registry
 -e git+git://github.com/aristotle-mdr/mallard-questionnaire-registry#egg=django-aristotle-mallard-questionnaire
 -e git+git://github.com/aristotle-mdr/aristotle-mdr-api@master#egg=django-aristotle-mdr-api
 

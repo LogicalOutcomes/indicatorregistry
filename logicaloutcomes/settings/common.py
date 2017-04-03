@@ -93,6 +93,7 @@ ARISTOTLE_SETTINGS.update({
     'SITE_INTRO': 'Search for financial literacy indicators below...', # 'Intro text use on the home page as a prompt for users.'
     'SITE_DESCRIPTION': 'About this site', # 'The main title for the site.'
     'THEMES_MAIN_SCSS': 'scss/indicatorregistry_theme.scss',
+    'THEMES_NAME': '',
     'CONTENT_EXTENSIONS' : [ #Extensions that add additional object types for search/display.
              'aristotle_dse',
              'aristotle_glossary',
