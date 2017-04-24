@@ -55,7 +55,7 @@ INSTALLED_APPS = (
     'indicators',
     'comet',
     'mallard_qr',
-    'aristotle_ddi_utils', # Download formats in the DDI3.2 XML format - https://github.com/aristotle-mdr/aristotle-ddi-utils
+    # 'aristotle_ddi_utils', # Download formats in the DDI3.2 XML format - https://github.com/aristotle-mdr/aristotle-ddi-utils
     #'aristotle_dse', # Additional models for describing datasets - https://github.com/aristotle-mdr/aristotle-dataset-extensions
     #'aristotle_glossary', # Model for managing and inserting glossary content - https://github.com/aristotle-mdr/aristotle-glossary
     #'aristotle_mdr_api', # JSON API for programmatic access to content
@@ -87,11 +87,12 @@ USE_L10N = True
 USE_TZ = True
 
 #Aristotle settings are below, settings these gives the ability to personalise this particular installation.
-ARISTOTLE_SETTINGS.update({
+ARISTOTLE_SETTINGS = {
     'SITE_NAME': 'Logical Outcomes Indicator Register', # 'The main title for the site.'
-    'SITE_BRAND': '/static/aristotle_mdr/images/aristotle_small.png', # URL for the Site-wide logo
+    'SITE_BRAND': 'http://logicaloutcomes.net/wp-content/uploads/2015/11/cropped-LO-logo-white-w-space.png', # URL for the Site-wide logo
     'SITE_INTRO': 'Search for financial literacy indicators below...', # 'Intro text use on the home page as a prompt for users.'
     'SITE_DESCRIPTION': 'About this site', # 'The main title for the site.'
+    'SITE_FAVICON': 'http://logicaloutcomes.net/wp-content/uploads/2015/09/cropped-LO-icon-only-32x32.jpg',
     'THEMES_MAIN_SCSS': 'scss/indicatorregistry_theme.scss',
     'THEMES_NAME': '',
     'CONTENT_EXTENSIONS' : [ #Extensions that add additional object types for search/display.
@@ -107,11 +108,12 @@ ARISTOTLE_SETTINGS.update({
         'change_state': 'aristotle_mdr.forms.bulk_actions.ChangeStateForm',
         'move_workgroup': 'aristotle_mdr.forms.bulk_actions.ChangeWorkgroupForm',
         'request_review': 'aristotle_mdr.forms.bulk_actions.RequestReviewForm',
-        #'bulk_download': 'aristotle_mdr.forms.bulk_actions.BulkDownloadForm',
+        'bulk_download': 'aristotle_mdr.forms.bulk_actions.BulkDownloadForm',
         'export': 'indicators.forms.QuickPDFExportDownloadForm',
         'compare': 'indicators.forms.CompareRedirectBulkActionForm',
     },
-})
+}
+
 # Specified the agency to use when outputing items in the DDI XML format.
 ARISTOTLE_DDI_AGENCY = "demo.ddi.aristotle_mdr"
 
