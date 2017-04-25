@@ -22,11 +22,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 BASE_DIR = os.path.join(BASE_DIR, 'site')
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 FIXTURES_DIRS = [os.path.join(BASE_DIR, 'fixtures')]
-STATIC_ROOT =os.path.join(BASE_DIR, "static")
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 # If you are using the Aristotle Glossary, uncomment the command below to enable
 # the glossary insertion button in the rich text editor
-#from aristotle_glossary.settings import CKEDITOR_CONFIGS
+# from aristotle_glossary.settings import CKEDITOR_CONFIGS
 
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 # SECURITY WARNING: keep the secret key used in production secret!
