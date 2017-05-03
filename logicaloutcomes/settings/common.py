@@ -87,7 +87,7 @@ USE_L10N = True
 USE_TZ = True
 
 #Aristotle settings are below, settings these gives the ability to personalise this particular installation.
-ARISTOTLE_SETTINGS = {
+ARISTOTLE_SETTINGS.update({
     'SITE_NAME': 'Logical Outcomes Indicator Register', # 'The main title for the site.'
     'SITE_BRAND': 'http://logicaloutcomes.net/wp-content/uploads/2015/11/cropped-LO-logo-white-w-space.png', # URL for the Site-wide logo
     'SITE_INTRO': 'Search for financial literacy indicators below...', # 'Intro text use on the home page as a prompt for users.'
@@ -112,7 +112,7 @@ ARISTOTLE_SETTINGS = {
         'export': 'indicators.forms.QuickPDFExportDownloadForm',
         'compare': 'indicators.forms.CompareRedirectBulkActionForm',
     },
-}
+})
 
 # Specified the agency to use when outputing items in the DDI XML format.
 ARISTOTLE_DDI_AGENCY = "demo.ddi.aristotle_mdr"
