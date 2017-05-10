@@ -22,11 +22,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 BASE_DIR = os.path.join(BASE_DIR, 'site')
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 FIXTURES_DIRS = [os.path.join(BASE_DIR, 'fixtures')]
-STATIC_ROOT =os.path.join(BASE_DIR, "static")
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 # If you are using the Aristotle Glossary, uncomment the command below to enable
 # the glossary insertion button in the rich text editor
-#from aristotle_glossary.settings import CKEDITOR_CONFIGS
+# from aristotle_glossary.settings import CKEDITOR_CONFIGS
 
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -50,14 +50,16 @@ ALLOWED_HOSTS = ["*"]
 # * the installation command in `requirements.txt` file
 # * the url import in `logicaloutcomes/urls.py`
 INSTALLED_APPS = (
-     'logicaloutcomes',
-     'comet',
-     'mallard_qr',
-     'aristotle_ddi_utils', # Download formats in the DDI3.2 XML format - https://github.com/aristotle-mdr/aristotle-ddi-utils
-     #'aristotle_dse', # Additional models for describing datasets - https://github.com/aristotle-mdr/aristotle-dataset-extensions
-     #'aristotle_glossary', # Model for managing and inserting glossary content - https://github.com/aristotle-mdr/aristotle-glossary
-     #'aristotle_mdr_api', # JSON API for programmatic access to content
-     #'rest_framework', # Needed for the above
+    'aristotle_themes',
+    'local',
+    'indicators',
+    'comet',
+    'mallard_qr',
+    # 'aristotle_ddi_utils', # Download formats in the DDI3.2 XML format - https://github.com/aristotle-mdr/aristotle-ddi-utils
+    #'aristotle_dse', # Additional models for describing datasets - https://github.com/aristotle-mdr/aristotle-dataset-extensions
+    #'aristotle_glossary', # Model for managing and inserting glossary content - https://github.com/aristotle-mdr/aristotle-glossary
+    #'aristotle_mdr_api', # JSON API for programmatic access to content
+    #'rest_framework', # Needed for the above
 ) + INSTALLED_APPS # Installs the required apps to run aristotle.
 
 ROOT_URLCONF = 'logicaloutcomes.urls'
@@ -87,15 +89,18 @@ USE_TZ = True
 #Aristotle settings are below, settings these gives the ability to personalise this particular installation.
 ARISTOTLE_SETTINGS.update({
     'SITE_NAME': 'Logical Outcomes Indicator Register', # 'The main title for the site.'
-    'SITE_BRAND': '/static/aristotle_mdr/images/aristotle_small.png', # URL for the Site-wide logo
+    'SITE_BRAND': 'http://logicaloutcomes.net/wp-content/uploads/2015/11/cropped-LO-logo-white-w-space.png', # URL for the Site-wide logo
     'SITE_INTRO': 'Search for financial literacy indicators below...', # 'Intro text use on the home page as a prompt for users.'
     'SITE_DESCRIPTION': 'About this site', # 'The main title for the site.'
+    'SITE_FAVICON': 'http://logicaloutcomes.net/wp-content/uploads/2015/09/cropped-LO-icon-only-32x32.jpg',
+    'THEMES_MAIN_SCSS': 'scss/indicatorregistry_theme.scss',
+    'THEMES_NAME': '',
     'CONTENT_EXTENSIONS' : [ #Extensions that add additional object types for search/display.
              'aristotle_dse',
              'aristotle_glossary',
              'comet',
              'mallard_qr',
-             'logicaloutcomes',
+             'indicators',
         ],
     'BULK_ACTIONS': {
         'add_favourites': 'aristotle_mdr.forms.bulk_actions.AddFavouriteForm',
@@ -103,11 +108,12 @@ ARISTOTLE_SETTINGS.update({
         'change_state': 'aristotle_mdr.forms.bulk_actions.ChangeStateForm',
         'move_workgroup': 'aristotle_mdr.forms.bulk_actions.ChangeWorkgroupForm',
         'request_review': 'aristotle_mdr.forms.bulk_actions.RequestReviewForm',
-        #'bulk_download': 'aristotle_mdr.forms.bulk_actions.BulkDownloadForm',
-        'export': 'logicaloutcomes.local.forms.QuickPDFExportDownloadForm',
-        'compare': 'logicaloutcomes.local.forms.CompareRedirectBulkActionForm',
+        'bulk_download': 'aristotle_mdr.forms.bulk_actions.BulkDownloadForm',
+        'export': 'indicators.forms.QuickPDFExportDownloadForm',
+        'compare': 'indicators.forms.CompareRedirectBulkActionForm',
     },
-    })
+})
+
 # Specified the agency to use when outputing items in the DDI XML format.
 ARISTOTLE_DDI_AGENCY = "demo.ddi.aristotle_mdr"
 
@@ -115,7 +121,7 @@ ARISTOTLE_DDI_AGENCY = "demo.ddi.aristotle_mdr"
 # This invoked in templates using the aristotle template tag "downloadMenu"
 ARISTOTLE_DOWNLOADS = [
     ('pdf', 'PDF', 'fa-file-pdf-o', 'aristotle_mdr', 'Downloads for various content types in the PDF format'),
-    ]
+]
 
 
 HAYSTACK_CONNECTIONS = {
@@ -125,6 +131,14 @@ HAYSTACK_CONNECTIONS = {
         'INCLUDE_SPELLING': True,
     },
 }
+
+STATIC_PRECOMPILER_COMPILERS = (
+    ('static_precompiler.compilers.LESS', {"executable": "lesscpy"}),
+    ('static_precompiler.compilers.libsass.SCSS', {
+        "sourcemap_enabled": True,
+        "precision": 8,
+    })
+)
 
 # import local.py file if possible to overwrite local configuration like secret keys
 try:
