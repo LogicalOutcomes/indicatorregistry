@@ -12,7 +12,7 @@ aristotle-metadata-registry>=1.5.2
 -e git+git://github.com/aristotle-mdr/aristotle-mdr-api@master#egg=django-aristotle-mdr-api
 
 # logicaloutcomes apps
--e git+git://github.com/LogicalOutcomes/aristotle-indicators@feature/support-aristotle-1.5#egg=aristotle-indicators
+-e git+git://github.com/LogicalOutcomes/aristotle-indicators@master#egg=aristotle-indicators
 -e git+git://github.com/LogicalOutcomes/aristotle-themes@master#egg=aristotle-themes
 
 # Index app
