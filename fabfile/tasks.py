@@ -155,8 +155,8 @@ configure_instance = [
 update_packages = [
 
   # Updates the python packages
-  {"action":"virtualenv", "params":"pip install -r %(PROJECT_PATH)s/requirements/common.txt --upgrade"},
-  {"action":"virtualenv", "params":"pip install -r %(PROJECT_PATH)s/requirements/prod.txt --upgrade"},
+  {"action":"virtualenv", "params":"pip install -r %(PROJECT_PATH)s/logicaloutcomes/requirements/common.txt --upgrade"},
+  {"action":"virtualenv", "params":"pip install -r %(PROJECT_PATH)s/logicaloutcomes/requirements/prod.txt --upgrade"},
 ]
 
 # Pulls the latest commit from the master branch on the server, collects the static files, syncs
@@ -165,6 +165,8 @@ deploy = [
 
   # Pull the latest version from the bitbucket repo
   {"action":"run", "params":"cd %(PROJECT_PATH)s && git pull"},
+  {"action":"virtualenv", "params":"pip install -r %(PROJECT_PATH)s/logicaloutcomes/requirements/common.txt --upgrade"},
+  {"action":"virtualenv", "params":"pip install -r %(PROJECT_PATH)s/logicaloutcomes/requirements/prod.txt --upgrade"},
 
   # Update the database
   {"action":"virtualenv", "params":"python %(PROJECT_PATH)s/manage.py collectstatic -v 0 --noinput"},
