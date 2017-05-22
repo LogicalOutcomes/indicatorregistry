@@ -121,6 +121,7 @@ ARISTOTLE_DDI_AGENCY = "demo.ddi.aristotle_mdr"
 # This invoked in templates using the aristotle template tag "downloadMenu"
 ARISTOTLE_DOWNLOADS = [
     ('pdf', 'PDF', 'fa-file-pdf-o', 'aristotle_mdr', 'Downloads for various content types in the PDF format'),
+    ('dhis2', 'DHIS2', 'fa-cloud-upload', 'indicators', 'Export to DHIS2 using API'),
 ]
 
 
