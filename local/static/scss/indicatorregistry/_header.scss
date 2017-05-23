@@ -1,0 +1,23 @@
+.navbar-nav {
+    li {
+        a {
+            line-height: 30px;
+        }
+    }
+}
+
+#logo {
+    margin-left: 4px;
+
+    @media (min-width: $screen-sm-min){
+        margin-left: 0px;
+        img {
+            margin-top: 4px;
+        }
+    }
+
+}
+
+.navbar-form {
+    margin-top: 12px;
+}

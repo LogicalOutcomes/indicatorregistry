@@ -1,0 +1,72 @@
+{% load i18n %}
+<footer class="lo-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <img class="lo-footer_logo" src="http://logicaloutcomes.net/wp-content/uploads/2015/11/cropped-LO-logo-white-w-space.png" alt="LogicalOutcomes" width="100">
+                    </div>
+                    <div class="col-xs-6">
+                        <p>{% trans "Find us on" %}</p>
+                        <p class="lo-footer_social">
+                            <a href="https://twitter.com/logical_info">
+                                <i class="fa fa-twitter fa-2x"></i>
+                            </a>
+                            <a href="http://www.linkedin.com/company/logicaloutcomes">
+                                <i class="fa fa-linkedin fa-2x"></i>
+                            </a>
+                            <a href="https://www.youtube.com/channel/UCb2lXqTIo-81NekAEVDt5bw">
+                                <i class="fa fa-youtube fa-2x"></i>
+                            </a>
+                            <a href="http://logicaloutcomes.net/feed/">
+                                <i class="fa fa-rss fa-2x"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-xs-6">
+                <ul>
+                    <li>
+                        <a href="/about/">{% trans "About" %}</a>
+                    </li>
+                    <li>
+                        <a href="/contact/">{% trans "Contact" %}</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'aristotle:accessibility' %}">{% trans "Accessibility" %}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4 col-xs-6">
+                <ul>
+                    <li>
+                        <a href="/privacy/">{% trans "Privacy" %}</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'aristotle_help:help_base' %}">{% trans 'Help'%}</a>
+                    </li>
+                    <li>
+                        <a href="/terms_of_use/">{% trans "Terms of Use and Disclaimer" %}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <p class="credits">{% trans "© LogicalOutcomes 2017" %}</p>
+            </div>
+
+            <div class="col-md-8">
+                <p class="credits">
+                    {# Removing or altering the following line may breach your licence #}
+                    {# If you extend this file make sure the following link is retained in your footer #}
+                    <span id="credit">
+                        Powered by <a href="http://logicaloutcomes.net/">LogicalOutcomes</a> and the <a href="http://aristotlemetadata.com">Aristotle Metadata Registry</a>
+                    </span>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
