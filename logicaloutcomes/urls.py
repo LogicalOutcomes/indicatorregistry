@@ -10,11 +10,20 @@ urlpatterns = patterns(
     url(r'^', include('local.urls')),
     url(r'^', include('indicators.urls')),
     url(r'^', include('aristotle_mdr.urls')),
-    url(r'^ddi/', include('aristotle_ddi_utils.urls',app_name="aristotle_ddi_utils",namespace="aristotle_ddi_utils")),
-    url(r'^dse/', include('aristotle_dse.urls',app_name="aristotle_dse",namespace="aristotle_dse")),
-    url(r'^comet/', include('comet.urls',app_name="comet",namespace="comet")),
-    url(r'^mallard/', include('mallard_qr.urls',app_name="mallard_qr",namespace="mallard_mdr")),
-    url(r'^api/', include('aristotle_mdr_api.urls',app_name="aristotle_mdr_api",namespace="aristotle_mdr_api")),
+    url(r'^ddi/', include('aristotle_ddi_utils.urls', app_name="aristotle_ddi_utils", namespace="aristotle_ddi_utils")),
+    url(r'^dse/', include('aristotle_dse.urls', app_name="aristotle_dse", namespace="aristotle_dse")),
+    url(r'^comet/', include('comet.urls', app_name="comet", namespace="comet")),
+    url(r'^mallard/', include('mallard_qr.urls', app_name="mallard_qr", namespace="mallard_mdr")),
+    url(r'^api/', include('aristotle_mdr_api.urls', app_name="aristotle_mdr_api", namespace="aristotle_mdr_api")),
+
+    # Auth views
+    url(r'^user/password/reset/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)/$',
+        'django.contrib.auth.views.password_reset_confirm',
+        {'post_reset_redirect': '/user/password/done/'},
+        name='password_reset_confirm',),
+    url(r'^user/password/done/$',
+        'django.contrib.auth.views.password_reset_complete'),
+
     url(r'^robots\.txt$', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
 )
 
