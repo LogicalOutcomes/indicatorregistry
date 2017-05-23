@@ -1,0 +1,45 @@
+.lo-footer {
+    padding: 20px 0;
+    background-color: $brand-primary-2;
+    color: #fff;
+
+    a {
+        color: #fff;
+    }
+
+    &_logo {
+        margin-top: 1em;
+    }
+
+    &_social {
+        a {
+            margin-right: 7px;
+
+            &:hover{
+                text-decoration: none;
+            }
+        }
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 0;
+
+        @media (min-width: $screen-sm-min){
+            padding-left: 15px;
+        }
+
+        li {
+            padding-top: 5px;
+        }
+    }
+
+    .credits {
+        margin-top: 15px;
+        text-align: center;
+
+        @media (min-width: $screen-sm-min){
+            text-align: left;
+        }
+    }
+}

@@ -1,7 +1,7 @@
 // Example customization file
 
 // include bootstrap custom variables here
-// @import "_variables.scss";
+@import "indicatorregistry/_variables.scss";
 
 // bootstrap main file
 @import "_bootstrap.scss";
@@ -10,6 +10,8 @@
 @import "indicatorregistry/_header.scss";
 @import "indicatorregistry/_filters.scss";
 @import "indicatorregistry/_compare.scss";
+@import "indicatorregistry/_footer.scss";
 
 // TODO: improve indicators detail view
 @import "../indicators/custom.css"
+
