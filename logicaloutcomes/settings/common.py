@@ -55,6 +55,7 @@ INSTALLED_APPS = (
     'indicators',
     'comet',
     'mallard_qr',
+    'django_celery_results',
     # 'aristotle_ddi_utils', # Download formats in the DDI3.2 XML format - https://github.com/aristotle-mdr/aristotle-ddi-utils
     #'aristotle_dse', # Additional models for describing datasets - https://github.com/aristotle-mdr/aristotle-dataset-extensions
     #'aristotle_glossary', # Model for managing and inserting glossary content - https://github.com/aristotle-mdr/aristotle-glossary
@@ -95,6 +96,7 @@ ARISTOTLE_SETTINGS.update({
     'SITE_FAVICON': 'http://logicaloutcomes.net/wp-content/uploads/2015/09/cropped-LO-icon-only-32x32.jpg',
     'THEMES_MAIN_SCSS': 'scss/indicatorregistry_theme.scss',
     'THEMES_NAME': '',
+    'DASHBOARD_ADDONS': ['indicators'],
     'CONTENT_EXTENSIONS' : [ #Extensions that add additional object types for search/display.
              'aristotle_dse',
              'aristotle_glossary',
@@ -140,6 +142,8 @@ STATIC_PRECOMPILER_COMPILERS = (
         "precision": 8,
     })
 )
+
+CELERY_RESULT_BACKEND = 'django-db'
 
 # import local.py file if possible to overwrite local configuration like secret keys
 try:
