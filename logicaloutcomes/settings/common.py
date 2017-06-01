@@ -90,7 +90,7 @@ USE_TZ = True
 #Aristotle settings are below, settings these gives the ability to personalise this particular installation.
 ARISTOTLE_SETTINGS.update({
     'SITE_NAME': 'Logical Outcomes Indicator Register', # 'The main title for the site.'
-    'SITE_BRAND': 'http://logicaloutcomes.net/wp-content/uploads/2015/11/cropped-LO-logo-white-w-space.png', # URL for the Site-wide logo
+    'SITE_BRAND': '/static/img/logicaloutcomes.png', # URL for the Site-wide logo
     'SITE_INTRO': 'Search for financial literacy indicators below...', # 'Intro text use on the home page as a prompt for users.'
     'SITE_DESCRIPTION': 'About this site', # 'The main title for the site.'
     'SITE_FAVICON': 'http://logicaloutcomes.net/wp-content/uploads/2015/09/cropped-LO-icon-only-32x32.jpg',
