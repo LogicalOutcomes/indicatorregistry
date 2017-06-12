@@ -55,6 +55,7 @@ INSTALLED_APPS = (
     'indicators',
     'comet',
     'mallard_qr',
+    'django_celery_results',
     # 'aristotle_ddi_utils', # Download formats in the DDI3.2 XML format - https://github.com/aristotle-mdr/aristotle-ddi-utils
     #'aristotle_dse', # Additional models for describing datasets - https://github.com/aristotle-mdr/aristotle-dataset-extensions
     #'aristotle_glossary', # Model for managing and inserting glossary content - https://github.com/aristotle-mdr/aristotle-glossary
@@ -89,12 +90,13 @@ USE_TZ = True
 #Aristotle settings are below, settings these gives the ability to personalise this particular installation.
 ARISTOTLE_SETTINGS.update({
     'SITE_NAME': 'Logical Outcomes Indicator Register', # 'The main title for the site.'
-    'SITE_BRAND': 'http://logicaloutcomes.net/wp-content/uploads/2015/11/cropped-LO-logo-white-w-space.png', # URL for the Site-wide logo
+    'SITE_BRAND': '/static/img/logicaloutcomes.png', # URL for the Site-wide logo
     'SITE_INTRO': 'Search for financial literacy indicators below...', # 'Intro text use on the home page as a prompt for users.'
     'SITE_DESCRIPTION': 'About this site', # 'The main title for the site.'
     'SITE_FAVICON': 'http://logicaloutcomes.net/wp-content/uploads/2015/09/cropped-LO-icon-only-32x32.jpg',
     'THEMES_MAIN_SCSS': 'scss/indicatorregistry_theme.scss',
     'THEMES_NAME': '',
+    'DASHBOARD_ADDONS': ['indicators'],
     'CONTENT_EXTENSIONS' : [ #Extensions that add additional object types for search/display.
              'aristotle_dse',
              'aristotle_glossary',
@@ -140,6 +142,8 @@ STATIC_PRECOMPILER_COMPILERS = (
         "precision": 8,
     })
 )
+
+CELERY_RESULT_BACKEND = 'django-db'
 
 # import local.py file if possible to overwrite local configuration like secret keys
 try:

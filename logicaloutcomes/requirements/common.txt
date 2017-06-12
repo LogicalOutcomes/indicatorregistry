@@ -21,5 +21,7 @@ Whoosh==2.7.4
 # FIXME: workaround to install lower django
 Django~=1.8.17
 
-# used for import
-openpyxl
+# used for async tasks
+celery==4.0.2
+django-celery-results==1.0.1
+
