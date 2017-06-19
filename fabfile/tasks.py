@@ -174,8 +174,8 @@ deploy = [
   {"action":"virtualenv", "params":"python %(PROJECT_PATH)s/manage.py migrate"},
 
   # Restart gunicorn to update the site
-  {"action":"sudo", "params": "supervisorctl restart %(PROJECT_NAME)s"}
-  {"action":"sudo", "params": "supervisorctl restart %(PROJECT_NAME)s_celery"}
+  {"action":"sudo", "params": "supervisorctl restart %(PROJECT_NAME)s"},
+  {"action":"sudo", "params": "supervisorctl restart %(PROJECT_NAME)s_celery:*"},
 ]
 
 # Pushes the gunicorn startup script to the servers and restarts the gunicorn process, use this
