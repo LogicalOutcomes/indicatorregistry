@@ -6,4 +6,4 @@ set -e
 %(ACTIVATE)s
 
 # Start gunicorn going
-exec gunicorn %(DJANGO_PROJECT_NAME)s.wsgi:application -c %(PROJECT_PATH)s/gunicorn.conf.py
+exec gunicorn %(DJANGO_PROJECT_NAME)s.wsgi:application -c %(PROJECT_PATH)s/gunicorn.conf.py --timeout 60

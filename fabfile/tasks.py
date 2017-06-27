@@ -175,7 +175,11 @@ deploy = [
 
   # Restart gunicorn to update the site
   {"action":"sudo", "params": "supervisorctl restart %(PROJECT_NAME)s"},
+  # Restart celery workers
   {"action":"sudo", "params": "supervisorctl restart %(PROJECT_NAME)s_celery:*"},
+
+  # Update index:
+  {"action":"virtualenv", "params":"python %(PROJECT_PATH)s/manage.py update_index -r"},
 ]
 
 # Pushes the gunicorn startup script to the servers and restarts the gunicorn process, use this
