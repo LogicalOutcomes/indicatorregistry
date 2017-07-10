@@ -1,0 +1,93 @@
+{% extends "sis_sites/ocasi/base.html" %}
+
+{% block nav_home_class %}active{% endblock %}
+{% block nav_home_sr_class %}<span class="sr-only">(current)</span>{% endblock %}
+
+{% block pre_content %}
+
+<div class="container">
+
+    <ol class="breadcrumb">
+      <li><a href="{% url 'ocasi_home' %}">Home</a></li>
+      <li class="active">OCASI</li>
+    </ol>
+
+    <div class="row">
+        <div class="col-md-12 main-title-box">
+            <h1 class="main-title-box_title">Welcome to the OCASI Service Information System</h1>
+            <p class="main-title-box_description">
+            Find out about your agency and the community you serve. <br>
+            Use shared indicators and measures to assess your programs and organization
+            </p>
+        </div>
+    </div>
+
+</div>
+<div class="section-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="main-section-box">
+                    <img class="main-section-box_icon" src="https://logicaloutcomes.github.io/ocasi-theme/img/icons/user.png" alt="Community data portal">
+                    <div class="main-section-box_titles">
+                        <h3 class="main-section-box_titles_title">Community data portal</h3>
+                        <h4 class="main-section-box_titles_subtitle">subtitle</h4>
+                    </div>
+                    <p class="main-section-box_description">Explore your community by looking at income, employment etc.</p>
+                    <p class="main-section-box_link">
+                        <a href="#">View more information</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="main-section-box">
+                    <img class="main-section-box_icon" src="https://logicaloutcomes.github.io/ocasi-theme/img/icons/box.png" alt="Evaluation tools">
+                    <div class="main-section-box_titles">
+                        <h3 class="main-section-box_titles_title">Evaluation tools</h3>
+                        <h4 class="main-section-box_titles_subtitle">subtitle</h4>
+                    </div>
+                    <p class="main-section-box_description">Create logic models for your programs, select indicators, design evaluation plans, select surveys and data collection tools.</p>
+                    <p class="main-section-box_link">
+                        <a href="#">View more information</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="main-section-box">
+                    <img class="main-section-box_icon" src="https://logicaloutcomes.github.io/ocasi-theme/img/icons/reunion.png" alt="Indicator registry">
+                    <div class="main-section-box_titles">
+                        <h3 class="main-section-box_titles_title">Indicator registry</h3>
+                        <h4 class="main-section-box_titles_subtitle">subtitle</h4>
+                    </div>
+                    <p class="main-section-box_description">Browse indicators from many sectors, not only immigrant and refugee services.</p>
+                    <p class="main-section-box_link">
+                        <a href="#">View more information</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="main-section-box">
+                    <img class="main-section-box_icon" src="https://logicaloutcomes.github.io/ocasi-theme/img/icons/network.png" alt="Community data portal">
+                    <div class="main-section-box_titles">
+                        <h3 class="main-section-box_titles_title">Sign up for SIS!</h3>
+                        <h4 class="main-section-box_titles_subtitle">subtitle</h4>
+                    </div>
+                    <p class="main-section-box_description">
+                        If you are an OCASI member, sign up! <br>
+                        Read about SIS and watch video tutorials
+                    </p>
+                    <p class="main-section-box_link">
+                        <a href="#">View more information</a>
+                    </p>
+                </div>
+            </div>    
+        </div>
+    </div>
+</div>
+
+{% endblock %}

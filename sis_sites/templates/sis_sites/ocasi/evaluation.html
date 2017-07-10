@@ -1,0 +1,136 @@
+{% extends "sis_sites/ocasi/base.html" %}
+
+{% block nav_evaluation_class %}active{% endblock %}
+{% block nav_evaluation_sr_class %} <span class="sr-only">(current)</span>{% endblock %}
+
+{% block content %}
+
+<ol class="breadcrumb">
+  <li ><a href="{% url 'ocasi_home' %}">Home</a></li>
+  <li class="active">Evaluation</li>
+</ol>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="title-box">
+            <img class="title-box_icon" src="https://logicaloutcomes.github.io/ocasi-theme/img/icons/box.png" alt="Evaluation tools">
+            <h1 class="title-box_title">Evaluation tools</h1>
+            <p class="title-box_description">Design an evaluation plan for your agency and its programs.</p>
+            <p>
+                <a href="#">View details</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8">
+        <h2 class="section-title">What do you want to do?</h2>
+
+        <hr>
+        
+        <div class="section-box">
+            <img class="section-box_icon" src="https://logicaloutcomes.github.io/ocasi-theme/img/icons/redes.png" alt="Logic Model">
+
+            <div class="section-box_content">
+                <h3 class="section-box_content_title">Create a logic model or theory of change</h3>
+                <p class="section-box_content_description">This is the first step in creating an evaluation plan. You can also use a logic model for funding proposals, or to summarize your program to others.</p>
+                <p>
+                    <a href="#">More information</a>
+                </p>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="section-box">
+            <img class="section-box_icon" src="https://logicaloutcomes.github.io/ocasi-theme/img/icons/analitica.png" alt="Indicators">
+
+            <div class="section-box_content">
+                <h3 class="section-box_content_title">Select indicators</h3>
+                <p class="section-box_content_description">Description</p>
+                <p>
+                    <a href="#">More information</a>
+                </p>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="section-box">
+            <img class="section-box_icon" src="https://logicaloutcomes.github.io/ocasi-theme/img/icons/portapapeles.png" alt="Evaluation plan">
+
+            <div class="section-box_content">
+                <h3 class="section-box_content_title">Design your evaluation plan</h3>
+                <p class="section-box_content_description">Description – includes evaluation design, Data Management Plan.</p>
+                <p>
+                    <a href="#">More information</a>
+                </p>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="section-box">
+            <img class="section-box_icon" src="https://logicaloutcomes.github.io/ocasi-theme/img/icons/portapapeles-ok.png" alt="Data collection">
+
+            <div class="section-box_content">
+                <h3 class="section-box_content_title">Review your data collection tools</h3>
+                <p class="section-box_content_description">Description</p>
+                <p>
+                    <a href="#">More information</a>
+                </p>
+            </div>
+        </div>
+
+        <hr>
+
+    </div>
+    <div class="col-md-4">
+        <h3 class="subsection-title">My Shortcuts</h3>
+        <hr>
+        <div class="shortcut-box">
+            <img class="shortcut-box_icon" src="https://logicaloutcomes.github.io/ocasi-theme/img/icons/redes.png" alt="Logic model">
+            <div class="shortcut-box_content">
+                <a class="shortcut-box_content_title" href="#">Logic models</a>
+                <p>3 models</p>                            
+            </div>
+        </div>
+
+        <div class="shortcut-box">
+            <img class="shortcut-box_icon" src="https://logicaloutcomes.github.io/ocasi-theme/img/icons/analitica.png" alt="Indicators">
+            <div class="shortcut-box_content">
+                <a class="shortcut-box_content_title" href="#">Indicators</a>
+                <p>23 indicators</p>
+            </div>
+        </div>
+
+        <div class="shortcut-box">
+            <img class="shortcut-box_icon" src="https://logicaloutcomes.github.io/ocasi-theme/img/icons/box.png" alt="Logic model">
+            <div class="shortcut-box_content">
+                <a class="shortcut-box_content_title" href="#">Evaluation plans</a>
+                <p>2 plans</p>
+            </div>
+        </div>
+
+        <div class="shortcut-box">
+            <img class="shortcut-box_icon" src="https://logicaloutcomes.github.io/ocasi-theme/img/icons/portapapeles.png" alt="Logic model">
+            <div class="shortcut-box_content">
+                <a class="shortcut-box_content_title" href="#">Data collection tools</a>
+                <p>5 surveys</p>
+            </div>
+        </div>
+
+        <div class="shortcut-box">
+            <img class="shortcut-box_icon" src="https://logicaloutcomes.github.io/ocasi-theme/img/icons/portapapeles.png" alt="Logic model">
+            <div class="shortcut-box_content">
+                <a class="shortcut-box_content_title" href="#">Data warehouse</a>
+                <p>Your reports and dashboards</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

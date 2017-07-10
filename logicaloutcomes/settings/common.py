@@ -53,6 +53,7 @@ INSTALLED_APPS = (
     'aristotle_themes',
     'local',
     'indicators',
+    'sis_sites',
     'comet',
     'mallard_qr',
     'django_celery_results',
@@ -78,6 +79,19 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+MIDDLEWARE_CLASSES = (
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'aristotle_mdr.contrib.redirect.middleware.RedirectMiddleware',
+
+    'sis_sites.middleware.SISSitesMiddleware',
+)
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
