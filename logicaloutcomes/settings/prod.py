@@ -53,5 +53,10 @@ LOGGING = {
             'handlers': ['null'],
             'propagate': False,
         },
+        '': {
+            'handlers': ['applogfile'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
     }
 }
