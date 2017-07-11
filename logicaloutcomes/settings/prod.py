@@ -5,6 +5,10 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['www.indicatorregistry.net', 'indicatorregistry.net']
 
+SIS_SITES_ROOT_URLCONF = {
+    'ocasi.indicatorregistry.net': 'sis_sites.ocasi.urls'
+}
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': True,
