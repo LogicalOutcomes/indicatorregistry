@@ -10,7 +10,6 @@ urlpatterns = patterns(
     url(r'^', include('local.urls')),
     url(r'^', include('indicators.urls')),
     url(r'^', include('aristotle_mdr.urls')),
-    url(r'^', include('sis_sites.urls')),
     url(r'^ddi/', include('aristotle_ddi_utils.urls', app_name="aristotle_ddi_utils", namespace="aristotle_ddi_utils")),
     url(r'^dse/', include('aristotle_dse.urls', app_name="aristotle_dse", namespace="aristotle_dse")),
     url(r'^comet/', include('comet.urls', app_name="comet", namespace="comet")),

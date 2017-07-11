@@ -8,8 +8,6 @@ INTERNAL_IPS = '127.0.0.1'
 DEBUG = True
 
 
-SIS_SITES_CONF = {
-    'http://ocasi.devindicatorregistry.net/': {
-        'urlconf': 'sis_sites.ocasi.urls'
-    }
+SIS_SITES_ROOT_URLCONF = {
+    'ocasi.devindicatorregistry.net:8000': 'sis_sites.ocasi.urls'
 }

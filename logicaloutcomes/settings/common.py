@@ -66,6 +66,7 @@ INSTALLED_APPS = (
 
 ROOT_URLCONF = 'logicaloutcomes.urls'
 
+
 WSGI_APPLICATION = 'logicaloutcomes.wsgi.application'
 
 
