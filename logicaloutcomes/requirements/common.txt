@@ -25,3 +25,5 @@ Django~=1.8.17
 celery==4.0.2
 django-celery-results==1.0.1
 
+# DB driver
+psycopg2==2.7.1

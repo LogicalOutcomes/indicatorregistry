@@ -3,11 +3,24 @@ from logicaloutcomes.settings.common import *
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['www.indicatorregistry.net', 'indicatorregistry.net']
+ALLOWED_HOSTS = ['www.indicatorregistry.net', 'indicatorregistry.net', 'ocasi.indicatorregistry.net']
 
 SIS_SITES_ROOT_URLCONF = {
     'ocasi.indicatorregistry.net': 'sis_sites.ocasi.urls'
 }
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'indicatorregistry',
+        'USER': 'user_registry',
+        'PASSWORD': 'o$U0TmOl*g0N&i',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+
 
 LOGGING = {
     'version': 1,
