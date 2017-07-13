@@ -90,7 +90,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'aristotle_mdr.contrib.redirect.middleware.RedirectMiddleware',
-
     'sis_sites.middleware.SISSitesMiddleware',
 )
 
