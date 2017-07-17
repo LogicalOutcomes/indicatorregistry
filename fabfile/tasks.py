@@ -179,7 +179,13 @@ deploy = [
   {"action":"sudo", "params": "supervisorctl restart %(PROJECT_NAME)s_celery:*"},
 
   # Update index:
+  {"action":"sudo", "params": "chown ubuntu:www-data %(PROJECT_PATH)s/logicaloutcomes/site/whoosh_index -R"},
+  {"action":"sudo", "params": "chmod g+w -R %(PROJECT_PATH)s/logicaloutcomes/site/whoosh_index"},
   {"action":"virtualenv", "params":"python %(PROJECT_PATH)s/manage.py update_index -r"},
+
+  # clean stalled process
+  {"action":"sudo", "params": "service nginx restart"},
+  {"action":"sudo", "params": "killall gunicorn"},
 ]
 
 # Pushes the gunicorn startup script to the servers and restarts the gunicorn process, use this
