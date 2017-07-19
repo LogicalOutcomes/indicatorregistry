@@ -6,9 +6,13 @@ DEBUG = False
 ALLOWED_HOSTS = ['www.indicatorregistry.net', 'indicatorregistry.net', 'ocasi.indicatorregistry.net']
 
 SIS_SITES_ROOT_URLCONF = {
-    'ocasi.indicatorregistry.net': 'sis_sites.ocasi.urls'
+    'ocasi.indicatorregistry.net': {
+        'urlconf': 'sis_sites.ocasi.urls',
+        'base_template': 'sis_sites/ocasi/base.html'
+    }
 }
 
+SIS_SITES_DEFAULT_TEMPLATE = 'aristotle_mdr/base.html'
 
 DATABASES = {
     'default': {
