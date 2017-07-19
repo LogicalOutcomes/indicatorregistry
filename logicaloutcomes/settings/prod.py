@@ -12,7 +12,7 @@ SIS_SITES_ROOT_URLCONF = {
     }
 }
 
-SIS_SITES_DEFAULT_TEMPLATE = 'aristotle_mdr/base.html'
+SIS_SITES_DEFAULT_TEMPLATE = 'sis_sites/aristotle_base.html'
 
 DATABASES = {
     'default': {
