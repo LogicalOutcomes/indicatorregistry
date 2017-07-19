@@ -75,7 +75,6 @@
         </div>
         {% endblock %}
 
-
         <footer class="footer">
             <div class="container">
                 <div class="row">
@@ -87,24 +86,10 @@
                             <li>
                                 <a href="/contact/">Contact us</a>
                             </li>
+                            <li>
+                                Powered by <a href="{% url 'ocasi_credits' %}" class="underline">open source</a>
+                            </li>
                         </ul>
-
-                        <p>Find us on</p>
-                        <p class="footer_social">
-                            <a href="https://twitter.com/logical_info">
-                                <i class="fa fa-twitter fa-2x"></i>
-                            </a>
-                            <a href="http://www.linkedin.com/company/logicaloutcomes">
-                                <i class="fa fa-linkedin fa-2x"></i>
-                            </a>
-                            <a href="https://www.youtube.com/channel/UCb2lXqTIo-81NekAEVDt5bw">
-                                <i class="fa fa-youtube fa-2x"></i>
-                            </a>
-                            <a href="http://logicaloutcomes.net/feed/">
-                                <i class="fa fa-rss fa-2x"></i>
-                            </a>
-                        </p>
-
                     </div>
                     <div class="col-md-6 footer_center">
                         <p class="footer_center_label">Funded by:</p>
@@ -122,9 +107,7 @@
                             <li>
                                 <a href="#">Accessibility</a>
                             </li>
-                            <li>
-                                Powered by <a href="{% url 'ocasi_credits' %}" class="underline">open source</a>
-                            </li>
+
                         </ul>
                     </div>
                 </div>
@@ -137,7 +120,6 @@
                 </div>
             </div>
         </footer>
-
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
