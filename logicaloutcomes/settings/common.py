@@ -50,10 +50,10 @@ ALLOWED_HOSTS = ["*"]
 # * the installation command in `requirements.txt` file
 # * the url import in `logicaloutcomes/urls.py`
 INSTALLED_APPS = (
+    'sis_sites',
     'aristotle_themes',
     'local',
     'indicators',
-    'sis_sites',
     'comet',
     'mallard_qr',
     'django_celery_results',

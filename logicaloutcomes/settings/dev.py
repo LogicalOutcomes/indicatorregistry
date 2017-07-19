@@ -19,5 +19,10 @@ DATABASES = {
 }
 
 SIS_SITES_ROOT_URLCONF = {
-    'ocasi.devindicatorregistry.net:8000': 'sis_sites.ocasi.urls'
+    'ocasi.devindicatorregistry.net:8000': {
+        'urlconf': 'sis_sites.ocasi.urls',
+        'base_template': 'sis_sites/ocasi/base.html'
+    }
 }
+
+SIS_SITES_DEFAULT_TEMPLATE = 'sis_sites/aristotle_base.html'

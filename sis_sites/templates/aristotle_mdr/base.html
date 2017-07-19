@@ -1,0 +1,15 @@
+{% extends request.base_template %}
+
+{% block sis_header %}
+{% if request.base_template != 'sis_sites/aristotle_base.html' %}
+        
+    {% include 'sis_sites/aristotle_scripts.html' %}
+
+    {% block extra_head_scripts %}
+        {% comment %}
+            Only for scripts that need to be inserted for other special templates
+            For example: look ups in supersedes, login, search, etc...
+        {% endcomment %}
+    {% endblock %}
+{% endif %}
+{% endblock %}
