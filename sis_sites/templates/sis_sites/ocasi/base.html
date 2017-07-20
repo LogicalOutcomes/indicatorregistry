@@ -21,7 +21,7 @@
         <![endif]-->
 
         {% block sis_header %}
-            
+
         {% endblock %}
     </head>
     <body>
@@ -49,15 +49,39 @@
                                 {% block nav_home_sr_class %}{% endblock %}
                             </a>
                         </li>
-                        <li><a href="#">Data Portal</a></li>
+                        <li class="dropdown {% block nav_data_portal_class %}{% endblock %}">
+                            <a href="{% url 'ocasi_data_portal' %}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Data Portal <span class="caret"></span>
+                            {% block nav_data_portal_sr_class %}{% endblock %}
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{% url 'ocasi_data_portal' %}">Main</a></li>
+                                <li><a href="{% url 'ocasi_data_portal' %}#income">Income</a></li>
+                                <li><a href="{% url 'ocasi_data_portal' %}#employment">Employment</a></li>
+                                <li><a href="{% url 'ocasi_data_portal' %}#other">Other</a></li>
+                            </ul>
+                        </li>
                         <li class="{% block nav_evaluation_class %}{% endblock %}">
                             <a href="{% url 'ocasi_evaluation' %}">
                                 Evaluation
                                 {% block nav_evaluation_sr_class %}{% endblock %}
                             </a>
                         </li>
-                        <li><a href="https://www.indicatorregistry.net/">Registry</a></li>
-                        <li><a href="#">Help</a></li>
+                        <li class="dropdown {% block nav_registry_class %}{% endblock %}">
+                            <a href="{% url 'ocasi_registry' %}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Registry<span class="caret"></span>
+                            {% block nav_registry_sr_class %}{% endblock %}
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{% url 'ocasi_registry' %}">Browse</a></li>
+                                <li><a href="{% url 'comparer' %}">Compare</a></li>
+                                <li><a href="{% url 'exporter' %}">Export</a></li>
+                            </ul>
+                        </li>
+                        <li class="{% block nav_help_class %}{% endblock %}">
+                            <a href="{% url 'ocasi_help' %}">
+                                Help
+                                {% block nav_help_sr_class %}{% endblock %}
+                            </a>
+                        </li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
