@@ -1,0 +1,42 @@
+{% extends "sis_sites/ocasi/base.html" %}
+
+{% block nav_data_portal_class %}active{% endblock %}
+{% block nav_data_portal_sr_class %} <span class="sr-only">(current)</span>{% endblock %}
+
+{% block content %}
+
+<ol class="breadcrumb">
+  <li ><a href="{% url 'ocasi_home' %}">Home</a></li>
+  <li class="active">Community data portal</li>
+</ol>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="title-box">
+            <img class="title-box_icon" src="https://logicaloutcomes.github.io/ocasi-theme/img/icons/user.png" alt="Data portal">
+            <h1 class="title-box_title">Community data portal</h1>
+            <p class="title-box_description">
+                How do immigrants compare with the local community? 
+            </p>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2 class="section-title">Who are you interested in?</h2>
+        <p>
+            Default is for the whole population of Ontario. These tables are based on the 2011 National Household Survey. For information see [link].
+        </p>
+
+        <div class="embed-responsive embed-responsive-16by9 embed-responsive-full">
+            <iframe class="embed-responsive-item" src="https://app.powerbi.com/view?r=eyJrIjoiNjNiM2E2Y2YtYjg1YS00Mzc3LTliN2EtYTAzMzg5MTI5ODhlIiwidCI6IjMzZWI5ODkzLWUyYWUtNGI2ZC1hNGJiLTYyYjliZDc3MzJkYiJ9" frameborder="0" allowFullScreen="true"></iframe>
+        </div>
+
+        <hr>
+    </div>
+</div>
+
+{% endblock %}

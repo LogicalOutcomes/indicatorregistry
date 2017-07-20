@@ -1,0 +1,52 @@
+{% extends "sis_sites/ocasi/base.html" %}
+
+{% block nav_help_class %}active{% endblock %}
+{% block nav_help_sr_class %} <span class="sr-only">(current)</span>{% endblock %}
+
+{% block content %}
+
+<ol class="breadcrumb">
+  <li ><a href="{% url 'ocasi_home' %}">Home</a></li>
+  <li class="active">Help</li>
+</ol>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="title-box">
+            <img class="title-box_icon" src="https://logicaloutcomes.github.io/ocasi-theme/img/icons/network.png" alt="Help">
+            <h1 class="title-box_title">Get Started with SIS</h1>
+            <p class="title-box_description">
+                The <b>Service Information System</b> or <b>Système d'Information de Service (SIS)</b>, is a new initiative funded by the Ontario Ministry of Citizenship and Immigration (MCI), spear-headed by the Ontario Council of Agencies Serving Immigrants (OCASI) and developed in partnership with LogicalOutcomes, a Canadian non-profit organization. <br><br>
+                SIS is an evaluation platform, expected to improve the effectiveness of services provided to immigrants and refugees and dramatically reduce the costs and data collection burden of monitoring and evaluation across the sector. Learn <a href="{% url 'ocasi_about' %}">more About SIS</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="row">
+    <div class="col-md-12">
+
+        <h3>Introduction to The Community Data Portal</h3>
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/OCWj5xgu5Ng"></iframe>
+        </div>
+        <br><br>
+
+        <h3>Introduction to The Indicator Registry</h3>
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/OCWj5xgu5Ng"></iframe>
+        </div>
+        <br><br>
+
+        <h3>Introduction to Evaluation Services</h3>
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/OCWj5xgu5Ng"></iframe>
+        </div>
+        <br><br>
+
+    </div>
+</div>
+
+{% endblock %}
