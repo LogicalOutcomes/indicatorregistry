@@ -60,11 +60,17 @@
                                 <li><a href="{% url 'ocasi_data_portal' %}#other">Other</a></li>
                             </ul>
                         </li>
-                        <li class="{% block nav_evaluation_class %}{% endblock %}">
-                            <a href="{% url 'ocasi_evaluation' %}">
-                                Evaluation
+                        <li class="dropdown {% block nav_evaluation_class %}{% endblock %}">
+                            <a href="{% url 'ocasi_evaluation' %}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                Evaluation <span class="caret"></span>
                                 {% block nav_evaluation_sr_class %}{% endblock %}
                             </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{% url 'ocasi_evaluation' %}">Main</a></li>
+                                <li><a href="{% url 'ocasi_evaluation' %}#logic-model">Logic Model</a></li>
+                                <li><a href="{% url 'ocasi_evaluation' %}#evaluation-plan">Evaluation Plan</a></li>
+                                <li><a href="{% url 'ocasi_evaluation' %}#DMP">Data Management Plan</a></li>
+                            </ul>
                         </li>
                         <li class="dropdown {% block nav_registry_class %}{% endblock %}">
                             <a href="{% url 'ocasi_registry' %}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Registry<span class="caret"></span>
