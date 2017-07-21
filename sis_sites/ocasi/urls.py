@@ -7,7 +7,6 @@ urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='sis_sites/ocasi/home.html'), name="ocasi_home"),
     url(r'^evaluation/$', TemplateView.as_view(template_name='sis_sites/ocasi/evaluation.html'), name="ocasi_evaluation"),
     url(r'^help/$', TemplateView.as_view(template_name='sis_sites/ocasi/help.html'), name="ocasi_help"),
-    url(r'^about/$', TemplateView.as_view(template_name='sis_sites/ocasi/about.html'), name="ocasi_about"),
     url(r'^data-portal/$', TemplateView.as_view(template_name='sis_sites/ocasi/data_portal.html'), name="ocasi_data_portal"),
 
     url(r'^registry/$', BrowseRegistry.as_view(), name="ocasi_registry"),

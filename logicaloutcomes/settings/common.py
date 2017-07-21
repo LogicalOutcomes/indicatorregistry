@@ -57,12 +57,20 @@ INSTALLED_APPS = (
     'comet',
     'mallard_qr',
     'django_celery_results',
+    # Static pages
+    'django.contrib.sites',
+    'django.contrib.flatpages',
+    'pagedown',
+    'markdown_deux',
     # 'aristotle_ddi_utils', # Download formats in the DDI3.2 XML format - https://github.com/aristotle-mdr/aristotle-ddi-utils
     #'aristotle_dse', # Additional models for describing datasets - https://github.com/aristotle-mdr/aristotle-dataset-extensions
     #'aristotle_glossary', # Model for managing and inserting glossary content - https://github.com/aristotle-mdr/aristotle-glossary
     #'aristotle_mdr_api', # JSON API for programmatic access to content
     #'rest_framework', # Needed for the above
 ) + INSTALLED_APPS # Installs the required apps to run aristotle.
+
+# Use domain to detect site
+SITE_ID = None
 
 ROOT_URLCONF = 'logicaloutcomes.urls'
 
@@ -91,6 +99,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'aristotle_mdr.contrib.redirect.middleware.RedirectMiddleware',
     'sis_sites.middleware.SISSitesMiddleware',
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
 
 # Internationalization
