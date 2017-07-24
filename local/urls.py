@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.conf.urls import url
 from django.views.generic import TemplateView
 
@@ -9,3 +10,11 @@ urlpatterns = [
     url(r'^terms_of_use/?$', TemplateView.as_view(template_name='static/terms_of_use.html'), name="terms_of_use"),
     url(r'^privacy/?$', TemplateView.as_view(template_name='static/privacy.html'), name="privacy"),
 ]
+
+if settings.DEBUG:
+    from .views import *
+
+    urlpatterns += [
+        url(r'^500/$', handler500),
+        url(r'^404/$', handler404),
+    ]

@@ -7,7 +7,7 @@
 
 <ol class="breadcrumb">
   <li ><a href="{% url 'ocasi_home' %}">Home</a></li>
-  <li class="active">Evaluation</li>
+  <li class="active">Evaluation tools</li>
 </ol>
 
 <div class="row">
@@ -31,12 +31,12 @@
         <hr>
 
         <div class="section-box">
-            <a href="#">
+            <a href="{% url 'ocasi_create_logic_model' %}">
                 <img class="section-box_icon" src="https://logicaloutcomes.github.io/ocasi-theme/img/icons/redes.png" alt="Logic Model">
             </a>
 
             <div class="section-box_content">
-                <a href="#">
+                <a href="{% url 'ocasi_create_logic_model' %}">
                     <h3 class="section-box_content_title">Create a logic model or theory of change</h3>
                 </a>
                 <p class="section-box_content_description">This is the first step in creating an evaluation plan. We have created a generic model for services to immigrants and refugees so you don’t have to start from scratch.</p>
