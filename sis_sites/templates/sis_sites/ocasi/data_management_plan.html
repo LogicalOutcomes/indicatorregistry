@@ -1,0 +1,28 @@
+{% extends "sis_sites/ocasi/base.html" %}
+
+{% block nav_evaluation_class %}active{% endblock %}
+{% block nav_evaluation_sr_class %} <span class="sr-only">(current)</span>{% endblock %}
+
+{% block content %}
+
+<ol class="breadcrumb">
+  <li ><a href="{% url 'ocasi_home' %}">Home</a></li>
+  <li><a href="{% url 'ocasi_evaluation' %}">Evaluation tools</a></li>
+  <li class="active">Develop a Data Management Plan</li>
+</ol>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="title-box">
+            <img class="title-box_icon" src="https://logicaloutcomes.github.io/ocasi-theme/img/icons/cardiograma.png" alt="Data Management Plan">
+            <h1 class="title-box_title">Data Management Plan</h1>
+            <p class="title-box_description">
+                Each evaluation project should have a Data Management Plan (DMP) that describes how the agency will manage and protect research data. DMPs are often required for research ethics approval.  Even though evaluations of agency services are generally not regarded as formal resarch projects, SIS aims to follow good research practices for the protection of client data. Data Management Plans are part of that.<br>
+                <br>
+                We are using, with permission, the DMP Assistant from the Canadian Portage Research Network, which is available in French and English.  In the next couple of months, LogicalOutcomes will provide a generic DMP for SIS data that agencies can customize for their own use. In the meantime, you can create your own DMP at <a href="https://assistant.portagenetwork.ca/">https://assistant.portagenetwork.ca/</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
