@@ -3,8 +3,7 @@
 {% block nav_data_portal_class %}active{% endblock %}
 {% block nav_data_portal_sr_class %} <span class="sr-only">(current)</span>{% endblock %}
 
-{% block pre_content %}
-<div class="container">
+{% block content %}
 
     <ol class="breadcrumb">
       <li ><a href="{% url 'ocasi_home' %}">Home</a></li>
@@ -34,14 +33,11 @@
         </div>
     </div>
 
-</div>
-<div class="container-fluid">
 
-        <div class="embed-responsive embed-responsive-16by9 embed-responsive-full">
-            <iframe class="embed-responsive-item" src="https://app.powerbi.com/view?r=eyJrIjoiNjNiM2E2Y2YtYjg1YS00Mzc3LTliN2EtYTAzMzg5MTI5ODhlIiwidCI6IjMzZWI5ODkzLWUyYWUtNGI2ZC1hNGJiLTYyYjliZDc3MzJkYiJ9" frameborder="0" allowFullScreen="true"></iframe>
-        </div>
+    <div class="embed-responsive embed-responsive-16by9 embed-responsive-full">
+        <iframe class="embed-responsive-item" src="https://app.powerbi.com/view?r=eyJrIjoiNjNiM2E2Y2YtYjg1YS00Mzc3LTliN2EtYTAzMzg5MTI5ODhlIiwidCI6IjMzZWI5ODkzLWUyYWUtNGI2ZC1hNGJiLTYyYjliZDc3MzJkYiJ9" frameborder="0" allowFullScreen="true"></iframe>
+    </div>
 
-        <hr>
-</div>
+    <hr>
 
 {% endblock %}
