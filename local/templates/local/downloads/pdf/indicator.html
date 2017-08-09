@@ -1,0 +1,44 @@
+{% extends 'aristotle_mdr/downloads/pdf/pdf.html' %}
+{% load aristotle_tags aristotle_help slot_tags %}
+
+{% block title %}{{ item.name }}{% endblock %}
+{% block content %}
+<section>
+    <header>
+    <h1 id="objectTitle">
+        {{ item.name }}
+        <span>({{ item.get_verbose_name }})
+        </span>
+    </h1>
+</header>
+<div class="definition">
+    {{ item.definition | safe }}
+</div>
+
+
+<div class="objectSpecific">
+    {% with item|slots_by_type:'Method of measurement' as slots %}
+        {% if slots %}
+            <h3>Method of measurement</h3>
+            {% for slot in slots %}
+                <p>{{slot.value}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    {# TODO: separate in new template: #}
+    {% with item|slots_by_type:'Reference' as slots %}
+        {% if slots %}
+            <h3>Reference</h3>
+            {% for slot in slots %}
+                <p>{{slot.value}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</div>
+
+
+</section>
+
+{% endblock %}
+
