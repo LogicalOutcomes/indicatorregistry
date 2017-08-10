@@ -1,0 +1,32 @@
+<b>
+    {{ item.name }}
+</b>
+<p style="text-align:center;">
+    {% include "aristotle_mdr/helpers/itemLink.html" with item=item.valueDomain %}
+</p>
+
+{% if item.valueDomain.permissibleValues.count > 0 %}
+    <table class="codeList table table-striped">
+        <thead>
+            <tr>
+                <th align="right" style="padding-right:5px">Value</th>
+                <th align="left" style="padding-left:5px">Meaning</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for perm in item.valueDomain.permissibleValues.all %}
+            <tr>
+                <td align="right" style="padding-right:5px">{{ perm.value }}</td>
+                <td style="padding-left:5px">{{ perm.meaning }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+<br>
+{% endif %}
+
+{% comment %}
+
+{% include "aristotle_mdr/downloads/pdf/inline/valueDomainRepresentation.html" with item=item.valueDomain %}
+
+{% endcomment %}

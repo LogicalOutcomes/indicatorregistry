@@ -1,5 +1,5 @@
 {% extends 'aristotle_mdr/downloads/pdf/pdf.html' %}
-{% load aristotle_tags aristotle_help slot_tags %}
+{% load aristotle_tags aristotle_help %}
 
 {% block title %}{{ item.name }}{% endblock %}
 {% block content %}
@@ -12,31 +12,29 @@
     </h1>
 </header>
 <div class="definition">
-    {{ item.definition | safe }}
+    {{ item.definition|safe }}
 </div>
 
 
 <div class="objectSpecific">
-    {% with item|slots_by_type:'Method of measurement' as slots %}
-        {% if slots %}
-            <h3>Method of measurement</h3>
-            {% for slot in slots %}
-                <p>{{slot.value}}</p>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
-
-    {# TODO: separate in new template: #}
-    {% with item|slots_by_type:'Reference' as slots %}
-        {% if slots %}
-            <h3>Reference</h3>
-            {% for slot in slots %}
-                <p>{{slot.value}}</p>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
+    {% include "local/downloads/pdf/slot_simple_display.html" with name='Method of measurement' %}
+    {% include "local/downloads/pdf/property_simple_display.html" with name='References' prop=item.references %}
+    {% include "local/downloads/pdf/property_simple_display.html" with name='Rationale' prop=item.rationale %}
+    {% include "local/downloads/pdf/slot_simple_display.html" with name='Sustainable development goals'  display='inline' %}
+    {% include "local/downloads/pdf/slot_simple_display.html" with name='Outcomes' display='inline' %}
 </div>
 
+<div class="objectSpecific">
+    <h2>Numerators</h2>
+    {% for data_element in item.numerators.all %}
+        {% include "local/downloads/pdf/data_element_simple_display.html" with item=data_element %}
+    {% endfor %}
+
+    <h2>Denominators</h2>
+    {% for data_element in item.denominators.all %}
+        {% include "local/downloads/pdf/data_element_simple_display.html" with item=data_element %}
+    {% endfor %}
+</div>
 
 </section>
 
