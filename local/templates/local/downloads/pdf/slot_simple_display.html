@@ -1,10 +1,12 @@
 {% load aristotle_tags slot_tags %}
 {% comment %}
-Usage: {% include "local/downloads/pdf/slot_simple_display.html" with item=obj name='Reference' display='inline' %}
+Usage: {% include "local/downloads/pdf/slot_simple_display.html" with item=obj name='Reference' display='inline' hide_title=True %}
 {% endcomment %}
 {% with item|slots_by_type:name as slots %}
     {% if slots %}
-        <h3>{{ name }}</h3>
+        {% if not hide_title %}
+            <h3>{{ name }}</h3>
+        {% endif %}
         {% for slot in slots %}
             {% if display == 'inline' %}
                 {{slot.value|safe}}{% if not forloop.last %},{% endif %}

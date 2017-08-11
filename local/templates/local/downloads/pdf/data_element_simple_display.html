@@ -1,10 +1,16 @@
-<b>
-    {{ item.name }}
-</b>
-<p style="text-align:center;">
-    {% include "aristotle_mdr/helpers/itemLink.html" with item=item.valueDomain %}
+<p>
+    <b>
+        {% include "local/downloads/pdf/slot_simple_display.html" with name='Form name' hide_title=True%}
+    </b>
+    <span style="font-size: 8pt;">
+        ({{item.valueDomain}})
+        {% comment %}
+            {% include "aristotle_mdr/helpers/itemLink.html" with item=item.valueDomain %}
+        {% endcomment %}
+    </span>
 </p>
 
+{% comment %}
 {% if item.valueDomain.permissibleValues.count > 0 %}
     <table class="codeList table table-striped">
         <thead>
@@ -25,7 +31,6 @@
 <br>
 {% endif %}
 
-{% comment %}
 
 {% include "aristotle_mdr/downloads/pdf/inline/valueDomainRepresentation.html" with item=item.valueDomain %}
 
