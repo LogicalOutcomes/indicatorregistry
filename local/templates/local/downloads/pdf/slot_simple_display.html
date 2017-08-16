@@ -1,4 +1,4 @@
-{% load aristotle_tags slot_tags %}
+{% load aristotle_tags slot_tags markdown_deux_tags %}
 {% comment %}
 Usage: {% include "local/downloads/pdf/slot_simple_display.html" with item=obj name='Reference' display='inline' hide_title=True %}
 {% endcomment %}
@@ -9,9 +9,9 @@ Usage: {% include "local/downloads/pdf/slot_simple_display.html" with item=obj n
         {% endif %}
         {% for slot in slots %}
             {% if display == 'inline' %}
-                {{slot.value|safe}}{% if not forloop.last %},{% endif %}
+                {{slot.value}}{% if not forloop.last %},{% endif %}
             {% else %}
-                {{slot.value|safe}} <br>
+                {{slot.value|markdown}}
             {% endif %}
         {% endfor %}
     {% endif %}

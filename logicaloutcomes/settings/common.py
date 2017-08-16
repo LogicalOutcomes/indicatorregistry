@@ -112,7 +112,7 @@ USE_TZ = True
 
 #Aristotle settings are below, settings these gives the ability to personalise this particular installation.
 ARISTOTLE_SETTINGS.update({
-    'SITE_NAME': 'Logical Outcomes Indicator Register', # 'The main title for the site.'
+    'SITE_NAME': 'LogicalOutcomes Indicator Registry', # 'The main title for the site.'
     'SITE_BRAND': '/static/img/logicaloutcomes.png', # URL for the Site-wide logo
     'SITE_INTRO': 'Search for financial literacy indicators below...', # 'Intro text use on the home page as a prompt for users.'
     'SITE_DESCRIPTION': 'About this site', # 'The main title for the site.'
