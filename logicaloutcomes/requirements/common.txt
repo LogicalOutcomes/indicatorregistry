@@ -34,3 +34,6 @@ django-markdown-deux==1.0.5
 
 # Fix for Search by forcing package versions:
 django-bootstrap3-datetimepicker-2~=2.4.2
+
+# Fix for development see https://github.com/django/channels/issues/696
+channels==1.1.5
