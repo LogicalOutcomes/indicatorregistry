@@ -1,0 +1,38 @@
+{% extends "sis_sites/ocasi/base.html" %}
+{% load markdown_deux_tags %}
+
+{% block nav_help_class %}active{% endblock %}
+{% block nav_help_sr_class %} <span class="sr-only">(current)</span>{% endblock %}
+
+{% block content %}
+
+<ol class="breadcrumb">
+  <li ><a href="{% url 'ocasi_home' %}">Home</a></li>
+  <li class="active">Help</li>
+</ol>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="title-box">
+            <img class="title-box_icon" src="https://logicaloutcomes.github.io/ocasi-theme/img/icons/network.png" alt="Help">
+            <h1 class="title-box_title">{{ flatpage.title }}</h1>
+            <div class="title-box_description">
+                {{ flatpage.content|markdown }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="row">
+    <div class="col-md-12">
+
+    {% for content_block in flatpage.contentblock_set.all %}
+        {{ content_block.render|safe }}
+    {% endfor %}
+
+    </div>
+</div>
+
+{% endblock %}

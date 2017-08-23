@@ -5,7 +5,20 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 from pagedown.widgets import AdminPagedownWidget
+from .models import Snippet, ContentBlock
 
+
+@admin.register(Snippet)
+class SnippetAdmin(admin.ModelAdmin):
+    list_display = ['name']
+
+
+class ContentBlockInline(admin.StackedInline):
+    model = ContentBlock
+    extra = 1
+    formfield_overrides = {
+        models.TextField: {'widget': AdminPagedownWidget},
+    }
 
 # Define a new FlatPageAdmin
 class FlatPageAdmin(FlatPageAdmin):
@@ -14,8 +27,8 @@ class FlatPageAdmin(FlatPageAdmin):
         (_('Advanced options'), {
             'classes': ('collapse', ),
             'fields': (
-                'enable_comments',
-                'registration_required',
+                # 'enable_comments',
+                # 'registration_required',
                 'template_name',
             ),
         }),
@@ -23,6 +36,7 @@ class FlatPageAdmin(FlatPageAdmin):
     formfield_overrides = {
         models.TextField: {'widget': AdminPagedownWidget},
     }
+    inlines = [ContentBlockInline]
 
 
 # Re-register FlatPageAdmin
