@@ -3,43 +3,7 @@
 
 {% block title %}{{ item.name }}{% endblock %}
 {% block content %}
-<section>
-    <header>
-    <h1 id="objectTitle">
-        {{ item.name }}
-        <span>({{ item.get_verbose_name }})
-        </span>
-    </h1>
-</header>
-<div class="definition">
-    {{ item.definition|safe }}
-</div>
-
-
-<div class="objectSpecific">
-    {% include "local/downloads/pdf/slot_simple_display.html" with name='Method of measurement' %}
-    {% include "local/downloads/pdf/slot_simple_display.html" with name='Form instructions' %}
-    {% if item.numerators.all %}
-        <h2>Questions</h2>
-        {% for data_element in item.numerators.all %}
-            {% include "local/downloads/pdf/data_element_simple_display.html" with item=data_element %}
-        {% endfor %}
-    {% endif %}
-
-    {% if item.denominators.all %}
-        <h2>Denominators</h2>
-        {% for data_element in item.denominators.all %}
-            {% include "local/downloads/pdf/data_element_simple_display.html" with item=data_element %}
-        {% endfor %}
-    {% endif %}
-    <hr>
-    {% include "local/downloads/pdf/property_simple_display.html" with name='References' prop=item.references %}
-    {% include "local/downloads/pdf/property_simple_display.html" with name='Rationale' prop=item.rationale %}
-    {% include "local/downloads/pdf/slot_simple_display.html" with name='Outcomes' display='inline' %}
-</div>
-
-
-</section>
+{% include "local/downloads/pdf/indicator_content.html" %}
 
 {% endblock %}
 

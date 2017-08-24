@@ -10,17 +10,18 @@
                 font-size:11pt;
             }
             h1 {
-                border-top:1px solid black;
                 border-bottom:1px solid black;
                 padding:5px;
             }
             h2 {
-                border-top:1px solid darkgray;
-                border-left:1px solid darkgray;
                 padding:5px;
+                -pdf-outline: false;
+            }
+            h3 {
+                -pdf-outline: false;
             }
             #footerContent, #footerContent * {
-                font-size:10pt;
+                font-size:8pt;
             }
             #supersedes {
                 list-style-type:none;
@@ -94,23 +95,13 @@
    </head>
    <body>
    <div id="main">
-           <div style="page-break-after:always;">
-                <strong>{{ title }}
-                </strong>
-                {% if subtitle %}
-                <p>
-                    {{subtitle}}
-                </p>
-                {% endif %}
-           </div>
-           <div style="page-break-after:always;">
-               <h1>Table of contents</h1>
-               <pdf:toc />
-           </div>
+       <div style="page-break-after:always;">
+           <h1 style="-pdf-outline: false;">Table of contents</h1>
+           <pdf:toc />
+       </div>
 
        <div id='content'>
             {% for t,dict in included_items %}
-            <h1>{{t.get_verbose_name_plural}}</h1>
                 {% with object=dict.help %}
                     {% if object %}
                     <p>
@@ -124,7 +115,7 @@
                 {% endwith %}
                 {% for item in dict.qs.all %}
                     <div style="page-break-after:always;">
-                        {% include 'local/downloads/pdf/indicator.html' with item=item.item %}
+                        {% include "local/downloads/pdf/indicator_content.html" with item=item.item %}
                     </div>
                 {% endfor %}
             {% endfor %}

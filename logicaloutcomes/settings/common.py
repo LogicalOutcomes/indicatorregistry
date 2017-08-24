@@ -134,7 +134,7 @@ ARISTOTLE_SETTINGS.update({
         'move_workgroup': 'aristotle_mdr.forms.bulk_actions.ChangeWorkgroupForm',
         'request_review': 'aristotle_mdr.forms.bulk_actions.RequestReviewForm',
         'bulk_download': 'aristotle_mdr.forms.bulk_actions.BulkDownloadForm',
-        'export': 'indicators.forms.QuickPDFExportDownloadForm',
+        # 'export': 'indicators.forms.QuickPDFExportDownloadForm',
         'compare': 'indicators.forms.CompareRedirectBulkActionForm',
     },
 })
