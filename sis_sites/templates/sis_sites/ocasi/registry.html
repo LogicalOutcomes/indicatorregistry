@@ -6,11 +6,36 @@
 {% block nav_registry_sr_class %} <span class="sr-only">(current)</span>{% endblock %}
 
 {% block content %}
-<ol class="breadcrumb">
-    <li><a href="/">Home</a></li>
-    <li class="active">Registry</li>
-    <li class="active">Browse {{ model.get_verbose_name_plural }}</li>
-</ol>
+<div class="row">
+
+    <div class="col-sm-8 col-lg-9">
+        <ol class="breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li class="active">Registry</li>
+            <li class="active">Browse {{ model.get_verbose_name_plural }}</li>
+        </ol>
+    </div>
+
+    <div class="col-sm-4 col-lg-3">
+        <div class="pull-right">
+            <form id="quickSearch" action="{% url 'aristotle:search' %}" method="get"
+            class="" role="search">
+                <label style="display:none;" for="searchText">Search:</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="searchText" name="q" accesskey="q"
+                    placeholder="Search the registry"></input>
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" type="submit" title="{% trans 'Search' %}">
+                            <i class="fa fa-search"></i>&nbsp;
+                        </button>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
 
 <div class="row">
     <div class="col-md-12">
