@@ -81,6 +81,7 @@
                                 <li><a href="{% url 'ocasi_create_logic_model' %}">Logic Model</a></li>
                                 <li><a href="{% url 'ocasi_evaluation_plan' %}">Evaluation Plan</a></li>
                                 <li><a href="{% url 'ocasi_data_management_plan' %}">Data Management Plan</a></li>
+                                <li><a href="{% url 'ocasi_review_data_collection_tools' %}">Review data collection tools</a></li>
                             </ul>
                         </li>
                         <li class="dropdown {% block nav_registry_class %}{% endblock %}">
@@ -102,7 +103,12 @@
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="{% url 'aristotle:userFavourites' %}">My Workspace</a></li>
+                        <li class="{% block nav_my_workspace_class %}{% endblock %}">
+                            <a href="{% url 'ocasi_my_workspace' %}">
+                                My Workspace
+                                {% block nav_my_workspace_sr_class %}{% endblock %}
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->

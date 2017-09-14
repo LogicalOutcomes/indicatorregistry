@@ -1,0 +1,72 @@
+{% extends "sis_sites/ocasi/base.html" %}
+
+{% block nav_evaluation_class %}active{% endblock %}
+{% block nav_evaluation_sr_class %} <span class="sr-only">(current)</span>{% endblock %}
+
+{% block content %}
+
+<ol class="breadcrumb">
+  <li ><a href="{% url 'ocasi_home' %}">Home</a></li>
+  <li><a href="{% url 'ocasi_evaluation' %}">Evaluation tools</a></li>
+  <li class="active">Review data collection tools</li>
+</ol>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="title-box">
+            <img class="title-box_icon" src="https://logicaloutcomes.github.io/ocasi-theme/img/icons/cardiograma.png" alt="Evaluation Plan">
+            <h1 class="title-box_title">Review data collection tools</h1>
+            <p class="title-box_description">
+            This list shows all the possible indicators and data collection tools in the OCASI collection. <br>
+            <br>
+            To select indicators and measures, fill out the surveys and send the results to yourself. If you want to add more, [contact name or go to form or FAQs]. <br>
+            <br>
+            <h4>Questions about programs and organizations</h4>
+
+            <ul>
+                <li>
+                    <a href="http://logicaloutcomes.net/forms/index.php/831915?lang=en">
+                    Surveys about management and team effectiveness, to be filled out by individual staff
+                    </a>
+                </li>
+                <li>
+                    <a href="http://logicaloutcomes.net/forms/index.php/418135?lang=en">
+                    Program-level self-assessment tools, to be filled out by program managers
+                    </a>
+                </li>
+                <li>
+                    <a href="http://logicaloutcomes.net/forms/index.php/126932?lang=en">
+                    Organization-level tools, to be filled out by senior managers
+                    </a>
+                </li>
+            </ul>
+
+
+            <h4>Questions about clients and participants</h4>
+
+            <ul>
+                <li>
+                    <a href="http://logicaloutcomes.net/forms/index.php/328545?lang=en">
+                    Client demographics
+                    </a>
+                </li>
+                <li>
+                    <a href="http://logicaloutcomes.net/forms/index.php/848161?lang=en">
+                    Surveys or interview questions, to be answered by clients or participants
+                    </a>
+                </li>
+                <li>
+                    <a href="http://logicaloutcomes.net/forms/index.php/479282?lang=en">
+                    Observations and progress notes, to be filled out by staff
+                    </a>
+                </li>
+            </ul>
+
+            If you want to review indicators at the community level, go to the data portal.
+
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

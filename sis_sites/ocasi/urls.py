@@ -12,8 +12,10 @@ urlpatterns = [
     url(r'^evaluation/create-logic-model/$', TemplateView.as_view(template_name='sis_sites/ocasi/create_logic_model.html'), name="ocasi_create_logic_model"),
     url(r'^evaluation/design-evaluation-plan/$', TemplateView.as_view(template_name='sis_sites/ocasi/evaluation_plan.html'), name="ocasi_evaluation_plan"),
     url(r'^evaluation/develop-data-management-plan/$', TemplateView.as_view(template_name='sis_sites/ocasi/data_management_plan.html'), name="ocasi_data_management_plan"),
+    url(r'^evaluation/review-data-collection-tools/$', TemplateView.as_view(template_name='sis_sites/ocasi/review_data_collection_tools.html'), name="ocasi_review_data_collection_tools"),
 
     url(r'^registry/$', BrowseRegistry.as_view(), name="ocasi_registry"),
+    url(r'^my-workspace/$', TemplateView.as_view(template_name='sis_sites/ocasi/my_workspace.html'), name="ocasi_my_workspace"),
 
     url(r'^', include('logicaloutcomes.urls')),
 ]
