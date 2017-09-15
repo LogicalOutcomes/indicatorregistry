@@ -1,1 +1,1 @@
-./manage.py test indicators --settings=logicaloutcomes.settings.test
+./manage.py test --settings=logicaloutcomes.settings.test
