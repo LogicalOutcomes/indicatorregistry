@@ -1,3 +1,4 @@
 ipython
 ipdb
 django-debug-toolbar
+pip install html5lib==1.0b8
