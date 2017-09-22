@@ -19,24 +19,119 @@
             <img class="title-box_icon" src="https://logicaloutcomes.github.io/ocasi-theme/img/icons/redes.png" alt="Logic Model">
             <h1 class="title-box_title">Create a logic model or theory of change</h1>
             <p class="title-box_description">
-                We have created a generic logic model for Canadian agencies serving immigrants and refugees. Agencies can select their own indicators and customize their logic model for their specific programs based on the general framework below.  Watch the video tutorial for details.
-
+                We have created a generic logic model for Canadian agencies serving immigrants and refugees. Agencies can select their own indicators and customize their logic model for their specific programs based on the general framework below. <br>
+                <br>
                 You can create your own logic model two ways:
             </p>
             <ul class="title-box_description">
                 <li>
-                    You can click on each link below, which will take you to the indicator registry. You can select relevant indicators and export them into pdf or csv.
+                    Click on each link below, which will take you to the indicator registry.
                 </li>
                 <li>
-                    Or, you can <a href="#">sign up for an account</a> and create your own workspace. Then you can select and save indicators within the registry.
+                    Select relevant indicators and export them into pdf or csv.
                 </li>
             </ul>
+            <p>In the future, you’ll be able to sign up for an account and create your own workspace to select and save indicators within the registry.</p>
         </div>
     </div>
 
 </div>
 
 <div class="row">
+
+    <div class="col-sm-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Inputs
+            </div>
+            <div class="panel-body">
+                <a href="{% url 'ocasi_registry' %}?col=OCASI&sdom=Program+design">
+                    Program design
+                </a>
+                <br>
+                <br>
+                <a href="{% url 'ocasi_registry' %}?col=OCASI&sdom=Organizational+capacity">
+                    Organizational capacity
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Activities and processes
+            </div>
+            <div class="panel-body">
+                <a href="{% url 'ocasi_registry' %}?col=OCASI&sdom=Program+activities">
+                    Number and type of program activities compared to targets
+                </a>
+                <br>
+                <br>
+                <a href="{% url 'ocasi_registry' %}?col=OCASI&sdom=Program+quality">
+                    Program quality
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Reach and experience
+            </div>
+            <div class="panel-body">
+                <a href="{% url 'ocasi_registry' %}?col=OCASI&sdom=Participants+reached">
+                    Number and type of participants reached compared to targets
+                </a>
+                <br>
+                <br>
+                <a href="{% url 'ocasi_registry' %}?col=OCASI&sdom=Participant+experience">
+                    Participant experience
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Outcomes
+            </div>
+            <div class="panel-body">
+                <a href="{% url 'ocasi_registry' %}?col=OCASI&sdom=Income">
+                    Income
+                </a><br>
+                <br>
+                <a href="{% url 'ocasi_registry' %}?col=OCASI&sdom=Employment">
+                    Employment
+                </a><br>
+                <br>
+                <a href="{% url 'ocasi_registry' %}?col=OCASI&sdom=Health+and+well-being">
+                    Health and wellbeing
+                </a><br>
+                <br>
+                <a href="{% url 'ocasi_registry' %}?col=OCASI&sdom=Housing">
+                    Housing
+                </a><br>
+                <br>
+                <a href="{% url 'ocasi_registry' %}?col=OCASI&sdom=Education+and+training">
+                    Education and training
+                </a><br>
+                <br>
+                <a href="{% url 'ocasi_registry' %}?col=OCASI&sdom=Social+inclusion">
+                    Social inclusion
+                </a><br>
+                <br>
+                <a href="{% url 'ocasi_registry' %}?col=OCASI&sdom=Access+to+services">
+                    Access to services
+                </a>
+            </div>
+        </div>
+    </div>
+
+{% comment %}
+
     <div class="col-sm-12">
         <br>
 
@@ -113,6 +208,7 @@
         </table>
 
     </div>
+{% endcomment %}
 </div>
 
 {% endblock %}
