@@ -3,5 +3,5 @@ Usage: {% include "local/downloads/pdf/property_simple_display.html" with item=o
 {% endcomment %}
 {% if prop %}
     <h3>{{ name }}</h3>
-    <p>{{ prop }}</p>
+    <p>{{ prop|safe }}</p>
 {% endif %}
