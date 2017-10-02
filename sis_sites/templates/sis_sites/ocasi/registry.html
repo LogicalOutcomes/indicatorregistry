@@ -1,6 +1,5 @@
 {% extends "aristotle_mdr/base.html" %}
-{% load i18n aristotle_tags aristotle_help logicaltags %}
-
+{% load i18n aristotle_tags aristotle_help logicaltags markdown_deux_tags %}
 
 {% block nav_registry_class %}active{% endblock %}
 {% block nav_registry_sr_class %} <span class="sr-only">(current)</span>{% endblock %}
@@ -42,11 +41,13 @@
 <div class="row">
     <div class="col-md-12">
         <div class="title-box">
-            <img class="title-box_icon" src="https://logicaloutcomes.github.io/ocasi-theme/img/icons/reunion.png" alt="Data portal">
-            <h1 class="title-box_title">Indicator registry</h1>
-            <p class="title-box_description">
-                This registry contains indicators for OCASI's Service Information System. It focuses on immigrant and refugee services, but it includes indicators and instruments from many other sectors too. To create your own workspace and collect indicators, <a href="/ocasi/help/">get started with SIS</a>
-            </p>
+                <img class="title-box_icon" src="https://logicaloutcomes.github.io/ocasi-theme/img/icons/reunion.png" alt="Data portal">
+                <h1 class="title-box_title">
+                    {{ flatpage.title }}
+                </h1>
+                <p class="title-box_description">
+                    {{ flatpage.content|markdown }}
+                </p>
         </div>
     </div>
 </div>

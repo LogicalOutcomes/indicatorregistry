@@ -102,6 +102,11 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
 
+# ADD Context Processors
+TEMPLATES[0]['OPTIONS']['context_processors'] += [
+    'sis_sites.context_processors.flatpages'
+]
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 LANGUAGE_CODE = 'en-us'
