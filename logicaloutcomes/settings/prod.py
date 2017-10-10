@@ -58,10 +58,10 @@ LOGGING = {
             'class': 'django.utils.log.AdminEmailHandler'
         },
         'applogfile': {
-            'level': 'DEBUG',
+            'level': 'INFO',
             'class': 'logging.handlers.RotatingFileHandler',
             'filename': join(BASE_DIR, '../../logs/indicatorregistry.log'),
-            'maxBytes': 1024 * 1024 * 50,  # 50MB
+            'maxBytes': 1024 * 1024 * 500,  # 50MB
             'backupCount': 5,
             'formatter': 'simple',
         },
