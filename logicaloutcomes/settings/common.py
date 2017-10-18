@@ -62,6 +62,7 @@ INSTALLED_APPS = (
     'django.contrib.flatpages',
     'pagedown',
     'markdown_deux',
+    'import_export',
     # 'aristotle_ddi_utils', # Download formats in the DDI3.2 XML format - https://github.com/aristotle-mdr/aristotle-ddi-utils
     #'aristotle_dse', # Additional models for describing datasets - https://github.com/aristotle-mdr/aristotle-dataset-extensions
     #'aristotle_glossary', # Model for managing and inserting glossary content - https://github.com/aristotle-mdr/aristotle-glossary
