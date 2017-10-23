@@ -67,20 +67,11 @@
                             {% block nav_data_portal_sr_class %}{% endblock %}
                             </a>
                         </li>
-                        <li class="dropdown {% block nav_evaluation_class %}{% endblock %}">
-                            <a href="{% url 'ocasi_evaluation' %}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                Evaluation <span class="caret"></span>
+                        <li class="{% block nav_evaluation_class %}{% endblock %}">
+                            <a href="{% url 'ocasi_evaluation' %}">
+                                Evaluation
                                 {% block nav_evaluation_sr_class %}{% endblock %}
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="{% url 'ocasi_evaluation' %}">Main</a></li>
-                                <li><a href="{% url 'ocasi_create_logic_model' %}">Logic Model</a></li>
-                                <li><a href="{% url 'ocasi_evaluation_plan' %}">Evaluation Plan</a></li>
-                                <li><a href="{% url 'ocasi_data_management_plan' %}">Data Management Plan</a></li>
-                                <li><a href="{% url 'ocasi_review_data_collection_tools' %}">Review data collection tools</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="https://demo.ocasi.sis.ngo/dhis-web-commons/security/login.action#/" target="_blank">Reports and Dashboards</a></li>
-                            </ul>
                         </li>
                         <li class="{% block nav_registry_class %}{% endblock %}">
                             <a href="{% url 'ocasi_registry' %}">Registry

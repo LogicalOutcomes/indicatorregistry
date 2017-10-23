@@ -1,4 +1,4 @@
-{% extends "sis_sites/ocasi/base.html" %}
+{% extends "sis_sites/ocasi/evaluation_base.html" %}
 
 {% block nav_evaluation_class %}active{% endblock %}
 {% block nav_evaluation_sr_class %} <span class="sr-only">(current)</span>{% endblock %}
@@ -6,6 +6,7 @@
 {% block title %}Design an evaluation plan{% endblock %}
 
 {% block content %}
+{{ block.super }}
 
 <ol class="breadcrumb">
   <li ><a href="{% url 'ocasi_home' %}">Home</a></li>
