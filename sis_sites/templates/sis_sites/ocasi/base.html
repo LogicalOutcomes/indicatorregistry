@@ -62,14 +62,10 @@
                                 {% block nav_home_sr_class %}{% endblock %}
                             </a>
                         </li>
-                        <li class="dropdown {% block nav_data_portal_class %}{% endblock %}">
-                            <a href="{% url 'ocasi_data_portal' %}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Data Portal <span class="caret"></span>
+                        <li class="{% block nav_data_portal_class %}{% endblock %}">
+                            <a href="{% url 'ocasi_data_portal' %}">Data Portal
                             {% block nav_data_portal_sr_class %}{% endblock %}
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/ocasi/data-portal/overview/">Overview</a></li>
-                                <li><a href="/ocasi/data_portal/maps-and-charts/">Detailed maps and charts</a></li>
-                            </ul>
                         </li>
                         <li class="dropdown {% block nav_evaluation_class %}{% endblock %}">
                             <a href="{% url 'ocasi_evaluation' %}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -82,17 +78,14 @@
                                 <li><a href="{% url 'ocasi_evaluation_plan' %}">Evaluation Plan</a></li>
                                 <li><a href="{% url 'ocasi_data_management_plan' %}">Data Management Plan</a></li>
                                 <li><a href="{% url 'ocasi_review_data_collection_tools' %}">Review data collection tools</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="https://demo.ocasi.sis.ngo/dhis-web-commons/security/login.action#/" target="_blank">Reports and Dashboards</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown {% block nav_registry_class %}{% endblock %}">
-                            <a href="{% url 'ocasi_registry' %}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Registry<span class="caret"></span>
+                        <li class="{% block nav_registry_class %}{% endblock %}">
+                            <a href="{% url 'ocasi_registry' %}">Registry
                             {% block nav_registry_sr_class %}{% endblock %}
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="{% url 'ocasi_registry' %}">Browse</a></li>
-                                <li><a href="{% url 'comparer' %}">Compare</a></li>
-                                <li><a href="/ocasi/export/">Export</a></li>
-                            </ul>
                         </li>
                         <li class="{% block nav_help_class %}{% endblock %}">
                             <a href="/ocasi/help/">
