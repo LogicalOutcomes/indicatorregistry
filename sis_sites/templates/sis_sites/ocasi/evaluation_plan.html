@@ -5,14 +5,10 @@
 
 {% block title %}Design an evaluation plan{% endblock %}
 
+{% block evaluation_nav_plan %}active{% endblock %}
+
 {% block content %}
 {{ block.super }}
-
-<ol class="breadcrumb">
-  <li ><a href="{% url 'ocasi_home' %}">Home</a></li>
-  <li><a href="{% url 'ocasi_evaluation' %}">Evaluation tools</a></li>
-  <li class="active">Design an evaluation plan</li>
-</ol>
 
 <div class="row">
     <div class="col-sm-12">
