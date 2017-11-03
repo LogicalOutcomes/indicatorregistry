@@ -1,0 +1,18 @@
+{% extends "sis_sites/ocasi/base.html" %}
+
+{% block nav_evaluation_class %}active{% endblock %}
+{% block nav_evaluation_sr_class %} <span class="sr-only">(current)</span>{% endblock %}
+
+
+{% block content %}
+
+<ul class="nav nav-pills nav-justified">
+    <li class="{% block evaluation_nav_tools %}{% endblock %}"><a href="{% url 'ocasi_evaluation' %}">Evaluation tools</a></li>
+    <li class="{% block evaluation_nav_model %}{% endblock %}"><a href="{% url 'ocasi_create_logic_model' %}">Logic Model</a></li>
+    <li class="{% block evaluation_nav_plan %}{% endblock %}"><a href="{% url 'ocasi_evaluation_plan' %}">Evaluation Plan</a></li>
+    <li class="{% block evaluation_nav_data %}{% endblock %}"><a href="{% url 'ocasi_data_management_plan' %}">Data Management Plan</a></li>
+    <li class="{% block evaluation_nav_review %}{% endblock %}"><a href="{% url 'ocasi_review_data_collection_tools' %}">Review data collection tools</a></li>
+    <li><a href="https://demo.ocasi.sis.ngo/dhis-web-commons/security/login.action#/" target="_blank">Reports and Dashboards</a></li>
+</ul>
+
+{% endblock %}

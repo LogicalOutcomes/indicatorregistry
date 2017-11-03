@@ -1,17 +1,15 @@
-{% extends "sis_sites/ocasi/base.html" %}
+{% extends "sis_sites/ocasi/evaluation_base.html" %}
 
 {% block nav_evaluation_class %}active{% endblock %}
 {% block nav_evaluation_sr_class %} <span class="sr-only">(current)</span>{% endblock %}
 
 {% block title %}Create a logic model{% endblock %}
 
+{% block evaluation_nav_model %}active{% endblock %}
 {% block content %}
+{{ block.super }}
 
-<ol class="breadcrumb">
-  <li ><a href="{% url 'ocasi_home' %}">Home</a></li>
-  <li><a href="{% url 'ocasi_evaluation' %}">Evaluation tools</a></li>
-  <li class="active">Create a logic model</li>
-</ol>
+
 
 <div class="row">
     <div class="col-sm-12">
