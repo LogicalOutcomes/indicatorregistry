@@ -19,28 +19,41 @@ class Command(BaseCommand):
                 return slot.value
         return None
 
+    def get_code(self, concept):
+        res = []
+        for ident in concept.identifiers.all():
+            res.append(ident.identifier)
+        if res:
+            return u', '.join(res)
+        else:
+            return concept.id
+
     def handle(self, *args, **options):
         writer = unicodecsv.writer(options.get('csv_file'), encoding='utf-8')
         # header
         writer.writerow((
             'ID',
+            'Code',
             'Short name',
             'Name',
             'Definition',
             'Value type',
             'Form name',
+            'Terms of use',
             'Value domain',
         ))
         # rows
         for de in DataElement.objects.all():
             writer.writerow((
                 de.id,
+                self.get_code(de),
                 de.short_name,
                 de.name,
                 de.definition,
                 self.get_slot(de, ['Value type']),
                 self.get_slot(de, ['Form name', 'Form name EN']),
-                de.valueDomain.pk if de.valueDomain else None,
+                self.get_slot(de, ['Terms of use']),
+                self.get_code(de.valueDomain) if de.valueDomain else None,
             ))
 
         self.stdout.write('Successfully exported {} Data Elements'.format(DataElement.objects.count()))

@@ -12,6 +12,7 @@ class Command(ExportValueDomainsCommand):
         # header
         writer.writerow((
             'ID',
+            'Code',
             'Short name',
             'Name',
             'Value',
@@ -23,6 +24,7 @@ class Command(ExportValueDomainsCommand):
             for pv in vd.permissibleValues:
                 writer.writerow((
                     vd.id,
+                    self.get_code(vd),
                     vd.short_name,
                     vd.name,
                     pv.value,
@@ -32,6 +34,7 @@ class Command(ExportValueDomainsCommand):
             if not vd.permissibleValues:
                 writer.writerow((
                     vd.id,
+                    self.get_code(vd),
                     vd.short_name,
                     vd.name,
                     None,
