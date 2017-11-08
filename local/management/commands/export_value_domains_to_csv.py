@@ -1,7 +1,7 @@
 import unicodecsv
+from aristotle_mdr.models import SupplementaryValue, ValueDomain
 
 from .export_data_elements_to_csv import Command as ExportValueDomainsCommand
-from aristotle_mdr.models import ValueDomain
 
 
 class Command(ExportValueDomainsCommand):
@@ -30,8 +30,18 @@ class Command(ExportValueDomainsCommand):
                     pv.value,
                     pv.meaning,
                 ))
+            # Supplementary Values of the Value Domain
+            for sv in vd.supplementaryValues:
+                writer.writerow((
+                    vd.id,
+                    self.get_code(vd),
+                    vd.short_name,
+                    vd.name,
+                    sv.value,
+                    sv.meaning,
+                ))
             # Empty Value Domain
-            if not vd.permissibleValues:
+            if not vd.permissibleValues and not vd.supplementaryValues:
                 writer.writerow((
                     vd.id,
                     self.get_code(vd),
