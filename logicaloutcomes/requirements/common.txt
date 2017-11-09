@@ -3,7 +3,7 @@
 # including haystack channels to workarround aristotle requirement issues
 # django-haystack-channels==0.0.1b
 
-# aristotle-metadata-registry>=1.5.7
+# aristotle-metadata-registry==1.5.7
 git+https://github.com/LogicalOutcomes/aristotle-metadata-registry/@hotfix/edit-UI
 
 -e git+git://github.com/aristotle-mdr/aristotle-dataset-extensions@develop#egg=django-aristotle-dataset-extensions

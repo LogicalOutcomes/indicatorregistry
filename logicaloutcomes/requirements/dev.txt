@@ -1,4 +1,5 @@
 ipython
 ipdb
 django-debug-toolbar
-pip install html5lib==1.0b8
+# fix for pisa module issue
+git+https://github.com/xhtml2pdf/xhtml2pdf@master
