@@ -47,8 +47,8 @@
                 <a href="{{comparer_url}}">{% trans "Compare Indicators" %}</a>
             </li>
             {% url 'exporter' as exporter_url %}
-            <li class="{% if request.path == '/static/export/' %}active{% endif %}">
-                <a href="/static/export/">{% trans "Export" %}</a>
+            <li class="{% if request.path == '/content/export/' %}active{% endif %}">
+                <a href="/content/export/">{% trans "Export" %}</a>
             </li>
             {% comment %}
             <li >
