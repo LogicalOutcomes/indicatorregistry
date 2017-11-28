@@ -2,6 +2,6 @@
 Usage: {% include "local/downloads/pdf/property_simple_display.html" with item=obj name='Reference' prop='references' %}
 {% endcomment %}
 {% if prop %}
-    <h3>{{ name }}</h3>
+    <h2>{{ name }}</h2>
     <p>{{ prop|safe }}</p>
 {% endif %}

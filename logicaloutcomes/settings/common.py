@@ -151,9 +151,9 @@ ARISTOTLE_DDI_AGENCY = "demo.ddi.aristotle_mdr"
 # This option gives a site the ability to register the different download options available for the site
 # This invoked in templates using the aristotle template tag "downloadMenu"
 ARISTOTLE_DOWNLOADS = [
-    ('pdf', 'PDF', 'fa-file-pdf-o', 'aristotle_mdr', 'Downloads for various content types in the PDF format'),
-    ('pdf', 'PDF Summary', 'fa-file-pdf-o', 'local', 'Downloads indicators in simple PDF format'),
-    ('dhis2', 'DHIS2', 'fa-cloud-upload', 'indicators', 'Export to DHIS2 using API'),
+    # ('pdf', 'PDF', 'fa-file-pdf-o', 'aristotle_mdr', 'Downloads for various content types in the PDF format'),
+    ('pdf', 'PDF', 'fa-file-pdf-o', 'local', 'Downloads indicators in simple PDF format'),
+    # ('dhis2', 'DHIS2', 'fa-cloud-upload', 'indicators', 'Export to DHIS2 using API'),
 ]
 
 

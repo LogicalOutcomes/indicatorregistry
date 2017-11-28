@@ -1,34 +1,35 @@
 <section>
-    <header>
-    <h1 id="objectTitle">
+<header>
+    <h1>
         {{ item.name }}
     </h1>
 </header>
-<div class="definition">
-    {{ item.definition|safe }}
-</div>
 
+{{ item.definition|safe }}
 
 <div class="objectSpecific">
-    {% include "local/downloads/pdf/property_simple_display.html" with name='Rationale' prop=item.rationale %}
-    {% include "local/downloads/pdf/slot_simple_display.html" with name='Form instructions' %}
-    {% if item.numerators.all %}
-        <h2>Questions</h2>
-        {% for data_element in item.numerators.all %}
-            {% include "local/downloads/pdf/data_element_simple_display.html" with item=data_element %}
-        {% endfor %}
-    {% endif %}
-    {% if item.denominators.all %}
-        <h2>Denominators</h2>
-        {% for data_element in item.denominators.all %}
-            {% include "local/downloads/pdf/data_element_simple_display.html" with item=data_element %}
-        {% endfor %}
-    {% endif %}
-    {% include "local/downloads/pdf/slot_simple_display.html" with name='Method of measurement' %}
-    {% include "local/downloads/pdf/property_simple_display.html" with name='References' prop=item.references %}
-    {% include "local/downloads/pdf/slot_simple_display.html" with name='Outcomes' %}
+    {% include "local/downloads/pdf/property_simple_display.html" with name='Numerator description' prop=item.numerator_description %}
 
-    <hr>
+    <h2>Indicator calculation</h2>
+    Numerator: {{ item.numerator_computation }}
+    <br>
+    Denominator: {{ item.denominator_computation }}
+
+    {% include "local/downloads/pdf/property_simple_display.html" with name='Rationale' prop=item.rationale %}
+
+    {% include "local/downloads/pdf/property_simple_display.html" with name='References' prop=item.references %}
+
+    {% include "local/downloads/pdf/property_simple_display.html" with name='Additional information' prop=item.comments %}
+
+    <h2>Logic model</h2>
+    {% include "local/downloads/pdf/slot_simple_display.html" with name='Inputs and Outputs' display='inline' hide_title=True next_slot='Outcomes' %}
+    {% include "local/downloads/pdf/slot_simple_display.html" with name='Outcomes' display='inline' hide_title=True %}
+
+    <h2>Indicator registry URL</h2>
+    <a href="{{ request.scheme }}://{{ request.META.HTTP_HOST }}{{ item.get_absolute_url }}">
+        {{ request.scheme }}://{{ request.META.HTTP_HOST }}{{ item.get_absolute_url }}
+    </a>
+
 </div>
 
 
