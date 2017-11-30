@@ -58,6 +58,7 @@ def bulk_download(request, download_type, items, title=None, subtitle=None):
                     key=lambda k_v: k_v[0]._meta.model_name
                 ),
                 'pagesize': request.GET.get('pagesize', page_size),
+                'request': request,
             },
             debug_as_html=debug_as_html
         )

@@ -21,11 +21,11 @@
 
     {% include "local/downloads/pdf/property_simple_display.html" with name='Additional information' prop=item.comments %}
 
-    <h2>Logic model</h2>
-    {% include "local/downloads/pdf/slot_simple_display.html" with name='Inputs and Outputs' display='inline' hide_title=True next_slot='Outcomes' %}
+    <h2 class="compact">Logic model</h2>
+    {% include "local/downloads/pdf/slot_simple_display.html" with name='Inputs and outputs' display='inline' hide_title=True next_slot='Outcomes' %}
     {% include "local/downloads/pdf/slot_simple_display.html" with name='Outcomes' display='inline' hide_title=True %}
 
-    <h2>Indicator registry URL</h2>
+    <h2 class="loose">Indicator registry URL</h2>
     <a href="{{ request.scheme }}://{{ request.META.HTTP_HOST }}{{ item.get_absolute_url }}">
         {{ request.scheme }}://{{ request.META.HTTP_HOST }}{{ item.get_absolute_url }}
     </a>

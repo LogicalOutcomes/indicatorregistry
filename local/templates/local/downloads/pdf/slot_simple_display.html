@@ -7,16 +7,15 @@ Usage: {% include "local/downloads/pdf/slot_simple_display.html" with item=obj n
         {% if not hide_title %}
             <h2>{{ name }}</h2>
         {% endif %}
-
         {% for slot in slots %}
             {% if display == 'inline' %}
-                {{slot.value}}{% if not forloop.last %},{% endif %}
-                {# If next slot check if we need to add a comma to sperate it #}
-                {% if forloop.last and next_slot %}
-                    {% with item|slots_by_type:next_slot as next_slots %}
-                        {% if next_slots %},{% endif %}
-                    {% endwith %}
-                {% endif %}
+                    {{slot.value}}{% if not forloop.last %},{% endif %}{% spaceless %}
+                    {% if forloop.last and next_slot %}
+                        {% with item|slots_by_type:next_slot as next_slots %}
+                            {% if next_slots %},{% endif %}
+                        {% endwith %}
+                    {% endif %}
+                {% endspaceless %}
             {% else %}
                 {{slot.value|markdown}}
             {% endif %}
