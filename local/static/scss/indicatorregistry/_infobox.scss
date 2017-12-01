@@ -1,0 +1,17 @@
+#infobox-wrap {
+    padding-top: 10px !important;
+
+    #infobox {
+        border-radius: 4px;
+        border: 1px solid $input-border;
+        font-size: 80%;
+        padding:  5px 10px;
+
+        > header {
+            border-bottom: none;
+            font-size: 120%;
+            margin: 4px 0 6px 0;
+            text-align: left;
+        }
+    }
+}

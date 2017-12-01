@@ -1,4 +1,4 @@
-{% load i18n %}
+{% load i18n static compile_static %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -12,7 +12,8 @@
         <link href="https://logicaloutcomes.github.io/ocasi-theme/css/main.css" rel="stylesheet">
         <!-- Font Awesome -->
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
+        <!-- Customizations -->
+        <link rel="stylesheet" href="{% static 'sis_sites/ocasi/scss/ocasi_theme.scss'|compile %}" />
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
