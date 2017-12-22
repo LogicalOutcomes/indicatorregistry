@@ -1,16 +1,16 @@
 {% extends "sis_sites/ocasi/base.html" %}
 {% load markdown_deux_tags %}
 
-{% block nav_help_class %}active{% endblock %}
-{% block nav_help_sr_class %} <span class="sr-only">(current)</span>{% endblock %}
-
 {% block title %}{{ flatpage.title }} {% endblock %}
+
+{% block nav_home_class %}active{% endblock %}
+{% block nav_home_sr_class %}<span class="sr-only">(current)</span>{% endblock %}
 
 {% block content %}
 
 <ol class="breadcrumb">
-  <li ><a href="{% url 'ocasi_home' %}">Home</a></li>
-  <li class="active">Help</li>
+  <li><a href="{% url 'ocasi_home' %}">Home</a></li>
+  <li class="active">Start</li>
 </ol>
 
 <div class="row">
