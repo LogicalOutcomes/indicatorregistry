@@ -1,9 +1,10 @@
 {% extends "sis_sites/ocasi/evaluation_base.html" %}
+{% load markdown_deux_tags %}
 
 {% block nav_evaluation_class %}active{% endblock %}
 {% block nav_evaluation_sr_class %} <span class="sr-only">(current)</span>{% endblock %}
 
-{% block title %}Design an evaluation plan{% endblock %}
+{% block title %}{{ flatpage.title }}{% endblock %}
 
 {% block evaluation_nav_plan %}active{% endblock %}
 
@@ -13,14 +14,16 @@
 <div class="row">
     <div class="col-sm-12">
         <div class="title-box">
-            <img class="title-box_icon" src="https://logicaloutcomes.github.io/ocasi-theme/img/icons/historia-clinica.png" alt="Evaluation Plan">
-            <h1 class="title-box_title">Design an evaluation plan</h1>
+            <img class="title-box_icon" src="https://logicaloutcomes.github.io/ocasi-theme/img/icons/design_an_evaluation_plan.png" alt="{{ flatpage.title }}">
+            <h1 class="title-box_title">{{ flatpage.title }}</h1>
             <p class="title-box_description">
-                This page will contain a series of questions that leads users though the process of selecting evaluation priorities, an evaluation design (e.g., pre-post survey measures), and a list of desired reports. It will include the recommended reports from major funders. <br><br>
-
-                All of these documents will be saved in DHIS2 within the agency’s directory.
+                {{ flatpage.content|markdown }}
             </p>
         </div>
+        <br><br>
+        {% for content_block in flatpage.contentblock_set.all %}
+            {{ content_block.render|safe }}
+        {% endfor %}
     </div>
 </div>
 
