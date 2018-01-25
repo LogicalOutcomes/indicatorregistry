@@ -1,7 +1,6 @@
-from django.conf.urls import url, include
+from django.conf.urls import include, url
 from django.views.generic import TemplateView
-from sis_sites.ocasi.views import BrowseRegistry
-
+from sis_sites.ocasi.views import BrowseRegistry, MyWorkspaceView
 
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='sis_sites/ocasi/home.html'), name="ocasi_home"),
@@ -14,7 +13,7 @@ urlpatterns = [
     url(r'^evaluation/review-data-collection-tools/$', TemplateView.as_view(template_name='sis_sites/ocasi/review_data_collection_tools.html'), name="ocasi_review_data_collection_tools"),
 
     url(r'^registry/$', BrowseRegistry.as_view(), name="ocasi_registry"),
-    url(r'^my-workspace/$', TemplateView.as_view(template_name='sis_sites/ocasi/my_workspace.html'), name="ocasi_my_workspace"),
+    url(r'^my-workspace/$', MyWorkspaceView.as_view(), name="ocasi_my_workspace"),
 
     url(r'^', include('logicaloutcomes.urls')),
 ]

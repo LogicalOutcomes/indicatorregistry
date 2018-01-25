@@ -16,7 +16,13 @@
         <div class="title-box">
             <img class="title-box_icon" src="https://logicaloutcomes.github.io/ocasi-theme/img/icons/box.png" alt="Evaluation tools">
             <h1 class="title-box_title">Evaluation tools</h1>
-            <p class="title-box_description">Design an evaluation plan for your agency and its programs.</p>
+            <p class="title-box_description">
+                Use the tools below to design an evaluation plan for your agency and its programs. The tools can be used individually or to develop and execute a full evaluation(s).
+                <br><br>
+                The tools are free to use or you can sign up for SIS to gain access to our full range of services, including the SIS data warehouse and assistance through the evaluation process . The SIS data warehouse allows you to store your data collection tools, securely store aggregated results and create reports to visualize your data.
+                <br><br>
+                This page is continually under development, check back often to explore new tools and features.
+            </p>
         </div>
     </div>
 </div>
@@ -67,7 +73,9 @@
                 <a href="{% url 'ocasi_review_data_collection_tools' %}">
                     <h3 class="section-box_content_title">Review data collection tools</h3>
                 </a>
-                <p class="section-box_content_description">Go to a list of DHIS2  data collection forms. These are demos – to see your own data collection tools, go to your Workspace.</p>
+                <p class="section-box_content_description">
+                    Go to a list of demo data collection forms. These are demos – to see your own data collection tools, go to <a href="{% url 'ocasi_my_workspace' %}">My Workspace.</a>
+                </p>
             </div>
         </div>
 
@@ -82,7 +90,7 @@
                 <a href=" https://demo.ocasi.sis.ngo/dhis-web-commons/security/login.action" target="_blank">
                     <h3 class="section-box_content_title">See the demo for reports and dashboards</h3>
                 </a>
-                <p class="section-box_content_description">This link will take you to the SIS data warehouse, which is built on another software platform. This link is a demo – to see your own reports, go to your Workspace.</p>
+                <p class="section-box_content_description">This link will take you to the SIS data warehouse, which is built on another software platform. This link is a demo – to see your own reports, go to your <a href="{% url 'ocasi_my_workspace' %}">My Workspace.</a></p>
             </div>
         </div>
 
