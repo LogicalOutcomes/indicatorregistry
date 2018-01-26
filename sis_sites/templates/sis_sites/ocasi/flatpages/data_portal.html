@@ -8,25 +8,6 @@
 
 {% block content %}
 
-<ol class="breadcrumb">
-  <li ><a href="{% url 'ocasi_home' %}">Home</a></li>
-  <li class="active">Community data portal</li>
-</ol>
-
-<div class="row">
-    <div class="col-md-12">
-        <div class="title-box">
-            <img class="title-box_icon" src="https://logicaloutcomes.github.io/ocasi-theme/img/icons/user.png" alt="Data portal">
-            <h1 class="title-box_title">{{ flatpage.title }}</h1>
-            <div class="title-box_description">
-                {{ flatpage.content|markdown }}
-            </div>
-        </div>
-    </div>
-</div>
-
-<hr>
-
 {% for content_block in flatpage.contentblock_set.all %}
 <div class="row">
     <div class="col-md-12">
