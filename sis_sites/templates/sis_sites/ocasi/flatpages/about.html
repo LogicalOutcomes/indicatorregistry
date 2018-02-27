@@ -1,0 +1,21 @@
+{% extends "sis_sites/ocasi/base.html" %}
+{% load markdown_deux_tags %}
+
+{% block title %}{{ flatpage.title }} {% endblock %}
+
+{% block nav_about_class %}active{% endblock %}
+{% block nav_about_sr_class %}<span class="sr-only">(current)</span>{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-12">
+
+    {% for content_block in flatpage.contentblock_set.all %}
+        {{ content_block.render|safe }}
+    {% endfor %}
+
+    </div>
+</div>
+
+{% endblock %}
