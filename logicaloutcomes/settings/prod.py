@@ -23,17 +23,8 @@ SIS_SITES_ROOT_URLCONF = {
 
 SIS_SITES_DEFAULT_TEMPLATE = 'sis_sites/aristotle_base.html'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'indicatorregistry',
-        'USER': 'user_registry',
-        'PASSWORD': 'o$U0TmOl*g0N&i',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
-
+# DATABASES = {} -- Please see local.py file for sensitive DB configuration 
+# (imported by common.py, not versioned)
 
 LOGGING = {
     'version': 1,
