@@ -1,4 +1,5 @@
 {% extends "sis_sites/ocasi/evaluation_base.html" %}
+{% load static %}
 
 {% block nav_evaluation_class %}active{% endblock %}
 {% block nav_evaluation_sr_class %} <span class="sr-only">(current)</span>{% endblock %}
@@ -36,24 +37,30 @@
                 The OCASI SIS Program Logic Model is built from a free evaluation planning tool developed by <a href="https://www.jhsph.edu/research/centers-and-institutes/institute-for-international-programs/current-projects/RADAR/index.html">Johns Hopkins RADAR program.</a>
                 </p>
 
-                <p>
-
-                We have also created a standard logic model for Canadian agencies serving immigrants and refugees. Agencies can select their own indicators and customize their logic model for their specific programs based on the general framework below.
-                </p>
-
-                <p>
-                Follow these steps to create your own logic model:
-                <ul>
-                    <li>
-                        Each link below will take you to the associated indicator in the <a href="{% url 'ocasi_registry' %}">indicator registry</a>.
-                    </li>
-                    <li>
-                        Select relevant indicators and export them into pdf.
-                    </li>
-                </ul>
-                With a SIS subscription, you can store your list of indicators in your workspace. We'll use that list to create custom data collection tools for your agency.
-                </p>
             </div>
+
+            <p class="text-center">
+                <a href="{% static "sis_sites/ocasi/img/program_logic_model.png" %}">
+                    <img class="img-responsive" src="{% static "sis_sites/ocasi/img/program_logic_model.png" %}" alt="Program logic model">
+                </a>
+            </p>
+
+            <p>
+            We have also created a standard logic model for Canadian agencies serving immigrants and refugees. Agencies can select their own indicators and customize their logic model for their specific programs based on the general framework below.
+            </p>
+
+            <p>
+            Follow these steps to create your own logic model:
+            <ul>
+                <li>
+                    Each link below will take you to the associated indicator in the <a href="{% url 'ocasi_registry' %}">indicator registry</a>.
+                </li>
+                <li>
+                    Select relevant indicators and export them into pdf.
+                </li>
+            </ul>
+            With a SIS subscription, you can store your list of indicators in your workspace. We'll use that list to create custom data collection tools for your agency.
+            </p>
         </div>
     </div>
 
