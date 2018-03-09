@@ -1,4 +1,5 @@
-from django.views.generic.base import RedirectView
+# from django.views.generic.base import RedirectView
+from django.views.generic.base import TemplateView
 from indicators.views import BrowseIndicatorsAsHome
 
 
@@ -9,10 +10,14 @@ class BrowseRegistry(BrowseIndicatorsAsHome):
         return [self.template_name]
 
 
-class MyWorkspaceView(RedirectView):
+class MyWorkspaceView(TemplateView):
+    template_name = 'sis_sites/ocasi/my_workspace.html'
 
-    permanent = False
-    query_string = True
 
-    def get_redirect_url(self, *args, **kwargs):
-        return 'https://reports.ocasi.sis.ngo'
+# class MyWorkspaceView(RedirectView):
+
+#     permanent = False
+#     query_string = True
+
+#     def get_redirect_url(self, *args, **kwargs):
+#         return 'https://reports.ocasi.sis.ngo'
