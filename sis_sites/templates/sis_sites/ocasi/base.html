@@ -86,13 +86,14 @@
                             </a>
                         </li>
                         <li class="{% block nav_help_class %}{% endblock %}">
-                            <a href="https://support.logicaloutcomes.net/portal/kb">
+                            <a href="https://support.logicaloutcomes.net/portal/">
                                 Help
                                 {% block nav_help_sr_class %}{% endblock %}
                             </a>
                         </li>
                     </ul>
 
+                    {% comment %}
                     <ul class="nav navbar-nav navbar-right">
                         <li class="{% block nav_my_workspace_class %}{% endblock %}">
                             <a href="{% url 'ocasi_my_workspace' %}">
@@ -101,6 +102,7 @@
                             </a>
                         </li>
                     </ul>
+                    {% endcomment %}
                 </div>
                 <!-- /.navbar-collapse -->
             </div>
