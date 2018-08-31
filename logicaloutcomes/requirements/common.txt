@@ -44,3 +44,9 @@ channels==1.1.5
 
 # Fix for aristotle-mdr-api
 djangorestframework==3.6.4
+
+# Fix ckeditor
+django-ckeditor==5.3.1
+
+# Fix autocomplete
+django-autocomplete-light==3.2.10
