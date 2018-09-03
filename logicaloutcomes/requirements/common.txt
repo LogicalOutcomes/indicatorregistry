@@ -50,3 +50,6 @@ django-ckeditor==5.3.1
 
 # Fix autocomplete
 django-autocomplete-light==3.2.10
+
+# Fix notifications
+django-notifications-hq==1.3
