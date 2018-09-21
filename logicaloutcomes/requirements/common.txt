@@ -26,6 +26,7 @@ Django~=1.8.17
 # used for async tasks
 celery==4.0.2
 django-celery-results==1.0.1
+kombu==4.1
 
 # DB
 psycopg2==2.7.1
